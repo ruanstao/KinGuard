@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		622218F81CD10C3C00A47434 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218F71CD10C3C00A47434 /* main.m */; };
+		622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218FA1CD10C3C00A47434 /* AppDelegate.m */; };
+		622218FE1CD10C3C00A47434 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218FD1CD10C3C00A47434 /* ViewController.m */; };
+		622219011CD10C3C00A47434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622218FF1CD10C3C00A47434 /* Main.storyboard */; };
+		622219031CD10C3C00A47434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622219021CD10C3C00A47434 /* Assets.xcassets */; };
+		622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622219041CD10C3C00A47434 /* LaunchScreen.storyboard */; };
+		622219111CD10C3C00A47434 /* KinGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622219101CD10C3C00A47434 /* KinGuardTests.m */; };
+		6222191C1CD10C3C00A47434 /* KinGuardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222191B1CD10C3C00A47434 /* KinGuardUITests.m */; };
+		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
+		628759E01CD120F800CD92A5 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DF1CD120F800CD92A5 /* LeftViewController.m */; };
+		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6222190D1CD10C3C00A47434 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 622218EB1CD10C3C00A47434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 622218F21CD10C3C00A47434;
+			remoteInfo = KinGuard;
+		};
+		622219181CD10C3C00A47434 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 622218EB1CD10C3C00A47434 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 622218F21CD10C3C00A47434;
+			remoteInfo = KinGuard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		617CE91FC2BBD5ADF436D425 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		622218F31CD10C3C00A47434 /* KinGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		622218F71CD10C3C00A47434 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		622218F91CD10C3C00A47434 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		622218FA1CD10C3C00A47434 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		622218FC1CD10C3C00A47434 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		622218FD1CD10C3C00A47434 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		622219001CD10C3C00A47434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		622219021CD10C3C00A47434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		622219051CD10C3C00A47434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		622219071CD10C3C00A47434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6222190C1CD10C3C00A47434 /* KinGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		622219101CD10C3C00A47434 /* KinGuardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KinGuardTests.m; sourceTree = "<group>"; };
+		622219121CD10C3C00A47434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		622219171CD10C3C00A47434 /* KinGuardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6222191B1CD10C3C00A47434 /* KinGuardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KinGuardUITests.m; sourceTree = "<group>"; };
+		6222191D1CD10C3C00A47434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		628759DE1CD120F800CD92A5 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		628759DF1CD120F800CD92A5 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DDAE2203136E8BF0163DCA25 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		622218F01CD10C3C00A47434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622219091CD10C3C00A47434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622219141CD10C3C00A47434 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ABBC0F00920C307CF872AB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				617CE91FC2BBD5ADF436D425 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1176AE3E0ACADDE17B958E59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */,
+				DDAE2203136E8BF0163DCA25 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		622218EA1CD10C3C00A47434 = {
+			isa = PBXGroup;
+			children = (
+				622218F51CD10C3C00A47434 /* KinGuard */,
+				6222190F1CD10C3C00A47434 /* KinGuardTests */,
+				6222191A1CD10C3C00A47434 /* KinGuardUITests */,
+				622218F41CD10C3C00A47434 /* Products */,
+				1176AE3E0ACADDE17B958E59 /* Pods */,
+				0ABBC0F00920C307CF872AB8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		622218F41CD10C3C00A47434 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				622218F31CD10C3C00A47434 /* KinGuard.app */,
+				6222190C1CD10C3C00A47434 /* KinGuardTests.xctest */,
+				622219171CD10C3C00A47434 /* KinGuardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		622218F51CD10C3C00A47434 /* KinGuard */ = {
+			isa = PBXGroup;
+			children = (
+				622218F91CD10C3C00A47434 /* AppDelegate.h */,
+				622218FA1CD10C3C00A47434 /* AppDelegate.m */,
+				622218FC1CD10C3C00A47434 /* ViewController.h */,
+				622218FD1CD10C3C00A47434 /* ViewController.m */,
+				628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */,
+				628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */,
+				628759DE1CD120F800CD92A5 /* LeftViewController.h */,
+				628759DF1CD120F800CD92A5 /* LeftViewController.m */,
+				622218FF1CD10C3C00A47434 /* Main.storyboard */,
+				622219021CD10C3C00A47434 /* Assets.xcassets */,
+				622219041CD10C3C00A47434 /* LaunchScreen.storyboard */,
+				622219071CD10C3C00A47434 /* Info.plist */,
+				622218F61CD10C3C00A47434 /* Supporting Files */,
+			);
+			path = KinGuard;
+			sourceTree = "<group>";
+		};
+		622218F61CD10C3C00A47434 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				622218F71CD10C3C00A47434 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6222190F1CD10C3C00A47434 /* KinGuardTests */ = {
+			isa = PBXGroup;
+			children = (
+				622219101CD10C3C00A47434 /* KinGuardTests.m */,
+				622219121CD10C3C00A47434 /* Info.plist */,
+			);
+			path = KinGuardTests;
+			sourceTree = "<group>";
+		};
+		6222191A1CD10C3C00A47434 /* KinGuardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6222191B1CD10C3C00A47434 /* KinGuardUITests.m */,
+				6222191D1CD10C3C00A47434 /* Info.plist */,
+			);
+			path = KinGuardUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		622218F21CD10C3C00A47434 /* KinGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 622219201CD10C3C00A47434 /* Build configuration list for PBXNativeTarget "KinGuard" */;
+			buildPhases = (
+				CE21E5305124311F014CAC22 /* Check Pods Manifest.lock */,
+				622218EF1CD10C3C00A47434 /* Sources */,
+				622218F01CD10C3C00A47434 /* Frameworks */,
+				622218F11CD10C3C00A47434 /* Resources */,
+				83F052F122663B88FA885A9B /* Embed Pods Frameworks */,
+				3C22A7F3D9F779E2C17B0B6C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KinGuard;
+			productName = KinGuard;
+			productReference = 622218F31CD10C3C00A47434 /* KinGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6222190B1CD10C3C00A47434 /* KinGuardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 622219231CD10C3C00A47434 /* Build configuration list for PBXNativeTarget "KinGuardTests" */;
+			buildPhases = (
+				622219081CD10C3C00A47434 /* Sources */,
+				622219091CD10C3C00A47434 /* Frameworks */,
+				6222190A1CD10C3C00A47434 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6222190E1CD10C3C00A47434 /* PBXTargetDependency */,
+			);
+			name = KinGuardTests;
+			productName = KinGuardTests;
+			productReference = 6222190C1CD10C3C00A47434 /* KinGuardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		622219161CD10C3C00A47434 /* KinGuardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 622219261CD10C3C00A47434 /* Build configuration list for PBXNativeTarget "KinGuardUITests" */;
+			buildPhases = (
+				622219131CD10C3C00A47434 /* Sources */,
+				622219141CD10C3C00A47434 /* Frameworks */,
+				622219151CD10C3C00A47434 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				622219191CD10C3C00A47434 /* PBXTargetDependency */,
+			);
+			name = KinGuardUITests;
+			productName = KinGuardUITests;
+			productReference = 622219171CD10C3C00A47434 /* KinGuardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		622218EB1CD10C3C00A47434 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = RuanSTao;
+				TargetAttributes = {
+					622218F21CD10C3C00A47434 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Q8G47UAD38;
+					};
+					6222190B1CD10C3C00A47434 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Q8G47UAD38;
+						TestTargetID = 622218F21CD10C3C00A47434;
+					};
+					622219161CD10C3C00A47434 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Q8G47UAD38;
+						TestTargetID = 622218F21CD10C3C00A47434;
+					};
+				};
+			};
+			buildConfigurationList = 622218EE1CD10C3C00A47434 /* Build configuration list for PBXProject "KinGuard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 622218EA1CD10C3C00A47434;
+			productRefGroup = 622218F41CD10C3C00A47434 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				622218F21CD10C3C00A47434 /* KinGuard */,
+				6222190B1CD10C3C00A47434 /* KinGuardTests */,
+				622219161CD10C3C00A47434 /* KinGuardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		622218F11CD10C3C00A47434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */,
+				622219031CD10C3C00A47434 /* Assets.xcassets in Resources */,
+				622219011CD10C3C00A47434 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6222190A1CD10C3C00A47434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622219151CD10C3C00A47434 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C22A7F3D9F779E2C17B0B6C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83F052F122663B88FA885A9B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE21E5305124311F014CAC22 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		622218EF1CD10C3C00A47434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
+				628759E01CD120F800CD92A5 /* LeftViewController.m in Sources */,
+				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
+				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
+				622218F81CD10C3C00A47434 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622219081CD10C3C00A47434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622219111CD10C3C00A47434 /* KinGuardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		622219131CD10C3C00A47434 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6222191C1CD10C3C00A47434 /* KinGuardUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6222190E1CD10C3C00A47434 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 622218F21CD10C3C00A47434 /* KinGuard */;
+			targetProxy = 6222190D1CD10C3C00A47434 /* PBXContainerItemProxy */;
+		};
+		622219191CD10C3C00A47434 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 622218F21CD10C3C00A47434 /* KinGuard */;
+			targetProxy = 622219181CD10C3C00A47434 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		622218FF1CD10C3C00A47434 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				622219001CD10C3C00A47434 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		622219041CD10C3C00A47434 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				622219051CD10C3C00A47434 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6222191E1CD10C3C00A47434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6222191F1CD10C3C00A47434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		622219211CD10C3C00A47434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KinGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		622219221CD10C3C00A47434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDAE2203136E8BF0163DCA25 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KinGuard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		622219241CD10C3C00A47434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KinGuardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KinGuard.app/KinGuard";
+			};
+			name = Debug;
+		};
+		622219251CD10C3C00A47434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KinGuardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KinGuard.app/KinGuard";
+			};
+			name = Release;
+		};
+		622219271CD10C3C00A47434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KinGuardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KinGuard;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		622219281CD10C3C00A47434 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KinGuardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KinGuard;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		622218EE1CD10C3C00A47434 /* Build configuration list for PBXProject "KinGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6222191E1CD10C3C00A47434 /* Debug */,
+				6222191F1CD10C3C00A47434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		622219201CD10C3C00A47434 /* Build configuration list for PBXNativeTarget "KinGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				622219211CD10C3C00A47434 /* Debug */,
+				622219221CD10C3C00A47434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		622219231CD10C3C00A47434 /* Build configuration list for PBXNativeTarget "KinGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				622219241CD10C3C00A47434 /* Debug */,
+				622219251CD10C3C00A47434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		622219261CD10C3C00A47434 /* Build configuration list for PBXNativeTarget "KinGuardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				622219271CD10C3C00A47434 /* Debug */,
+				622219281CD10C3C00A47434 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 622218EB1CD10C3C00A47434 /* Project object */;
+}
