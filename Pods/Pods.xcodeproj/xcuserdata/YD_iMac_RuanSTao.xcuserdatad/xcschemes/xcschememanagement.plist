@@ -39,15 +39,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RegexKitLite.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>669DF201ACA80F784ABA9217DA976829</key>
+		<key>1279CC55D4D574C23D40DA4E110F11E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87ECCEC5953124B5CE99FF65118CB5FC</key>
+		<key>2D581D208B998B56552636310C2901F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E0F6C299391483CA272C60683AB043E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

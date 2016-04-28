@@ -132,14 +132,7 @@ typedef void (^CompletionBlock)(BOOL finish);
  *  Description: 打开本地文件
  */
 + (NSArray *)arrayWithFileName:(NSString *)filename;
-/**
- *  Description: 判断图片链接是否有http://img.jjshome.com前缀
- */
-+ (NSString *)imageUrlWith:(NSString *)path;
-/**
- *  Description:判断是网络图片还是相册图片
- */
-+ (BOOL)imageUrlWithHexFix:(NSString *)path;
+
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToFillSize:(CGSize)size;
 //

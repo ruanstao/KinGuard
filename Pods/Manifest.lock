@@ -21,6 +21,7 @@ PODS:
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
   - Reachability (3.2)
+  - RegexKitLite (4.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - Reachability
+  - RegexKitLite
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -37,5 +39,6 @@ SPEC CHECKSUMS:
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
 
 COCOAPODS: 0.39.0

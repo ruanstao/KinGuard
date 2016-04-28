@@ -75,7 +75,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    [JJSUtil setExtraCellLineHidden:tableView];
+//    [JJSUtil setExtraCellLineHidden:tableView];
     return self.tableViewContent.count;
 }
 

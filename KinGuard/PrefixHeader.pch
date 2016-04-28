@@ -9,8 +9,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import "JJSKit.h"
-#import "JJSUtil.h"
 // 颜色转换
 #define RGB(r, g, b)             [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
 #define RGBAlpha(r, g, b, a)     [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
@@ -18,10 +16,67 @@
 #define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define HexRGBAlpha(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
 
+
 #define mNavBarHeight         44
 #define mTabBarHeight         49
 #define mScreenWidth          ([UIScreen mainScreen].bounds.size.width)
 #define mScreenHeight         ([UIScreen mainScreen].bounds.size.height)
+
+/*---------------------------------App UI Config Info-------------------------------------*/
+
+// App View Background Color
+#define kAppBgColor  [UIColor whiteColor]
+
+// Color Define
+#define kClearColor             [UIColor clearColor]
+#define kWhiteColor             [UIColor whiteColor]
+
+// Menu theme
+#define kBackgroundGray         [UIColor colorWithRed:0.941 green:0.937 blue:0.957 alpha:1]
+#define kMenuThemeNew           [UIColor colorWithRed:0.357 green:0.859 blue:0.361 alpha:1]
+#define kMenuThemeFocus         [UIColor colorWithRed:0.427 green:0.678 blue:0.929 alpha:1]
+#define kMenuThemeChange        [UIColor colorWithRed:0.996 green:0.792 blue:0.365 alpha:1]
+#define kMenuThemeWaiting       [UIColor colorWithRed:0.757 green:0.427 blue:0.933 alpha:1]
+#define kMenuThemeDisable       [UIColor colorWithRed:0.902 green:0.902 blue:0.902 alpha:1]
+
+
+// App Font Style Config
+#define kNavTitleFont               [UIFont fontWithName:@"HelveticaNeue" size:20] //導航欄標題 HelveticaNeue-Light|HelveticaNeue-Bold
+
+#define kTitleFontFir               [UIFont boldSystemFontOfSize:20]//一級標題字號
+#define kTitleFontSec               [UIFont boldSystemFontOfSize:18]//二級標題字號
+
+#define kContentFont                [UIFont systemFontOfSize:16]  //內容文字字號
+#define kContentFontBlod            [UIFont boldSystemFontOfSize:16]//内容文字字号粗体
+
+#define kContentFontMiddle          [UIFont systemFontOfSize:14]  //內容文字中號
+#define kContentFontMiddleAndBlod   [UIFont boldSystemFontOfSize:14]//内容文字中号粗体
+
+#define kContentFontSmall           [UIFont systemFontOfSize:12]    // 內容文字小號
+#define kContentFontSmallAndBlod    [UIFont boldSystemFontOfSize:12]    // 內容文字小號粗体
+#define kTimeFontSmall              [UIFont systemFontOfSize:10]    // 时间文字小號
+
+
+// TableView Config
+// 表视图分割线颜色
+#define kSeparatorColor         [UIColor colorWithRed:0.890 green:0.886 blue:0.898 alpha:1]
+// 表视图背景色
+#define kTableViewBgColor [UIColor colorWithRed:1.000 green:1.000 blue:1.000 alpha:1]
+
+// 表视图单元格详情标签字体颜色
+#define kTableViewCellDetailLabelTextColor [UIColor colorWithRed:0.455 green:0.455 blue:0.455 alpha:1]
+
+// 导航栏字体颜色
+#define kNavTitleColor     [UIColor colorWithRed:0.345 green:0.345 blue:0.345 alpha:1]
+#define kNavBarBgColor     [UIColor whiteColor]
+#define kNavItemColor      [UIColor colorWithRed:0.125 green:0.561 blue:0.922 alpha:1]
+
+// 按钮字体颜色
+#define kBtnTitleNormalColor [UIColor colorWithRed:0.200 green:0.200 blue:0.200 alpha:1]
+#define kBtnTitleHighlightColor  [UIColor colorWithRed:0.800 green:0.800 blue:0.800 alpha:1]
+
+//价格相关Text字体颜色
+#define KTextPriceColor HexRGB(0xF5A623)
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

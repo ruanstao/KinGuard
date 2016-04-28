@@ -100,8 +100,8 @@
     
     if (obj) {
         
-        [mUserDefaults setObject:obj forKey:key];
-        [mUserDefaults synchronize];
+        [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];
+        [[NSUserDefaults standardUserDefaults]  synchronize];
         completion(YES,obj);
         
     }
@@ -111,7 +111,7 @@
 + (void)getDataWithKey:(NSString *)key Completion:(CompletionWithObjectBlock)completion
 {
     
-    id data = [mUserDefaults objectForKey:key];
+    id data = [[NSUserDefaults standardUserDefaults]  objectForKey:key];
     completion(YES,data);
     
 }
@@ -593,23 +593,6 @@
     return plistArray;
 }
 
-+ (NSString *)imageUrlWith:(NSString *)path
-{
-    NSRange range = [path rangeOfString:@"http://"];
-    if (range.location == NSNotFound) {
-        NSString *imgUrl = [NSString stringWithFormat:@"%@%@",kImagePrexTest,path];
-        return imgUrl;
-    }
-    return path;
-}
-+ (BOOL)imageUrlWithHexFix:(NSString *)path
-{
-    NSRange range = [path rangeOfString:@"assets-library://"];
-    if (range.location == NSNotFound) {
-        return NO;
-    }
-    return YES;
-}
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToFillSize:(CGSize)size
 {
@@ -1236,7 +1219,7 @@
 {
     UIButton *blueBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [blueBtn setBackgroundColor:[UIColor colorWithRed:0 green:132.0/255.0f blue:232.0/255.0f alpha:1]];
-    [blueBtn setTitleColor:kAppBgColor forState:UIControlStateNormal];
+    [blueBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     blueBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [blueBtn setTitle:btnName forState:UIControlStateNormal];
     blueBtn.layer.cornerRadius = 6.0;
@@ -1252,7 +1235,7 @@
 + (JJSScrollView *)initializeViewWithScrollView:(CGRect)frame
 {
     JJSScrollView *scrollView = [[JJSScrollView alloc] initWithFrame:frame];
-    [scrollView setBackgroundColor:kBackgroundGray];
+    [scrollView setBackgroundColor:[UIColor grayColor]];
     [scrollView setPagingEnabled:YES];
     [scrollView setBounces:NO];
     [scrollView setContentSize:CGSizeMake(frame.size.width, frame.size.height)];
