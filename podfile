@@ -1,2 +1,8 @@
 platform :ios, '7.0'
-pod "AFNetworking"
+pod 'AFNetworking'
+pod 'MJExtension'
+pod 'MJRefresh'
+pod 'MBProgressHUD'
+pod 'FMDB'
+pod 'Reachability'
+pod 'RegexKitLite'

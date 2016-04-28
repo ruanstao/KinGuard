@@ -1,18 +1,18 @@
 //
-//  LeftViewController.m
+//  HomeViewController.m
 //  KinGuard
 //
 //  Created by RuanSTao on 16/4/28.
 //  Copyright © 2016年 RuanSTao. All rights reserved.
 //
 
-#import "LeftViewController.h"
+#import "HomeViewController.h"
 
-@interface LeftViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation LeftViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@
 
 + (instancetype)creatByNib
 {
-    return [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LeftViewController"];
+    return [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"HomeViewController"];
 }
 /*
 #pragma mark - Navigation

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSUInteger, LeftType) {
+    LeftType_JianKongLog = 1 ,
+    LeftType_JianKongMember,
+    LeftType_AddDevice,
+    LeftType_Setting
+};
 @interface LeftViewController : UIViewController
 
 + (instancetype)creatByNib;
