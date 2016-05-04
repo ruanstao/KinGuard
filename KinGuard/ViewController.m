@@ -171,17 +171,19 @@
 
 // 执行三种动画：显示左侧菜单、显示主页、显示右侧菜单
 -(void)doTheAnimateWithProportion:(CGFloat)proportion andshowWhat:(NSString *)showWhat {
+    if ([showWhat isEqualToString: @"left"]) {
+        // 移动左侧菜单的中心
+        self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y);
+        // 缩放左侧菜单
+        self.leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.proportionOfLeftView, self.proportionOfLeftView);
+    }
+
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.mainView.center = CGPointMake(self.view.center.x + self.distance, self.view.center.y);
         // 缩放首页
         self.mainView.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion);
         self.blackCover.alpha = ([showWhat isEqualToString: @"home"]) ? 1 : 0;
-        if ([showWhat isEqualToString: @"left"]) {
-            // 移动左侧菜单的中心
-            self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y);
-            // 缩放左侧菜单
-            self.leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.proportionOfLeftView, self.proportionOfLeftView);
-        }
+
 
     } completion:^(BOOL finished) {
         // 改变黑色遮罩层的透明度，实现视差效果
