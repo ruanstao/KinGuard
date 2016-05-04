@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "MainTabBarController.h"
 #import "LeftViewController.h"
-#import "HomeViewController.h"
 
 @interface ViewController ()
 
@@ -20,7 +19,6 @@
 
 @property (nonatomic,strong)LeftViewController *leftViewController;
 
-// 构造主视图，实现 UINavigationController.view 和 HomeViewController.view 一起缩放
 @property (nonatomic,strong) UIView *mainView;
 @property (nonatomic,strong) UIView *blackCover; // 侧滑菜单黑色半透明遮罩层
 // 侧滑所需参数
@@ -31,10 +29,16 @@
 @property (nonatomic,assign) CGFloat proportionOfLeftView;
 @property (nonatomic,assign) CGFloat distanceOfLeftView;
 
+@property (nonatomic,assign) BOOL isOpen;
+
 @end
 
 @implementation ViewController
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Show_LeftMenu object:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,29 +74,12 @@
 //    let tabBarView = mainTabBarController.view
     [self.mainView addSubview:self.mainTabBarController.view];
 
-    HomeViewController *homeViewController = self.mainTabBarController.viewControllers.firstObject;
-    // 分别将 Navigation Bar 和 homeViewController 的视图加入 TabBar Controller 的视图
-//    tabBarView.addSubview(homeViewController.navigationController!.view)
-//    tabBarView.addSubview(homeViewController.view)
-
-    // 在 TabBar Controller 的视图中，将 TabBar 视图提到最表层
-//    tabBarView.bringSubviewToFront(mainTabBarController.tabBar)
-
-    
-    // 分别指定 Navigation Bar 左右两侧按钮的事件
-//    homeViewController.navigationItem.leftBarButtonItem?.action = Selector("showLeft")
-//    homeViewController.navigationItem.rightBarButtonItem?.action = Selector("showRight")
-
-    // 给主视图绑定 UIPanGestureRecognizer
-//    let panGesture = homeViewController.panGesture
-//    panGesture.addTarget(self, action: Selector("pan:"))
-//    mainView.addGestureRecognizer(panGesture)
-
     // 生成单击收起菜单手势
     self.tapGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self.mainView addGestureRecognizer:self.tapGesture];
     // 将主视图加入容器
     [self.view addSubview:self.mainView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openAction) name:Show_LeftMenu object:nil];
 
 }
 
@@ -105,6 +92,7 @@
 {
 
     CGFloat x = [recongnizer translationInView:self.view].x;
+
     CGFloat trueDistance = _distance + x;
     CGFloat trueProportion = trueDistance / (mScreenWidth * self.fullDistance);
     // 如果 UIPanGestureRecognizer 结束，则激活自动停靠
@@ -112,14 +100,16 @@
         
         if (trueDistance > mScreenWidth * (self.proportion / 3)) {
             [self showLeft];
-        } else if (trueDistance < mScreenWidth * -(self.proportion / 3)) {
-            [self showRight];
+//        } else if (trueDistance < mScreenWidth * -(self.proportion / 3)) {
+//            [self showRight];
         } else {
             [self showHome];
         }
         return;
     }
-    
+    if (trueDistance < 0) {
+        return;
+    }
     // 计算缩放比例
     CGFloat proportion = recongnizer.view.frame.origin.x >= 0?-1:1;
     proportion *= trueDistance / mScreenWidth;
@@ -143,6 +133,14 @@
 
 // 封装三个方法，便于后期调用
 
+- (void)openAction
+{
+    if (self.isOpen) {
+        [self showHome];
+    }else{
+        [self showLeft];
+    }
+}
 // 展示左视图
 - (void)showLeft {
     // 给首页 加入 点击自动关闭侧滑菜单功能
@@ -150,6 +148,7 @@
     // 计算距离，执行菜单自动滑动动画
     self.distance = self.view.center.x * (self.fullDistance*2 + self.proportion - 1);
     [self doTheAnimateWithProportion:self.proportion andshowWhat:@"left"];
+    self.isOpen = YES;
 //    homeNavigationController.popToRootViewControllerAnimated(true)
 }
 // 展示主视图
@@ -159,6 +158,7 @@
     // 计算距离，执行菜单自动滑动动画
     self.distance = 0;
     [self doTheAnimateWithProportion:1 andshowWhat:@"home"];
+    self.isOpen = NO;
 }
 // 展示右视图
 - (void)showRight {
@@ -168,12 +168,14 @@
     self.distance = self.view.center.x * -(self.fullDistance*2 + self.proportion - 1);
     [self doTheAnimateWithProportion:self.proportion andshowWhat:@"right"];
 }
+
 // 执行三种动画：显示左侧菜单、显示主页、显示右侧菜单
 -(void)doTheAnimateWithProportion:(CGFloat)proportion andshowWhat:(NSString *)showWhat {
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.mainView.center = CGPointMake(self.view.center.x + self.distance, self.view.center.y);
         // 缩放首页
         self.mainView.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion);
+        self.blackCover.alpha = ([showWhat isEqualToString: @"home"]) ? 1 : 0;
         if ([showWhat isEqualToString: @"left"]) {
             // 移动左侧菜单的中心
             self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y);
@@ -183,10 +185,9 @@
 
     } completion:^(BOOL finished) {
         // 改变黑色遮罩层的透明度，实现视差效果
-        self.blackCover.alpha = ([showWhat isEqualToString: @"home"]) ? 1 : 0;
+//        self.blackCover.alpha = ([showWhat isEqualToString: @"home"]) ? 1 : 0;
 
-        // 为了演示效果，在右侧菜单划出时隐藏漏出的左侧菜单，并无实际意义
-        self.leftViewController.view.alpha = ([showWhat isEqualToString: @"right" ])? 0 : 1;
+//        self.leftViewController.view.alpha = ([showWhat isEqualToString: @"right" ])? 0 : 1;
     }];
 }
 

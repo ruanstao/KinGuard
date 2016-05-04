@@ -16,10 +16,15 @@
 		622219111CD10C3C00A47434 /* KinGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622219101CD10C3C00A47434 /* KinGuardTests.m */; };
 		6222191C1CD10C3C00A47434 /* KinGuardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222191B1CD10C3C00A47434 /* KinGuardUITests.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
-		DA8860A81CD1DA50009C6D56 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8860A71CD1DA50009C6D56 /* HomeViewController.m */; };
-		DA88613D1CD216E1009C6D56 /* UIView+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8860D31CD216E1009C6D56 /* UIView+Runtime.m */; };
-		DA8861651CD216E1009C6D56 /* TransparentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861271CD216E1009C6D56 /* TransparentView.m */; };
-		DA8861661CD216E1009C6D56 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861291CD216E1009C6D56 /* UIImageEffects.m */; };
+		DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B731CD9C8FD00524689 /* LoginViewController.m */; };
+		DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B771CD9C98D00524689 /* UIView+Runtime.m */; };
+		DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B7A1CD9C98D00524689 /* JJSNetworking.m */; };
+		DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B7C1CD9C98D00524689 /* JJSUtil.m */; };
+		DA063B851CD9C98D00524689 /* TransparentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B7F1CD9C98D00524689 /* TransparentView.m */; };
+		DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B811CD9C98D00524689 /* UIImageEffects.m */; };
+		DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B881CD9C9CB00524689 /* KinViewController.m */; };
+		DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B8E1CD9D22400524689 /* LoginNavigationController.m */; };
+		DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B981CD9E06B00524689 /* LocusViewController.m */; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
 		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
@@ -63,14 +68,24 @@
 		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		DA8860A61CD1DA50009C6D56 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		DA8860A71CD1DA50009C6D56 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		DA8860D21CD216E1009C6D56 /* UIView+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Runtime.h"; sourceTree = "<group>"; };
-		DA8860D31CD216E1009C6D56 /* UIView+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Runtime.m"; sourceTree = "<group>"; };
-		DA8861261CD216E1009C6D56 /* TransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentView.h; sourceTree = "<group>"; };
-		DA8861271CD216E1009C6D56 /* TransparentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentView.m; sourceTree = "<group>"; };
-		DA8861281CD216E1009C6D56 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
-		DA8861291CD216E1009C6D56 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		DA063B721CD9C8FD00524689 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DA063B731CD9C8FD00524689 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DA063B761CD9C98D00524689 /* UIView+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Runtime.h"; sourceTree = "<group>"; };
+		DA063B771CD9C98D00524689 /* UIView+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Runtime.m"; sourceTree = "<group>"; };
+		DA063B791CD9C98D00524689 /* JJSNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJSNetworking.h; sourceTree = "<group>"; };
+		DA063B7A1CD9C98D00524689 /* JJSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJSNetworking.m; sourceTree = "<group>"; };
+		DA063B7B1CD9C98D00524689 /* JJSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJSUtil.h; sourceTree = "<group>"; };
+		DA063B7C1CD9C98D00524689 /* JJSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJSUtil.m; sourceTree = "<group>"; };
+		DA063B7E1CD9C98D00524689 /* TransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentView.h; sourceTree = "<group>"; };
+		DA063B7F1CD9C98D00524689 /* TransparentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentView.m; sourceTree = "<group>"; };
+		DA063B801CD9C98D00524689 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		DA063B811CD9C98D00524689 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		DA063B871CD9C9CB00524689 /* KinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinViewController.h; sourceTree = "<group>"; };
+		DA063B881CD9C9CB00524689 /* KinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KinViewController.m; sourceTree = "<group>"; };
+		DA063B8D1CD9D22400524689 /* LoginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNavigationController.h; sourceTree = "<group>"; };
+		DA063B8E1CD9D22400524689 /* LoginNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNavigationController.m; sourceTree = "<group>"; };
+		DA063B971CD9E06B00524689 /* LocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocusViewController.h; sourceTree = "<group>"; };
+		DA063B981CD9E06B00524689 /* LocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocusViewController.m; sourceTree = "<group>"; };
 		DA88616C1CD222FE009C6D56 /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
 		DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
@@ -193,6 +208,80 @@
 			path = KinGuardUITests;
 			sourceTree = "<group>";
 		};
+		DA063B751CD9C98D00524689 /* KinCategory */ = {
+			isa = PBXGroup;
+			children = (
+				DA063B761CD9C98D00524689 /* UIView+Runtime.h */,
+				DA063B771CD9C98D00524689 /* UIView+Runtime.m */,
+			);
+			path = KinCategory;
+			sourceTree = "<group>";
+		};
+		DA063B781CD9C98D00524689 /* KinModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA063B791CD9C98D00524689 /* JJSNetworking.h */,
+				DA063B7A1CD9C98D00524689 /* JJSNetworking.m */,
+				DA063B7B1CD9C98D00524689 /* JJSUtil.h */,
+				DA063B7C1CD9C98D00524689 /* JJSUtil.m */,
+			);
+			path = KinModel;
+			sourceTree = "<group>";
+		};
+		DA063B7D1CD9C98D00524689 /* KinUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				DA063B7E1CD9C98D00524689 /* TransparentView.h */,
+				DA063B7F1CD9C98D00524689 /* TransparentView.m */,
+				DA063B801CD9C98D00524689 /* UIImageEffects.h */,
+				DA063B811CD9C98D00524689 /* UIImageEffects.m */,
+				DA063B871CD9C9CB00524689 /* KinViewController.h */,
+				DA063B881CD9C9CB00524689 /* KinViewController.m */,
+			);
+			path = KinUIKit;
+			sourceTree = "<group>";
+		};
+		DA063B931CD9E06B00524689 /* Locus */ = {
+			isa = PBXGroup;
+			children = (
+				DA063B941CD9E06B00524689 /* Model */,
+				DA063B951CD9E06B00524689 /* View */,
+				DA063B961CD9E06B00524689 /* ViewController */,
+				DA063B991CD9E06B00524689 /* ViewModel */,
+			);
+			path = Locus;
+			sourceTree = "<group>";
+		};
+		DA063B941CD9E06B00524689 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA063B951CD9E06B00524689 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA063B961CD9E06B00524689 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA063B971CD9E06B00524689 /* LocusViewController.h */,
+				DA063B981CD9E06B00524689 /* LocusViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA063B991CD9E06B00524689 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA8860941CD1B5E4009C6D56 /* AppGeneral */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,53 +299,12 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DA063B931CD9E06B00524689 /* Locus */,
 				DA8861671CD222CA009C6D56 /* LeftMenu */,
-				DA8860971CD1B5E4009C6D56 /* Home */,
 				DA88609C1CD1B5E4009C6D56 /* Login */,
 				DA8860A11CD1B5E4009C6D56 /* MemberCenter */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		DA8860971CD1B5E4009C6D56 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				DA8860981CD1B5E4009C6D56 /* Model */,
-				DA8860991CD1B5E4009C6D56 /* View */,
-				DA88609A1CD1B5E4009C6D56 /* ViewController */,
-				DA88609B1CD1B5E4009C6D56 /* ViewModel */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		DA8860981CD1B5E4009C6D56 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DA8860991CD1B5E4009C6D56 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DA88609A1CD1B5E4009C6D56 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DA8860A61CD1DA50009C6D56 /* HomeViewController.h */,
-				DA8860A71CD1DA50009C6D56 /* HomeViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		DA88609B1CD1B5E4009C6D56 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DA88609C1CD1B5E4009C6D56 /* Login */ = {
@@ -287,6 +335,10 @@
 		DA88609F1CD1B5E4009C6D56 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DA063B8D1CD9D22400524689 /* LoginNavigationController.h */,
+				DA063B8E1CD9D22400524689 /* LoginNavigationController.m */,
+				DA063B721CD9C8FD00524689 /* LoginViewController.h */,
+				DA063B731CD9C8FD00524689 /* LoginViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -340,38 +392,11 @@
 		DA8860A91CD216E1009C6D56 /* AppEngine */ = {
 			isa = PBXGroup;
 			children = (
-				DA8860AA1CD216E1009C6D56 /* Category */,
-				DA8860D61CD216E1009C6D56 /* JJSModel */,
-				DA8860E81CD216E1009C6D56 /* JJSUIKit */,
+				DA063B751CD9C98D00524689 /* KinCategory */,
+				DA063B781CD9C98D00524689 /* KinModel */,
+				DA063B7D1CD9C98D00524689 /* KinUIKit */,
 			);
 			path = AppEngine;
-			sourceTree = "<group>";
-		};
-		DA8860AA1CD216E1009C6D56 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				DA8860D21CD216E1009C6D56 /* UIView+Runtime.h */,
-				DA8860D31CD216E1009C6D56 /* UIView+Runtime.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		DA8860D61CD216E1009C6D56 /* JJSModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JJSModel;
-			sourceTree = "<group>";
-		};
-		DA8860E81CD216E1009C6D56 /* JJSUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				DA8861261CD216E1009C6D56 /* TransparentView.h */,
-				DA8861271CD216E1009C6D56 /* TransparentView.m */,
-				DA8861281CD216E1009C6D56 /* UIImageEffects.h */,
-				DA8861291CD216E1009C6D56 /* UIImageEffects.m */,
-			);
-			path = JJSUIKit;
 			sourceTree = "<group>";
 		};
 		DA8861671CD222CA009C6D56 /* LeftMenu */ = {
@@ -487,7 +512,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Q8G47UAD38;
+						DevelopmentTeam = QZL59SN5K2;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -602,15 +627,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */,
+				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
+				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
+				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
-				DA8861651CD216E1009C6D56 /* TransparentView.m in Sources */,
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
-				DA88613D1CD216E1009C6D56 /* UIView+Runtime.m in Sources */,
+				DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */,
+				DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */,
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
-				DA8861661CD216E1009C6D56 /* UIImageEffects.m in Sources */,
-				DA8860A81CD1DA50009C6D56 /* HomeViewController.m in Sources */,
+				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,
+				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
+				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
+				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,12 +781,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/KinGuard/PrefixHeader.pch";
 				INFOPLIST_FILE = KinGuard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -766,12 +799,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/KinGuard/PrefixHeader.pch";
 				INFOPLIST_FILE = KinGuard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

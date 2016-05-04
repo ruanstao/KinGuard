@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RegexKitLite.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1279CC55D4D574C23D40DA4E110F11E6</key>
+		<key>296EA225E5A1B71819DF810E0DE9B5FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D581D208B998B56552636310C2901F9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8E0F6C299391483CA272C60683AB043E</key>
+		<key>40D6F7ABE2ECD6F19E0AA4FFFCC6A3F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,6 +78,16 @@
 			<true/>
 		</dict>
 		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A919C25D97E66C07E228503532652EF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAAE856FA52CB01215AAF7A29FD0035A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

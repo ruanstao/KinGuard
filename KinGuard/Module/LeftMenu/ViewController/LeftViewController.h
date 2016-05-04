@@ -13,7 +13,7 @@ typedef NS_ENUM(NSUInteger, LeftType) {
     LeftType_AddDevice,
     LeftType_Setting
 };
-@interface LeftViewController : UIViewController
+@interface LeftViewController : KinViewController
 
 + (instancetype)creatByNib;
 

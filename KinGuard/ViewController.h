@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+static NSString *Show_LeftMenu = @"Show_LeftMenu";
+
+@interface ViewController : KinViewController
 
 
 @end
