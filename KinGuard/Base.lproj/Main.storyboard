@@ -598,6 +598,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="getCode:" destination="CAH-yT-7LY" eventType="touchUpInside" id="9YH-Ua-ynA"/>
                                     <action selector="getVertery:" destination="CAH-yT-7LY" eventType="touchUpInside" id="Ttb-Lw-ENo"/>
                                 </connections>
                             </button>
@@ -618,6 +619,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="resetAction:" destination="CAH-yT-7LY" eventType="touchUpInside" id="juq-fh-arj"/>
                                     <action selector="resetBtnClick:" destination="CAH-yT-7LY" eventType="touchUpInside" id="i9f-lU-GD4"/>
                                 </connections>
                             </button>
@@ -660,8 +662,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Aqj-ha-rR8"/>
                     <connections>
+                        <outlet property="codeField" destination="QLb-kK-hYX" id="HYs-cr-MJD"/>
+                        <outlet property="labUsername" destination="aBO-zu-Rp5" id="dzw-hH-MiI"/>
                         <outlet property="pwd1" destination="nqs-cm-Z2w" id="oay-yu-6Bq"/>
                         <outlet property="pwd2" destination="fvF-gf-Tmm" id="VYY-WA-yaD"/>
+                        <outlet property="pwdField1" destination="nqs-cm-Z2w" id="ihx-Pd-WGM"/>
+                        <outlet property="pwdField2" destination="fvF-gf-Tmm" id="X04-8W-gwH"/>
                         <outlet property="resetPwdBtn" destination="BpR-2x-kec" id="iHq-4J-S51"/>
                         <outlet property="telphoneLabel" destination="aBO-zu-Rp5" id="5xc-bw-pfO"/>
                         <outlet property="verteryCodeBtn" destination="P7i-RY-Ajy" id="amM-Zd-b9d"/>
