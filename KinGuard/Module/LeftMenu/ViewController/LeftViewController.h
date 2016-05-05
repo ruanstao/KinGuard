@@ -11,7 +11,8 @@ typedef NS_ENUM(NSUInteger, LeftType) {
     LeftType_JianKongLog = 1 ,
     LeftType_JianKongMember,
     LeftType_AddDevice,
-    LeftType_Setting
+    LeftType_Setting,
+    LeftType_Login
 };
 @interface LeftViewController : KinViewController
 

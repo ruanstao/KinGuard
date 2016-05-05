@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#define GaoDeDiTu_Key @"60bc8e854afef14a5500863c1f409263"
+
 @interface AppDelegate ()
 
 @end

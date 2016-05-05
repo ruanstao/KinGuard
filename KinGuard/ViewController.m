@@ -43,6 +43,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self setLeftAnimation];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openAction) name:Show_LeftMenu object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHome) name:Show_MainView object:nil];
+
+}
+
+
+- (void)setLeftAnimation{
     self.distance = 0;
     self.fullDistance = 0.78;
     self.proportion = 0.77;
@@ -55,12 +63,12 @@
 
     self.leftViewController.view.center = CGPointMake(self.leftViewController.view.center.x , self.leftViewController.view.center.y);
     self.leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8);
-//
+    //
     // 动画参数初始化
     self.centerOfLeftViewAtBeginning = self.leftViewController.view.center;
     // 把侧滑菜单视图加入根容器
     [self.view addSubview:self.leftViewController.view];
-    
+
     // 在侧滑菜单之上增加黑色遮罩层，目的是实现视差特效
     self.blackCover = [[UIView alloc] initWithFrame:CGRectOffset(self.view.frame, 0, 0)];//UIView(frame: CGRectOffset(self.view.frame, 0, 0))
     self.blackCover.backgroundColor = [UIColor blackColor];
@@ -71,7 +79,7 @@
     // 初始化 TabBar
     self.mainTabBarController = [MainTabBarController creatByNib];
     // 取出 TabBar Controller 的视图加入主视图
-//    let tabBarView = mainTabBarController.view
+    //    let tabBarView = mainTabBarController.view
     [self.mainView addSubview:self.mainTabBarController.view];
 
     // 生成单击收起菜单手势
@@ -79,14 +87,13 @@
     [self.mainView addGestureRecognizer:self.tapGesture];
     // 将主视图加入容器
     [self.view addSubview:self.mainView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openAction) name:Show_LeftMenu object:nil];
-
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 // 响应 UIPanGestureRecognizer 事件
 - (void)pan:(UIPanGestureRecognizer *)recongnizer
 {

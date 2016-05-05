@@ -1,0 +1,6 @@
+framework module StudentCardApi {
+  umbrella header "StudentCardApi.h"
+
+  export *
+  module * { export * }
+}

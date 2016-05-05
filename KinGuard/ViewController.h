@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 static NSString *Show_LeftMenu = @"Show_LeftMenu";
+static NSString *Show_MainView = @"Show_MainView";
 
 @interface ViewController : KinViewController
 
