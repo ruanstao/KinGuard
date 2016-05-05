@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -63,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="28" width="450" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="myZ-Kj-9Vr" id="5rd-Zk-8H4">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jUh-a0-NQ4">
@@ -178,11 +178,11 @@
             </objects>
             <point key="canvasLocation" x="1353" y="860"/>
         </scene>
-        <!--Item-->
+        <!--宝贝轨迹-->
         <scene sceneID="3hC-3a-1Nq">
             <objects>
                 <navigationController id="nWm-XP-b5i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ROc-iu-M3Z"/>
+                    <tabBarItem key="tabBarItem" title="宝贝轨迹" id="ROc-iu-M3Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zXC-Zo-dB4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -195,11 +195,11 @@
             </objects>
             <point key="canvasLocation" x="2355" y="-672"/>
         </scene>
-        <!--Item-->
+        <!--家庭互动-->
         <scene sceneID="oz7-Uo-zDI">
             <objects>
                 <navigationController id="gMf-b8-Pd7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xYv-Ln-vgh"/>
+                    <tabBarItem key="tabBarItem" title="家庭互动" id="xYv-Ln-vgh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K8x-RB-vte">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -223,20 +223,80 @@
                     <view key="view" contentMode="scaleToFill" id="Qwm-X0-AEf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ry5-23-oK3" customClass="MAMapView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ry5-23-oK3" secondAttribute="trailing" id="9he-Yg-XbM"/>
+                            <constraint firstItem="Ry5-23-oK3" firstAttribute="leading" secondItem="Qwm-X0-AEf" secondAttribute="leading" id="LDG-j0-muT"/>
+                            <constraint firstItem="Ry5-23-oK3" firstAttribute="top" secondItem="qog-Vd-Y3F" secondAttribute="bottom" id="iYw-2i-LqP"/>
+                            <constraint firstItem="bA2-pK-rrG" firstAttribute="top" secondItem="Ry5-23-oK3" secondAttribute="bottom" id="vgd-Yc-CTc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Ox-VD-6eP">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="菜单" id="l4X-FJ-ZFI">
                             <connections>
                                 <action selector="leftButtonAction:" destination="Wpg-KV-NsK" id="EbZ-d8-hNP"/>
                             </connections>
                         </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tz2-HX-rUc">
+                            <rect key="frame" x="225" y="2" width="150" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <inset key="imageEdgeInsets" minX="120" minY="1" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="名字" image="arrow.png">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="轨迹" id="a4v-W0-XtY">
+                            <connections>
+                                <segue destination="7gf-mj-YVQ" kind="push" id="b3s-d3-jHT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Ry5-23-oK3" id="9vC-XJ-krA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bG-wr-u6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3063" y="-672"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Nre-WI-z7n">
+            <objects>
+                <viewController id="7gf-mj-YVQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EeA-70-zYP"/>
+                        <viewControllerLayoutGuide type="bottom" id="7AN-yc-rOM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="caD-HU-NMc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAm-hi-4qI" customClass="MAMapView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NAm-hi-4qI" firstAttribute="top" secondItem="EeA-70-zYP" secondAttribute="bottom" id="S1F-5W-4Gr"/>
+                            <constraint firstItem="NAm-hi-4qI" firstAttribute="leading" secondItem="caD-HU-NMc" secondAttribute="leading" id="SJH-TP-ffe"/>
+                            <constraint firstItem="7AN-yc-rOM" firstAttribute="top" secondItem="NAm-hi-4qI" secondAttribute="bottom" id="aSG-hg-OKv"/>
+                            <constraint firstAttribute="trailing" secondItem="NAm-hi-4qI" secondAttribute="trailing" id="rFI-v2-NAQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aDH-4Z-xOG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6G-XY-eUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3813" y="-672"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s7T-qi-8NX">
@@ -291,7 +351,7 @@
                                         <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dd1-I2-VEx" id="EPq-N1-OFE">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号与安全" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiw-x3-iYa">
@@ -313,7 +373,7 @@
                                         <rect key="frame" x="0.0" y="108" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16m-O9-8VK" id="cFr-Dy-W15">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68A-er-RhQ">
@@ -343,13 +403,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMi-ce-xXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3055" y="1442"/>
+            <point key="canvasLocation" x="3055" y="1428"/>
         </scene>
-        <!--Item-->
+        <!--电子围栏-->
         <scene sceneID="73B-Uu-2WV">
             <objects>
                 <navigationController id="W5v-pa-Ykj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Y8O-aU-i7Z"/>
+                    <tabBarItem key="tabBarItem" title="电子围栏" id="Y8O-aU-i7Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aq4-6x-Y5M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -362,11 +422,11 @@
             </objects>
             <point key="canvasLocation" x="2355" y="718"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="kfK-fO-OeJ">
             <objects>
                 <navigationController id="dTE-xd-c00" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7RE-uk-r5i"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="more" id="7RE-uk-r5i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wam-7m-VqR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

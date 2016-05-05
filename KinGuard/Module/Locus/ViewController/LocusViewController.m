@@ -8,7 +8,9 @@
 
 #import "LocusViewController.h"
 
-@interface LocusViewController ()
+@interface LocusViewController ()<MAMapViewDelegate>
+
+@property (strong, nonatomic) IBOutlet MAMapView *mapView;
 
 @end
 
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initUI];
+    [self requestData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +40,18 @@
 - (IBAction)leftButtonAction:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:Show_LeftMenu object:nil];
 }
+
+
+- (void)initUI
+{
+    self.mapView.delegate = self;
+}
+
+- (void)requestData
+{
+    
+}
+
+#pragma mark - <MAMapViewDelegate>
 
 @end
