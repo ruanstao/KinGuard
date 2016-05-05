@@ -479,6 +479,9 @@
                                 <state key="normal" title="登录">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="login:" destination="tzO-Lc-brU" eventType="touchUpInside" id="083-3y-RjB"/>
                                 </connections>
@@ -597,6 +600,9 @@
                                 <state key="normal" title="获取短信验证码">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="getCode:" destination="CAH-yT-7LY" eventType="touchUpInside" id="9YH-Ua-ynA"/>
                                     <action selector="getVertery:" destination="CAH-yT-7LY" eventType="touchUpInside" id="Ttb-Lw-ENo"/>
@@ -618,6 +624,9 @@
                                 <state key="normal" title="重置密码">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="resetAction:" destination="CAH-yT-7LY" eventType="touchUpInside" id="juq-fh-arj"/>
                                     <action selector="resetBtnClick:" destination="CAH-yT-7LY" eventType="touchUpInside" id="i9f-lU-GD4"/>
@@ -711,7 +720,11 @@
                                 <state key="normal" title="获取短信验证码">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="getCode:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="Y2w-eR-pU8"/>
                                     <action selector="getVertery:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="3Ta-OV-lTi"/>
                                 </connections>
                             </button>
@@ -719,10 +732,14 @@
                                 <rect key="frame" x="40" y="408" width="520" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="15"/>
-                                <state key="normal" title="下一步">
+                                <state key="normal" title="注册">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="regist:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="wky-g9-rEw"/>
                                     <action selector="verteryCodeAndResgiter:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="crD-yb-GeJ"/>
                                 </connections>
                             </button>
@@ -810,12 +827,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bbh-mh-IQ1"/>
                     <connections>
+                        <outlet property="codeField" destination="uZT-vQ-8F2" id="s56-m3-Xof"/>
                         <outlet property="finishBtn" destination="e2V-gc-tUC" id="GR0-NL-OBW"/>
                         <outlet property="pwd1" destination="DZF-dX-hyM" id="Frh-3Q-RFU"/>
                         <outlet property="pwd2" destination="pfn-r8-qoj" id="ugM-Fs-f0z"/>
+                        <outlet property="pwdField1" destination="DZF-dX-hyM" id="Ib8-cN-5px"/>
+                        <outlet property="pwdField2" destination="pfn-r8-qoj" id="A96-0N-AUd"/>
                         <outlet property="reseanL" destination="Q2v-im-b80" id="yZp-t2-dRZ"/>
                         <outlet property="showWhyBtn" destination="KsE-SC-HZ2" id="eQI-Ze-0gb"/>
                         <outlet property="telelphoneField" destination="Xpj-th-nB3" id="JO6-Iw-vJr"/>
+                        <outlet property="usernameField" destination="Xpj-th-nB3" id="reH-rn-5We"/>
                         <outlet property="verteryBtn" destination="eeq-f3-gL2" id="etN-cF-vH6"/>
                         <outlet property="verteryField" destination="uZT-vQ-8F2" id="Trd-hT-RPP"/>
                     </connections>
