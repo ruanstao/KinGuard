@@ -14,7 +14,7 @@
 #import "JJSUtil.h"
 #import "LoginNavigationController.h"
 #import "ViewController.h"
-
+#import <MAMapKit/MAMapKit.h>
 
 // 颜色转换
 #define RGB(r, g, b)             [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
