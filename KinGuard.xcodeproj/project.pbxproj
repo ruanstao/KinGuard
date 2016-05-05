@@ -18,7 +18,6 @@
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
-		D5A3790C1CDA442600827F16 /* RegisterNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379091CDA442600827F16 /* RegisterNickNameViewController.m */; };
 		DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B731CD9C8FD00524689 /* LoginViewController.m */; };
 		DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B771CD9C98D00524689 /* UIView+Runtime.m */; };
 		DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B7A1CD9C98D00524689 /* JJSNetworking.m */; };
@@ -92,8 +91,6 @@
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D5A379071CDA442600827F16 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		D5A379081CDA442600827F16 /* RegisterNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNickNameViewController.h; sourceTree = "<group>"; };
-		D5A379091CDA442600827F16 /* RegisterNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNickNameViewController.m; sourceTree = "<group>"; };
 		DA063B721CD9C8FD00524689 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DA063B731CD9C8FD00524689 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		DA063B761CD9C98D00524689 /* UIView+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Runtime.h"; sourceTree = "<group>"; };
@@ -427,8 +424,6 @@
 				D5A379051CDA442600827F16 /* ForgetViewController.m */,
 				D5A379061CDA442600827F16 /* RegisterViewController.h */,
 				D5A379071CDA442600827F16 /* RegisterViewController.m */,
-				D5A379081CDA442600827F16 /* RegisterNickNameViewController.h */,
-				D5A379091CDA442600827F16 /* RegisterNickNameViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -680,7 +675,6 @@
 			files = (
 				DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */,
 				DA063BA21CDA077D00524689 /* MoreViewController.m in Sources */,
-				D5A3790C1CDA442600827F16 /* RegisterNickNameViewController.m in Sources */,
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
