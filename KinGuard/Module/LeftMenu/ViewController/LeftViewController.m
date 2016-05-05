@@ -7,6 +7,7 @@
 //
 
 #import "LeftViewController.h"
+#import "LeftTableViewCell.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -52,6 +53,9 @@
     [array addObject:@(LeftType_JianKongMember)];
     [array addObject:@(LeftType_AddDevice)];
     [array addObject:@(LeftType_Setting)];
+    [array addObject:@(LeftType_Login)];
+
+    [self.tableViewContent addObject:array];
 
 }
 #pragma mark - <UITableViewDelegate,UITableViewDataSource>
@@ -91,20 +95,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LeftType type = [[[self.tableViewContent objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] integerValue];
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftViewCell"];
+        LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
     switch (type) {
         case LeftType_JianKongLog:{
+            cell.title.text = @"监控日志";
         }
             break;
         case LeftType_JianKongMember:{
+            cell.title.text = @"监控成员";
 
         }
             break;
         case LeftType_AddDevice:{
+
+            cell.title.text = @"增加成员";
         }
             break;
         case LeftType_Setting:{
-
+            cell.title.text = @"设置";
+        }
+            break;
+        case LeftType_Login:{
+            cell.title.text = @"登入";
         }
             break;
         default:
@@ -130,6 +142,10 @@
         }
             break;
         case LeftType_Setting:{
+
+        }
+            break;
+        case LeftType_Login:{
 
         }
             break;

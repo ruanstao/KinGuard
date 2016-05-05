@@ -30,6 +30,8 @@
 		DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B981CD9E06B00524689 /* LocusViewController.m */; };
 		DA063BA21CDA077D00524689 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063BA11CDA077D00524689 /* MoreViewController.m */; };
 		DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063BA41CDA07FF00524689 /* KinTableViewController.m */; };
+		DA87685E1CDAE7BD0072FC50 /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA87685D1CDAE7BD0072FC50 /* StudentCardApi.framework */; };
+		DA8768611CDAE9140072FC50 /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA87685D1CDAE7BD0072FC50 /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
 		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
@@ -51,6 +53,19 @@
 			remoteInfo = KinGuard;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA8768601CDAE9040072FC50 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DA8768611CDAE9140072FC50 /* StudentCardApi.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		617CE91FC2BBD5ADF436D425 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +116,7 @@
 		DA063BA11CDA077D00524689 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		DA063BA31CDA07FF00524689 /* KinTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinTableViewController.h; sourceTree = "<group>"; };
 		DA063BA41CDA07FF00524689 /* KinTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KinTableViewController.m; sourceTree = "<group>"; };
+		DA87685D1CDAE7BD0072FC50 /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
 		DA88616C1CD222FE009C6D56 /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
 		DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
@@ -115,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */,
+				DA87685E1CDAE7BD0072FC50 /* StudentCardApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +357,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DA87685C1CDAE7BD0072FC50 /* KinApi */ = {
+			isa = PBXGroup;
+			children = (
+				DA87685D1CDAE7BD0072FC50 /* StudentCardApi.framework */,
+			);
+			path = KinApi;
+			sourceTree = "<group>";
+		};
 		DA8860941CD1B5E4009C6D56 /* AppGeneral */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +375,7 @@
 		DA8860951CD1B5E4009C6D56 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DA87685C1CDAE7BD0072FC50 /* KinApi */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -480,6 +506,7 @@
 				622218F11CD10C3C00A47434 /* Resources */,
 				83F052F122663B88FA885A9B /* Embed Pods Frameworks */,
 				3C22A7F3D9F779E2C17B0B6C /* Copy Pods Resources */,
+				DA8768601CDAE9040072FC50 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -812,6 +839,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KinGuard/Library/KinApi",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/KinGuard/PrefixHeader.pch";
 				INFOPLIST_FILE = KinGuard/Info.plist;
@@ -830,6 +861,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KinGuard/Library/KinApi",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/KinGuard/PrefixHeader.pch";
 				INFOPLIST_FILE = KinGuard/Info.plist;

@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <MAMapKit/MAMapKit.h>
+
+#define GaoDeDiTu_Key @"60bc8e854afef14a5500863c1f409263"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
     return YES;
 }
 
