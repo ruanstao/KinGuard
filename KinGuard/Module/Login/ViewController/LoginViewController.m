@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "ForgetViewController.h"
+#import "UserModel.h"
+#import "ViewController.h"
 
 @interface LoginViewController ()
 
@@ -43,7 +45,21 @@
         [JJSUtil hideHUD];
         [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
         
-        //跳转到主界面
+        //存储登录信息
+        UserModel *model = [[UserModel alloc] init];
+        model.username = phone;
+        model.password = pwd;
+        model.token = [data objectForKey:@"logintoken"];
+        model.isLogined = YES;
+        
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
+        [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+            if (finish) {
+                //跳转到主界面
+                ViewController *viewController = [[ViewController alloc] init];
+                self.view.window.rootViewController = viewController;
+            }
+        }];
         
     } fail:^(NSString *error) {
         [JJSUtil hideHUD];
@@ -57,7 +73,7 @@
         [JJSUtil showHUDWithMessage:@"请输入正确的手机号码" autoHide:YES];
         return;
     }
-    ForgetViewController *forgetController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ForgetVC"];
+    ForgetViewController *forgetController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ForgetViewController"];
     forgetController.phone = phone;
     [self.navigationController pushViewController:forgetController animated:YES];
 }

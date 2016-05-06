@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "UserModel.h"
 
 #define GaoDeDiTu_Key @"60bc8e854afef14a5500863c1f409263"
+#define KinGuardAppKey @"a6b0c023c373971a6523b1960ede0031"
+#define KinGuardAppSecret @"0be4f5e95593a4d65d6734942b4617e740090527becaf0d3f46d50be179d6933"
 
 @interface AppDelegate ()
 
@@ -20,6 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MAMapServices sharedServices].apiKey = GaoDeDiTu_Key;
+    //注册服务器识别key
+    [KinGuartApi sharedKinGuard].appKey = KinGuardAppKey;
+    [KinGuartApi sharedKinGuard].appSecret = KinGuardAppSecret;
+    
+    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+        if (obj) {
+            NSData *userData = obj;
+            UserModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+            if (!model.isLogined) { //非登录状态
+                self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+            }
+        }else{//未取到登录数据
+            self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+        }
+        
+    }];
+    
     
     return YES;
 }
