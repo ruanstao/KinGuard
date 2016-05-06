@@ -16,9 +16,9 @@
 		622219111CD10C3C00A47434 /* KinGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622219101CD10C3C00A47434 /* KinGuardTests.m */; };
 		6222191C1CD10C3C00A47434 /* KinGuardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222191B1CD10C3C00A47434 /* KinGuardUITests.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
+		D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
-		D5A3790C1CDA442600827F16 /* RegisterNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379091CDA442600827F16 /* RegisterNickNameViewController.m */; };
 		DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B731CD9C8FD00524689 /* LoginViewController.m */; };
 		DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B771CD9C98D00524689 /* UIView+Runtime.m */; };
 		DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B7A1CD9C98D00524689 /* JJSNetworking.m */; };
@@ -88,12 +88,12 @@
 		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D58B00F01CDBA80F00A42FDF /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
 		D5A379041CDA442600827F16 /* ForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D5A379071CDA442600827F16 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		D5A379081CDA442600827F16 /* RegisterNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNickNameViewController.h; sourceTree = "<group>"; };
-		D5A379091CDA442600827F16 /* RegisterNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNickNameViewController.m; sourceTree = "<group>"; };
 		DA063B721CD9C8FD00524689 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DA063B731CD9C8FD00524689 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		DA063B761CD9C98D00524689 /* UIView+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Runtime.h"; sourceTree = "<group>"; };
@@ -412,6 +412,8 @@
 		DA88609E1CD1B5E4009C6D56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D58B00F01CDBA80F00A42FDF /* JKCountDownButton.h */,
+				D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,8 +429,6 @@
 				D5A379051CDA442600827F16 /* ForgetViewController.m */,
 				D5A379061CDA442600827F16 /* RegisterViewController.h */,
 				D5A379071CDA442600827F16 /* RegisterViewController.m */,
-				D5A379081CDA442600827F16 /* RegisterNickNameViewController.h */,
-				D5A379091CDA442600827F16 /* RegisterNickNameViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -680,7 +680,6 @@
 			files = (
 				DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */,
 				DA063BA21CDA077D00524689 /* MoreViewController.m in Sources */,
-				D5A3790C1CDA442600827F16 /* RegisterNickNameViewController.m in Sources */,
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
@@ -691,6 +690,7 @@
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
 				DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */,
 				DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */,
+				D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */,
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
 				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,

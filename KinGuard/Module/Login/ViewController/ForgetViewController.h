@@ -9,5 +9,5 @@
 #import "KinViewController.h"
 
 @interface ForgetViewController : KinViewController
-
+@property(nonatomic, copy) NSString *phone;
 @end
