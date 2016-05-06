@@ -520,7 +520,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="UnR-XV-iuZ" kind="custom" id="py1-7r-edG"/>
+                                    <segue destination="UnR-XV-iuZ" kind="push" id="vuh-XG-2sG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -551,11 +551,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="UOQ-v6-cAg">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="reply" id="b7n-07-oLt">
-                            <connections>
-                                <action selector="backAction:" destination="tzO-Lc-brU" id="5VX-oZ-QVq"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="reply" id="b7n-07-oLt"/>
                     </navigationItem>
                     <connections>
                         <outlet property="passwordField" destination="RCL-ih-HhY" id="H0V-bZ-L1L"/>
@@ -569,7 +565,7 @@
         <!--Forget View Controller-->
         <scene sceneID="P5J-rC-RRw">
             <objects>
-                <viewController storyboardIdentifier="ForgetVC" id="CAH-yT-7LY" customClass="ForgetViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgetViewController" id="CAH-yT-7LY" customClass="ForgetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8dD-yG-Qx7"/>
                         <viewControllerLayoutGuide type="bottom" id="lM1-zS-qwl"/>
@@ -605,7 +601,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="getCode:" destination="CAH-yT-7LY" eventType="touchUpInside" id="9YH-Ua-ynA"/>
-                                    <action selector="getVertery:" destination="CAH-yT-7LY" eventType="touchUpInside" id="Ttb-Lw-ENo"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6-20位字符密码，请区分大小写" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-cm-Z2w">
@@ -629,7 +624,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="resetAction:" destination="CAH-yT-7LY" eventType="touchUpInside" id="juq-fh-arj"/>
-                                    <action selector="resetBtnClick:" destination="CAH-yT-7LY" eventType="touchUpInside" id="i9f-lU-GD4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvF-gf-Tmm">
@@ -665,38 +659,24 @@
                             <constraint firstItem="nqs-cm-Z2w" firstAttribute="leading" secondItem="QLb-kK-hYX" secondAttribute="leading" id="vjG-Wa-9aT"/>
                             <constraint firstItem="BpR-2x-kec" firstAttribute="height" secondItem="fvF-gf-Tmm" secondAttribute="height" id="wvo-Md-jeL"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Rlc-Ua-g85" appends="YES" id="meU-Os-NxV"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Aqj-ha-rR8"/>
                     <connections>
                         <outlet property="codeField" destination="QLb-kK-hYX" id="HYs-cr-MJD"/>
                         <outlet property="labUsername" destination="aBO-zu-Rp5" id="dzw-hH-MiI"/>
-                        <outlet property="pwd1" destination="nqs-cm-Z2w" id="oay-yu-6Bq"/>
-                        <outlet property="pwd2" destination="fvF-gf-Tmm" id="VYY-WA-yaD"/>
                         <outlet property="pwdField1" destination="nqs-cm-Z2w" id="ihx-Pd-WGM"/>
                         <outlet property="pwdField2" destination="fvF-gf-Tmm" id="X04-8W-gwH"/>
-                        <outlet property="resetPwdBtn" destination="BpR-2x-kec" id="iHq-4J-S51"/>
-                        <outlet property="telphoneLabel" destination="aBO-zu-Rp5" id="5xc-bw-pfO"/>
-                        <outlet property="verteryCodeBtn" destination="P7i-RY-Ajy" id="amM-Zd-b9d"/>
-                        <outlet property="veteryField" destination="QLb-kK-hYX" id="Sxm-Ru-6gW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKM-9D-Wav" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Rlc-Ua-g85">
-                    <connections>
-                        <action selector="hideKeyboard:" destination="CAH-yT-7LY" id="UeA-8w-UdR"/>
-                        <outlet property="delegate" destination="CAH-yT-7LY" id="pq0-HG-2zL"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Rlc-Ua-g85"/>
             </objects>
             <point key="canvasLocation" x="416" y="1831"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="9VP-CT-kew">
             <objects>
-                <viewController id="UnR-XV-iuZ" customClass="RegisterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="UnR-XV-iuZ" customClass="RegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XgU-53-pZC"/>
                         <viewControllerLayoutGuide type="bottom" id="kBX-Z9-cSV"/>
@@ -725,7 +705,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="getCode:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="Y2w-eR-pU8"/>
-                                    <action selector="getVertery:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="3Ta-OV-lTi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2V-gc-tUC">
@@ -740,14 +719,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="regist:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="wky-g9-rEw"/>
-                                    <action selector="verteryCodeAndResgiter:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="crD-yb-GeJ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6位短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZT-vQ-8F2">
-                                <rect key="frame" x="30" y="161" width="425" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfn-r8-qoj">
                                 <rect key="frame" x="30" y="281" width="540" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -759,9 +732,6 @@
                                 <state key="normal" title="为什么需要使用手机号作为帐号？">
                                     <color key="titleColor" red="0.0" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="showwhy:" destination="UnR-XV-iuZ" eventType="touchUpInside" id="XPw-lN-2MQ"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKZ-zd-EtM">
                                 <rect key="frame" x="30" y="336" width="20" height="20"/>
@@ -780,6 +750,11 @@
                                 <rect key="frame" x="30" y="221" width="540" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6位短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZT-vQ-8F2">
+                                <rect key="frame" x="30" y="161" width="425" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -821,32 +796,16 @@
                                 <exclude reference="nQM-Ou-DV8"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="YtW-uc-F2W" appends="YES" id="xDZ-ac-QfF"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Bbh-mh-IQ1"/>
                     <connections>
                         <outlet property="codeField" destination="uZT-vQ-8F2" id="s56-m3-Xof"/>
-                        <outlet property="finishBtn" destination="e2V-gc-tUC" id="GR0-NL-OBW"/>
-                        <outlet property="pwd1" destination="DZF-dX-hyM" id="Frh-3Q-RFU"/>
-                        <outlet property="pwd2" destination="pfn-r8-qoj" id="ugM-Fs-f0z"/>
                         <outlet property="pwdField1" destination="DZF-dX-hyM" id="Ib8-cN-5px"/>
                         <outlet property="pwdField2" destination="pfn-r8-qoj" id="A96-0N-AUd"/>
-                        <outlet property="reseanL" destination="Q2v-im-b80" id="yZp-t2-dRZ"/>
-                        <outlet property="showWhyBtn" destination="KsE-SC-HZ2" id="eQI-Ze-0gb"/>
-                        <outlet property="telelphoneField" destination="Xpj-th-nB3" id="JO6-Iw-vJr"/>
                         <outlet property="usernameField" destination="Xpj-th-nB3" id="reH-rn-5We"/>
-                        <outlet property="verteryBtn" destination="eeq-f3-gL2" id="etN-cF-vH6"/>
-                        <outlet property="verteryField" destination="uZT-vQ-8F2" id="Trd-hT-RPP"/>
                     </connections>
                 </viewController>
-                <tapGestureRecognizer id="YtW-uc-F2W">
-                    <connections>
-                        <action selector="tapBg:" destination="UnR-XV-iuZ" id="ViP-wt-ErK"/>
-                        <outlet property="delegate" destination="UnR-XV-iuZ" id="ApK-EH-HCe"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="YtW-uc-F2W"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtv-Cu-A3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128" y="1562"/>

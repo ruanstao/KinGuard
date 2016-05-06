@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "JKCountDownButton.h"
+#import "UserModel.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -22,6 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"注册";
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self. navigationItem.leftBarButtonItem = leftItem;
+}
+
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)getCode:(JKCountDownButton *)sender
@@ -106,6 +116,21 @@
         [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
         
         //跳转到主界面
+        //存储登录信息
+        UserModel *model = [[UserModel alloc] init];
+        model.username = phone;
+        model.password = pwd;
+        model.token = [data objectForKey:@"logintoken"];
+        model.isLogined = YES;
+        
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
+        [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+            if (finish) {
+                //跳转到主界面
+                ViewController *viewController = [[ViewController alloc] init];
+                self.view.window.rootViewController = viewController;
+            }
+        }];
         
     } fail:^(NSString *error) {
         [JJSUtil hideHUD];

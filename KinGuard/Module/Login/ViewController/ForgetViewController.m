@@ -8,6 +8,7 @@
 
 #import "ForgetViewController.h"
 #import "JKCountDownButton.h"
+#import "UserModel.h"
 
 @interface ForgetViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labUsername;
@@ -52,12 +53,14 @@
         [JJSUtil showHUDWithMessage:@"请输入验证码" autoHide:YES];
         return;
     }
+    
     [JJSUtil showHUDWithWaitingMessage:@"正在重置密码..."];
     [[KinGuartApi sharedKinGuard] setNewPasswordMobile:self.phone withPassword:pwd2 withSmscode:code success:^(NSDictionary *data) {
         [JJSUtil hideHUD];
         [JJSUtil showHUDWithMessage:@"重置成功" autoHide:YES];
         
-        //返回登陆页面
+        //登陆
+        [self performSelector:@selector(login:) withObject:nil afterDelay:0.5];
         
     } fail:^(NSString *error) {
         [JJSUtil hideHUD];
@@ -85,6 +88,38 @@
             countDownButton.enabled = YES;
             return @"点击重新获取";
             
+        }];
+        
+    } fail:^(NSString *error) {
+        [JJSUtil hideHUD];
+        [JJSUtil showHUDWithMessage:error autoHide:YES];
+    }];
+}
+
+- (void)login:(id)sender
+{
+    NSString *phone = self.phone;
+    NSString *pwd = self.pwdField2.text;
+    
+    [[KinGuartApi sharedKinGuard] loginWithMobile:phone withPassword:pwd success:^(NSDictionary *data) {
+        [JJSUtil hideHUD];
+        [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
+        
+        //跳转到主界面
+        //存储登录信息
+        UserModel *model = [[UserModel alloc] init];
+        model.username = phone;
+        model.password = pwd;
+        model.token = [data objectForKey:@"logintoken"];
+        model.isLogined = YES;
+        
+        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
+        [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+            if (finish) {
+                //跳转到主界面
+                ViewController *viewController = [[ViewController alloc] init];
+                self.view.window.rootViewController = viewController;
+            }
         }];
         
     } fail:^(NSString *error) {
