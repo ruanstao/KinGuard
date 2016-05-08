@@ -15,6 +15,7 @@
 		622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622219041CD10C3C00A47434 /* LaunchScreen.storyboard */; };
 		622219111CD10C3C00A47434 /* KinGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622219101CD10C3C00A47434 /* KinGuardTests.m */; };
 		6222191C1CD10C3C00A47434 /* KinGuardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222191B1CD10C3C00A47434 /* KinGuardUITests.m */; };
+		623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 623BD1C51CDF7CFD005DFCEC /* UserInfoModel.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D554FDC11CDCF93200F1537F /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D554FDC01CDCF93200F1537F /* StudentCardApi.framework */; };
@@ -86,6 +87,8 @@
 		622219171CD10C3C00A47434 /* KinGuardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6222191B1CD10C3C00A47434 /* KinGuardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KinGuardUITests.m; sourceTree = "<group>"; };
 		6222191D1CD10C3C00A47434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		623BD1C41CDF7CFD005DFCEC /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		623BD1C51CDF7CFD005DFCEC /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
 		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -471,6 +474,8 @@
 		DA8861681CD222CA009C6D56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				623BD1C41CDF7CFD005DFCEC /* UserInfoModel.h */,
+				623BD1C51CDF7CFD005DFCEC /* UserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -691,6 +696,7 @@
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
+				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
 				D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */,

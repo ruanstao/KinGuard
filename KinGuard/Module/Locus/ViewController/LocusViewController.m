@@ -49,9 +49,12 @@
 
 - (void)requestData
 {
-    
+    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+    } fail:^(NSString *error) {
+        NSLog(@"%@",error);
+    }];
 }
-
 #pragma mark - <MAMapViewDelegate>
 
 @end

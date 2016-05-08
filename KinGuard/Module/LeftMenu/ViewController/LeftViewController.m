@@ -8,12 +8,15 @@
 
 #import "LeftViewController.h"
 #import "LeftTableViewCell.h"
+#import "UserInfoModel.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic,strong) NSMutableArray *tableViewContent;
+
+@property (nonatomic,strong) UserInfoModel *userModel;
 
 @end
 
@@ -23,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initTableViewContent];
+    [self requestData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +37,19 @@
 + (instancetype)creatByNib
 {
     return [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LeftViewController"];
+}
+
+- (void)requestData
+{
+    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
+        NSLog(@"success:%@",data);
+        if (data) {
+            self.userModel = [UserInfoModel mj_objectWithKeyValues:data];
+            [self.tableView reloadData];
+        }
+    } fail:^(NSString *error) {
+        NSLog(@"error :%@",error);
+    }];
 }
 
 /*
