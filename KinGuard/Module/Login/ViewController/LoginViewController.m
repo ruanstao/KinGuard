@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "ForgetViewController.h"
 #import "UserModel.h"
-#import "ViewController.h"
+#import "BindDeviceViewController.h"
 
 @interface LoginViewController ()
 
@@ -55,9 +55,12 @@
         NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
         [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
             if (finish) {
-                //跳转到主界面
-                ViewController *viewController = [[ViewController alloc] init];
-                self.view.window.rootViewController = viewController;
+                //跳转到绑定设备页面
+                BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
+                [self.navigationController pushViewController:bindController animated:YES];
+//                ViewController *viewController = [[ViewController alloc] init];
+//                self.view.window.rootViewController = viewController;
+                
             }
         }];
         
