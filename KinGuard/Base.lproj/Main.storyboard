@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
     <dependencies>
         <deployment identifier="iOS"/>
+<<<<<<< HEAD
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+=======
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+>>>>>>> ruanstao/master
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1249,9 +1253,13 @@
     <resources>
         <image name="arrow.png" width="15" height="40"/>
         <image name="brother" width="116" height="121"/>
+<<<<<<< HEAD
         <image name="icon_light" width="80" height="80"/>
         <image name="icon_pic" width="80" height="80"/>
         <image name="street_w" width="15" height="40"/>
         <image name="二维码框__" width="351" height="351"/>
+=======
+        <image name="street_w" width="15" height="40"/>
+>>>>>>> ruanstao/master
     </resources>
 </document>

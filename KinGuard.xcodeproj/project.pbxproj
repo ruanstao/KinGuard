@@ -776,7 +776,10 @@
 				6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */,
 				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
+<<<<<<< HEAD
 				D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */,
+=======
+>>>>>>> ruanstao/master
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,

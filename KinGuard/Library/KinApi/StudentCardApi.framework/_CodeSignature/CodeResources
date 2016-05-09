@@ -45,10 +45,13 @@
 	<dict>
 		<key>Headers/KinDeviceApi.h</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<data>
 		3f6P92Cw4sG1f6CgM4pEiCDlcl4=
 		</data>
 =======
+=======
+>>>>>>> ruanstao/master
 		<dict>
 			<key>hash</key>
 			<data>
@@ -59,6 +62,9 @@
 			sQmd8yGlN64Ozc/5wBZjOAXBVO1ztbWba1SKybWsCeE=
 			</data>
 		</dict>
+<<<<<<< HEAD
+>>>>>>> ruanstao/master
+=======
 >>>>>>> ruanstao/master
 		<key>Headers/KinFileApi.h</key>
 		<dict>
