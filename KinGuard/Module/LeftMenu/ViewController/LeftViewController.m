@@ -8,6 +8,7 @@
 
 #import "LeftViewController.h"
 #import "LeftTableViewCell.h"
+#import "LeftHeaderTableViewCell.h"
 #import "UserInfoModel.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -66,6 +67,8 @@
 {
     self.tableViewContent = [NSMutableArray array];
     NSMutableArray *array = [NSMutableArray array];
+    [array addObject:@(LeftType_Space)];
+    [array addObject:@(LeftType_HeaderView)];
     [array addObject:@(LeftType_JianKongLog)];
     [array addObject:@(LeftType_JianKongMember)];
     [array addObject:@(LeftType_AddDevice)];
@@ -106,40 +109,68 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    return 44;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LeftType type = [[[self.tableViewContent objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] integerValue];
-        LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
     switch (type) {
-        case LeftType_JianKongLog:{
-            cell.title.text = @"监控日志";
+        case LeftType_Space:{
+            return 100;
         }
-            break;
-        case LeftType_JianKongMember:{
-            cell.title.text = @"监控成员";
-
+        case LeftType_HeaderView:{
+            return 100;
         }
-            break;
-        case LeftType_AddDevice:{
-
-            cell.title.text = @"增加成员";
-        }
-            break;
-        case LeftType_Setting:{
-            cell.title.text = @"设置";
-        }
-            break;
+        case LeftType_JianKongLog:
+        case LeftType_JianKongMember:
+        case LeftType_AddDevice:
+        case LeftType_Setting:
         case LeftType_Login:{
-            cell.title.text = @"登入";
+            return 44;
         }
             break;
         default:
             break;
     }
-    return cell;
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    LeftType type = [[[self.tableViewContent objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] integerValue];
+    if (type == LeftType_Space) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"space"];
+        return cell;
+    }else if (type == LeftType_HeaderView) {
+        LeftHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftHeaderTableViewCell"];
+//        cell.headerImage.image = [UIImage imageNamed:@""];
+        return cell;
+    }else{
+        LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
+        switch (type) {
+            case LeftType_JianKongLog:{
+                cell.title.text = @"监控日志";
+            }
+                break;
+            case LeftType_JianKongMember:{
+                cell.title.text = @"监控成员";
+                
+            }
+                break;
+            case LeftType_AddDevice:{
+                
+                cell.title.text = @"增加成员";
+            }
+                break;
+            case LeftType_Setting:{
+                cell.title.text = @"设置";
+            }
+                break;
+            case LeftType_Login:{
+                cell.title.text = @"登入";
+            }
+                break;
+            default:
+                break;
+        }
+        return cell;
+
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

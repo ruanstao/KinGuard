@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 typedef NS_ENUM(NSUInteger, LeftType) {
-    LeftType_JianKongLog = 1 ,
+    LeftType_Space = 1,
+    LeftType_HeaderView,
+    LeftType_JianKongLog ,
     LeftType_JianKongMember,
     LeftType_AddDevice,
     LeftType_Setting,
