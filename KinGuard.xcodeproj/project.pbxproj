@@ -36,6 +36,7 @@
 		DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063BA41CDA07FF00524689 /* KinTableViewController.m */; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
+		DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */; };
 		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		DA8861701CD22322009C6D56 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		DAEF09F91CD1AE20008CBDF4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DAF53AC91CDC775D0029BDC2 /* LeftHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHeaderTableViewCell.h; sourceTree = "<group>"; };
+		DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHeaderTableViewCell.m; sourceTree = "<group>"; };
 		DDAE2203136E8BF0163DCA25 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -485,6 +488,8 @@
 			children = (
 				DA88616C1CD222FE009C6D56 /* LeftTableViewCell.h */,
 				DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */,
+				DAF53AC91CDC775D0029BDC2 /* LeftHeaderTableViewCell.h */,
+				DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -695,6 +700,7 @@
 				D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */,
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
+				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+<<<<<<< Updated upstream
 //Success And Failed Blocks
 typedef void (^KSFinishedBlock) (NSDictionary *data);
 typedef void (^KSFailedBlock)   (NSString *error);
@@ -21,6 +22,21 @@ typedef void (^KSUpdateDataBlock) (void);
 typedef void (^CompletionWithObjectBlock) (BOOL finish, id obj);
 typedef void (^CompletionWithDoubleBlock) (BOOL finish, id obj, id obj2);
 typedef void (^CompletionBlock)(BOOL finish);
+=======
+////Success And Failed Blocks
+//typedef void (^KSFinishedBlock) (NSDictionary *data);
+//typedef void (^KSFailedBlock)   (NSString *error);
+//typedef void (^KSUploadProgress) (float progressValue);
+//
+////Load More And Update Data Block
+//typedef void (^KSLoadMoreDataBlock) (void);
+//typedef void (^KSUpdateDataBlock) (void);
+//
+////Completion Block(with object)
+//typedef void (^CompletionWithObjectBlock) (BOOL finish, id obj);
+//typedef void (^CompletionWithDoubleBlock) (BOOL finish, id obj, id obj2);
+//typedef void (^CompletionBlock)(BOOL finish);
+>>>>>>> Stashed changes
 
 
 /**
