@@ -50,7 +50,7 @@
         model.username = phone;
         model.password = pwd;
         model.token = [data objectForKey:@"logintoken"];
-        model.isLogined = YES;
+        model.isLogined = NO;
         
         NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
         [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
