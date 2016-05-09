@@ -7,6 +7,9 @@
     "e2e66aad-089c-6f4d-8d6d-37059a186800++9229+++2606155" : {
 
     },
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++3617B4E" : {
+
+    },
     "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++1B11DE6" : {
 
     },
@@ -15,21 +18,23 @@
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2E29809B247F3C489AE468287BE006F7C8048E7E+++F3CD79B" : 0,
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++239CB87" : 0,
     "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++04119B8" : 0,
-    "e2e66aad-089c-6f4d-8d6d-37059a186800++9229+++2606155" : 0,
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++3617B4E" : 0,
     "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++1B11DE6" : 0,
     "2E29809B247F3C489AE468287BE006F7C8048E7E+++1562CE2" : 0,
-    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++239CB87" : 0,
-    "2E29809B247F3C489AE468287BE006F7C8048E7E+++F3CD79B" : 0
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++9229+++2606155" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D6A080D3-01ED-4092-9C11-7F1AEAFB760C",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2E29809B247F3C489AE468287BE006F7C8048E7E+++F3CD79B" : "KinGuard_QQ\/",
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++239CB87" : "KinGuard\/KinGuard\/Module\/LeftMenu\/View\/",
     "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++04119B8" : "KinGuard\/KinGuard\/Module\/",
-    "e2e66aad-089c-6f4d-8d6d-37059a186800++9229+++2606155" : "KinGuard_QQ\/KinGuard\/Module\/Login\/View\/",
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++3617B4E" : "KinGuard_QQ\/KinGuard\/Module\/Locus\/View\/",
     "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++1B11DE6" : "KinGuard\/KinGuard\/Module\/LeftMenu\/View\/",
     "2E29809B247F3C489AE468287BE006F7C8048E7E+++1562CE2" : "KinGuard\/",
-    "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++239CB87" : "KinGuard\/KinGuard\/Module\/LeftMenu\/View\/",
-    "2E29809B247F3C489AE468287BE006F7C8048E7E+++F3CD79B" : "KinGuard_QQ\/"
+    "e2e66aad-089c-6f4d-8d6d-37059a186800++9229+++2606155" : "KinGuard_QQ\/KinGuard\/Module\/Login\/View\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "KinGuard",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -59,6 +64,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/172.16.2.230\/svn\/ios",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++239CB87"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/172.16.2.230\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e2e66aad-089c-6f4d-8d6d-37059a186800++4369+++3617B4E"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/172.16.2.230\/svn\/ios",

@@ -15,6 +15,10 @@
 		622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622219041CD10C3C00A47434 /* LaunchScreen.storyboard */; };
 		622219111CD10C3C00A47434 /* KinGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 622219101CD10C3C00A47434 /* KinGuardTests.m */; };
 		6222191C1CD10C3C00A47434 /* KinGuardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222191B1CD10C3C00A47434 /* KinGuardUITests.m */; };
+		623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 623BD1C51CDF7CFD005DFCEC /* UserInfoModel.m */; };
+		6242E92D1CE0C7DB00888475 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E92C1CE0C7DB00888475 /* DeviceInfo.m */; };
+		6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E92F1CE0CF7E00888475 /* RtOutputView.m */; };
+		6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E9351CE0E3C000888475 /* LocationInfo.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */; };
 		D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */; };
@@ -45,6 +49,7 @@
 		DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063BA41CDA07FF00524689 /* KinTableViewController.m */; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
+		DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */; };
 		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +101,14 @@
 		622219171CD10C3C00A47434 /* KinGuardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinGuardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6222191B1CD10C3C00A47434 /* KinGuardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KinGuardUITests.m; sourceTree = "<group>"; };
 		6222191D1CD10C3C00A47434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		623BD1C41CDF7CFD005DFCEC /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		623BD1C51CDF7CFD005DFCEC /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		6242E92B1CE0C7DB00888475 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		6242E92C1CE0C7DB00888475 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		6242E92E1CE0CF7E00888475 /* RtOutputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtOutputView.h; sourceTree = "<group>"; };
+		6242E92F1CE0CF7E00888475 /* RtOutputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RtOutputView.m; sourceTree = "<group>"; };
+		6242E9341CE0E3C000888475 /* LocationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInfo.h; sourceTree = "<group>"; };
+		6242E9351CE0E3C000888475 /* LocationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInfo.m; sourceTree = "<group>"; };
 		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +169,8 @@
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		DA8861701CD22322009C6D56 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		DAEF09F91CD1AE20008CBDF4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DAF53AC91CDC775D0029BDC2 /* LeftHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHeaderTableViewCell.h; sourceTree = "<group>"; };
+		DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHeaderTableViewCell.m; sourceTree = "<group>"; };
 		DDAE2203136E8BF0163DCA25 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +361,10 @@
 		DA063B941CD9E06B00524689 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6242E92B1CE0C7DB00888475 /* DeviceInfo.h */,
+				6242E92C1CE0C7DB00888475 /* DeviceInfo.m */,
+				6242E9341CE0E3C000888475 /* LocationInfo.h */,
+				6242E9351CE0E3C000888475 /* LocationInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +372,8 @@
 		DA063B951CD9E06B00524689 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6242E92E1CE0CF7E00888475 /* RtOutputView.h */,
+				6242E92F1CE0CF7E00888475 /* RtOutputView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,6 +549,8 @@
 		DA8861681CD222CA009C6D56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				623BD1C41CDF7CFD005DFCEC /* UserInfoModel.h */,
+				623BD1C51CDF7CFD005DFCEC /* UserInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -537,6 +560,8 @@
 			children = (
 				DA88616C1CD222FE009C6D56 /* LeftTableViewCell.h */,
 				DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */,
+				DAF53AC91CDC775D0029BDC2 /* LeftHeaderTableViewCell.h */,
+				DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -745,10 +770,14 @@
 				DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */,
 				DA063BA21CDA077D00524689 /* MoreViewController.m in Sources */,
 				D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */,
+				6242E92D1CE0C7DB00888475 /* DeviceInfo.m in Sources */,
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
+				6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */,
+				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
 				D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */,
+				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
 				D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */,
@@ -766,6 +795,7 @@
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
+				6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

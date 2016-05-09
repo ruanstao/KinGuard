@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - AMap2DMap (3.3.0)
+  - AMapSearch (3.3.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -34,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AMap2DMap
+  - AMapSearch
   - FMDB
   - MBProgressHUD
   - MJExtension
@@ -45,6 +47,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AMap2DMap: e53461cdc345375e514579db17dbd721ff9ed9eb
+  AMapSearch: cff4faf59c007f7d1f2bae2d7170c3912783981a
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
