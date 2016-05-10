@@ -10,16 +10,17 @@
 #import "DeviceInfo.h"
 #import "RtOutputView.h"
 #import "LocationInfo.h"
+#import "DeviceAnnotationView.h"
 
 @interface LocusViewController ()<MAMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MAMapView *mapView;
 
-@property (nonatomic,strong) NSArray *pids;
+@property (nonatomic,strong) NSArray *pids;  // pids 数组
 
-@property (nonatomic,strong) NSArray *info;
+@property (nonatomic,strong) NSArray *info; //所以宝贝信息
 
-@property (nonatomic,assign) NSInteger showIndex;
+@property (nonatomic,assign) NSInteger showIndex; //当前显示宝贝index
 
 @property (strong, nonatomic) IBOutlet UIButton *headerTitle;
 
@@ -58,6 +59,7 @@
 - (void)initUI
 {
     self.mapView.delegate = self;
+    self.mapView.showsScale = NO;
 }
 
 - (void)refreshUI
@@ -150,8 +152,29 @@
 
 - (void)beginLocation
 {
-    self.mapView.showsUserLocation = YES;
-    self.mapView.region = MACoordinateRegionMake(CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude), MACoordinateSpanMake(0.05, 0.05));
+//    self.mapView.showsUserLocation = YES;
+    
+//    DeviceInfo *info = self.info[self.showIndex];
+    MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
+    pointAnno.title = self.currentLocation.addr;
+    pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:10];
+    pointAnno.coordinate = CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude);
+    [self.mapView addAnnotation:pointAnno];
+    self.mapView.region = MACoordinateRegionMake(CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude), MACoordinateSpanMake(0.1, 0.1));
     [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude) animated:YES];
+}
+
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    DeviceAnnotationView *annotaionView = [[DeviceAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MainAnotation"];
+//    annotaionView.image = [UIImage imageNamed:@"father"];
+    annotaionView.canShowCallout = YES;
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
+    UIView *right = [[UIView alloc] init];
+    leftView.backgroundColor = [UIColor blueColor];
+    right.backgroundColor = [UIColor yellowColor];
+    annotaionView.leftCalloutAccessoryView = leftView;
+    annotaionView.rightCalloutAccessoryView = right;
+    return annotaionView;
 }
 @end
