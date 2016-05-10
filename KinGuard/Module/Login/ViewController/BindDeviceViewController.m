@@ -9,6 +9,7 @@
 #import "BindDeviceViewController.h"
 #import "XDScaningViewController.h"
 #import "UIImage+IAnime.h"
+#import "FollowViewController.h"
 
 @interface BindDeviceViewController ()<UIAlertViewDelegate>
 /**
@@ -97,7 +98,7 @@
  */
 - (IBAction)shaoMiao2DCode:(id)sender {
     //初始化相机控制器
-    XDScaningViewController* scanVC=[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"XDScaningVC"];
+    XDScaningViewController* scanVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"XDScaningVC"];
     [scanVC setBackValue:^(NSString * qr_code) {
         [JJSUtil showHUDWithWaitingMessage:@"绑定中..."];
         
@@ -156,7 +157,8 @@
 {
     if (buttonIndex) {
         //跳转关注页面
-        
+        FollowViewController *followController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"FollowVC"];
+        [self.navigationController pushViewController:followController animated:YES];
     }
 }
 

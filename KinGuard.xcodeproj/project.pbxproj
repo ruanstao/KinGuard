@@ -30,9 +30,11 @@
 		D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FD1CE0C42F00B1249C /* UIKit.framework */; };
 		D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */; };
 		D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54921041CE0CB4600B1249C /* XDScaningViewController.m */; };
-		D549210A1CE0DE2100B1249C /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54921091CE0DE2100B1249C /* StudentCardApi.framework */; };
-		D549210B1CE0DE2B00B1249C /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D54921091CE0DE2100B1249C /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
+		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
+		D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; };
+		D55FD9411CE22D470008F54B /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD9481CE23D100008F54B /* MemberListViewController.m */; };
 		D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
@@ -77,7 +79,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D549210B1CE0DE2B00B1249C /* StudentCardApi.framework in CopyFiles */,
+				D55FD9411CE22D470008F54B /* StudentCardApi.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,10 +127,14 @@
 		D54920FD1CE0C42F00B1249C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D54921031CE0CB4600B1249C /* XDScaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDScaningViewController.h; sourceTree = "<group>"; };
 		D54921041CE0CB4600B1249C /* XDScaningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDScaningViewController.m; sourceTree = "<group>"; };
-		D54921091CE0DE2100B1249C /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
 		D554FDAC1CDCDD5F00F1537F /* KinGuardDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinGuardDefine.h; sourceTree = "<group>"; };
 		D554FDAD1CDCDE8A00F1537F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		D554FDAE1CDCDE8A00F1537F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		D55FD93C1CE221320008F54B /* FollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowViewController.h; sourceTree = "<group>"; };
+		D55FD93D1CE221320008F54B /* FollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
+		D55FD93F1CE22D120008F54B /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
+		D55FD9471CE23D100008F54B /* MemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberListViewController.h; sourceTree = "<group>"; };
+		D55FD9481CE23D100008F54B /* MemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberListViewController.m; sourceTree = "<group>"; };
 		D58B00F01CDBA80F00A42FDF /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
 		D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
 		D58EABEF1CDF9AD500AECB3B /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -180,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */,
-				D549210A1CE0DE2100B1249C /* StudentCardApi.framework in Frameworks */,
+				D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */,
 				D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */,
 				D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */,
 				D54920FA1CE0C42200B1249C /* CoreMedia.framework in Frameworks */,
@@ -308,6 +314,47 @@
 				6222191D1CD10C3C00A47434 /* Info.plist */,
 			);
 			path = KinGuardUITests;
+			sourceTree = "<group>";
+		};
+		D55FD9421CE23CFE0008F54B /* MemberList */ = {
+			isa = PBXGroup;
+			children = (
+				D55FD9431CE23CFE0008F54B /* Model */,
+				D55FD9441CE23CFE0008F54B /* View */,
+				D55FD9451CE23CFE0008F54B /* ViewController */,
+				D55FD9461CE23CFE0008F54B /* ViewModel */,
+			);
+			path = MemberList;
+			sourceTree = "<group>";
+		};
+		D55FD9431CE23CFE0008F54B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D55FD9441CE23CFE0008F54B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D55FD9451CE23CFE0008F54B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D55FD9471CE23D100008F54B /* MemberListViewController.h */,
+				D55FD9481CE23D100008F54B /* MemberListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D55FD9461CE23CFE0008F54B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DA063B751CD9C98D00524689 /* KinCategory */ = {
@@ -438,7 +485,7 @@
 		DA87685C1CDAE7BD0072FC50 /* KinApi */ = {
 			isa = PBXGroup;
 			children = (
-				D54921091CE0DE2100B1249C /* StudentCardApi.framework */,
+				D55FD93F1CE22D120008F54B /* StudentCardApi.framework */,
 			);
 			path = KinApi;
 			sourceTree = "<group>";
@@ -462,6 +509,7 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D55FD9421CE23CFE0008F54B /* MemberList */,
 				DA8861671CD222CA009C6D56 /* LeftMenu */,
 				DA88609C1CD1B5E4009C6D56 /* Login */,
 				DA063B931CD9E06B00524689 /* Locus */,
@@ -514,6 +562,8 @@
 				D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */,
 				D54921031CE0CB4600B1249C /* XDScaningViewController.h */,
 				D54921041CE0CB4600B1249C /* XDScaningViewController.m */,
+				D55FD93C1CE221320008F54B /* FollowViewController.h */,
+				D55FD93D1CE221320008F54B /* FollowViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -784,6 +834,7 @@
 				D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */,
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
 				DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */,
+				D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */,
 				DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */,
 				D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */,
 				D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */,
@@ -792,6 +843,7 @@
 				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,
 				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
+				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
