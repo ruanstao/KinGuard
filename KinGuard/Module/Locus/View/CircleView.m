@@ -169,9 +169,13 @@
     if (open) {
        CAKeyframeAnimation *scaleAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
         scaleAnimation.keyTimes = @[@0,@0.618,@1];
+//        scaleAnimation.values =@[[NSValue valueWithCATransform3D:CATransform3DIdentity],
+//                                 [NSValue valueWithCATransform3D:CATransform3DMakeScale(2.5,2.5, 1)],
+//                                 [NSValue valueWithCATransform3D:CATransform3DMakeScale(2.0,2.0,1)]];
+        
         scaleAnimation.values =@[[NSValue valueWithCATransform3D:CATransform3DIdentity],
-                                 [NSValue valueWithCATransform3D:CATransform3DMakeScale(2.5,2.5, 1)],
-                                 [NSValue valueWithCATransform3D:CATransform3DMakeScale(2.0,2.0,1)]];
+                                 [NSValue valueWithCATransform3D:CATransform3DMakeScale(5,5, 1)],
+                                 [NSValue valueWithCATransform3D:CATransform3DMakeScale(4,4,1)]];
         scaleAnimation.duration = 2.0f;
 //        scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
 //        scaleAnimation.repeatCount = MAXFLOAT;

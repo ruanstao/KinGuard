@@ -60,6 +60,7 @@
 {
     self.mapView.delegate = self;
     self.mapView.showsScale = NO;
+    self.mapView.showsCompass = NO;
 }
 
 - (void)refreshUI
@@ -176,5 +177,11 @@
     annotaionView.leftCalloutAccessoryView = leftView;
     annotaionView.rightCalloutAccessoryView = right;
     return annotaionView;
+}
+
+#pragma mark - 定位当前位置
+
+- (IBAction)userLocationAction:(id)sender {
+    
 }
 @end

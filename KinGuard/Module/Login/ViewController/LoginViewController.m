@@ -56,10 +56,10 @@
         [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
             if (finish) {
                 //跳转到绑定设备页面
-                BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
-                [self.navigationController pushViewController:bindController animated:YES];
-//                ViewController *viewController = [[ViewController alloc] init];
-//                self.view.window.rootViewController = viewController;
+//                BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
+//                [self.navigationController pushViewController:bindController animated:YES];
+                ViewController *viewController = [[ViewController alloc] init];
+                self.view.window.rootViewController = viewController;
                 
             }
         }];

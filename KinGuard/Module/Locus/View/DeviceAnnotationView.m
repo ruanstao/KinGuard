@@ -9,8 +9,8 @@
 #import "DeviceAnnotationView.h"
 #import "CircleView.h"
 
-#define kWidth  30.f
-#define kHeight 30.f
+#define kWidth  20.f
+#define kHeight 20.f
 
 #define kHoriMargin 5.f
 #define kVertMargin 5.f
@@ -18,8 +18,8 @@
 #define kPortraitWidth  50.f
 #define kPortraitHeight 50.f
 
-#define kCalloutWidth   200.0
-#define kCalloutHeight  70.0
+#define kCalloutWidth   260.0
+#define kCalloutHeight  60.0
 
 @implementation DeviceAnnotationView
 
@@ -42,37 +42,25 @@
         return;
     }
     
-//    if (selected)
-//    {
-//        if (self.calloutView == nil)
-//        {
-            /* Construct custom callout. */
-//            self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, kCalloutWidth, kCalloutHeight)];
-//            self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
-//                                                  -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
-//            
-//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//            btn.frame = CGRectMake(10, 10, 40, 40);
-//            [btn setTitle:@"Test" forState:UIControlStateNormal];
-//            [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-//            [btn setBackgroundColor:[UIColor whiteColor]];
-//            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [self.calloutView addSubview:btn];
-//            
-//            UILabel *name = [[UILabel alloc] initWithFrame:CGRectMake(60, 10, 100, 30)];
-//            name.backgroundColor = [UIColor clearColor];
-//            name.textColor = [UIColor whiteColor];
-//            name.text = @"Hello Amap!";
-//            [self.calloutView addSubview:name];
-//        }
-//        
-//        [self addSubview:self.calloutView];
-//    }
-//    else
-//    {
-//        [self.calloutView removeFromSuperview];
-//    }
+    if (selected)
+    {
+        if (self.calloutView == nil)
+        {
+//             Construct custom callout. 
+            self.calloutView = [DeviceInfoView creatByNib];
+            self.calloutView.frame = CGRectMake(0, 0, kCalloutWidth, kCalloutHeight);
+            
+            self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
+                                                  -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
+
+        }
+        
+        [self addSubview:self.calloutView];
+    }
+    else
+    {
+        [self.calloutView removeFromSuperview];
+    }
     
     [super setSelected:selected animated:animated];
 }
