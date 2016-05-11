@@ -30,6 +30,8 @@
 		D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FD1CE0C42F00B1249C /* UIKit.framework */; };
 		D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */; };
 		D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54921041CE0CB4600B1249C /* XDScaningViewController.m */; };
+		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
+		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
 		D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; };
@@ -113,6 +115,10 @@
 		6242E9351CE0E3C000888475 /* LocationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInfo.m; sourceTree = "<group>"; };
 		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		62CE4E291CE23D92007551E4 /* DeviceAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceAnnotationView.h; sourceTree = "<group>"; };
+		62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceAnnotationView.m; sourceTree = "<group>"; };
+		62CE4E2D1CE2410A007551E4 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		62CE4E2E1CE2410A007551E4 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D539D87E1CDE54FF00FF36C0 /* BindDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindDeviceViewController.h; sourceTree = "<group>"; };
 		D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindDeviceViewController.m; sourceTree = "<group>"; };
@@ -421,6 +427,10 @@
 			children = (
 				6242E92E1CE0CF7E00888475 /* RtOutputView.h */,
 				6242E92F1CE0CF7E00888475 /* RtOutputView.m */,
+				62CE4E2D1CE2410A007551E4 /* CircleView.h */,
+				62CE4E2E1CE2410A007551E4 /* CircleView.m */,
+				62CE4E291CE23D92007551E4 /* DeviceAnnotationView.h */,
+				62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +831,7 @@
 				DA063BA21CDA077D00524689 /* MoreViewController.m in Sources */,
 				D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */,
 				6242E92D1CE0C7DB00888475 /* DeviceInfo.m in Sources */,
+				62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */,
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
 				6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */,
@@ -846,6 +857,7 @@
 				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
+				62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */,
 				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
 				6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */,
 			);
