@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -255,13 +255,16 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-5N-aoc">
-                                <rect key="frame" x="550" y="114" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-5N-aoc">
+                                <rect key="frame" x="550" y="94" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Lcp-3j-vP0"/>
                                     <constraint firstAttribute="height" constant="30" id="TaC-fg-8UJ"/>
                                 </constraints>
-                                <state key="normal" title="定位"/>
+                                <state key="normal" title="定位" image="grandmother"/>
+                                <connections>
+                                    <action selector="userLocationAction:" destination="Wpg-KV-NsK" eventType="touchUpInside" id="uxS-6m-R9E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uba-YW-yVq">
                                 <rect key="frame" x="20" y="381" width="50" height="40"/>
@@ -312,7 +315,7 @@
                             <constraint firstItem="ecj-sl-g3P" firstAttribute="height" secondItem="2vw-Am-ZJX" secondAttribute="height" id="Z4K-p2-zVW"/>
                             <constraint firstItem="ecj-sl-g3P" firstAttribute="width" secondItem="2vw-Am-ZJX" secondAttribute="width" id="h3b-3E-wMP"/>
                             <constraint firstItem="Ry5-23-oK3" firstAttribute="top" secondItem="qog-Vd-Y3F" secondAttribute="bottom" id="iYw-2i-LqP"/>
-                            <constraint firstItem="bkB-5N-aoc" firstAttribute="top" secondItem="qog-Vd-Y3F" secondAttribute="bottom" constant="50" id="mKh-UB-pYf"/>
+                            <constraint firstItem="bkB-5N-aoc" firstAttribute="top" secondItem="qog-Vd-Y3F" secondAttribute="bottom" constant="30" id="mKh-UB-pYf"/>
                             <constraint firstItem="bkB-5N-aoc" firstAttribute="top" secondItem="qog-Vd-Y3F" secondAttribute="bottom" constant="100" id="n6T-X4-2qg"/>
                             <constraint firstItem="bA2-pK-rrG" firstAttribute="top" secondItem="Ry5-23-oK3" secondAttribute="bottom" id="vgd-Yc-CTc"/>
                             <constraint firstItem="uba-YW-yVq" firstAttribute="centerX" secondItem="ecj-sl-g3P" secondAttribute="centerX" id="yG6-uR-zcd"/>
@@ -1314,6 +1317,7 @@
     <resources>
         <image name="arrow.png" width="15" height="40"/>
         <image name="brother" width="116" height="121"/>
+        <image name="grandmother" width="117" height="116"/>
         <image name="icon_light" width="80" height="80"/>
         <image name="icon_pic" width="80" height="80"/>
         <image name="street_w" width="15" height="40"/>

@@ -8,12 +8,14 @@
 
 #import <MAMapKit/MAMapKit.h>
 
+#import "DeviceInfoView.h"
+
 @interface DeviceAnnotationView : MAAnnotationView
 
 @property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, strong) UIImage *portrait;
 
-@property (nonatomic, strong) UIView *calloutView;
+@property (nonatomic, strong) DeviceInfoView *calloutView;
 
 @end

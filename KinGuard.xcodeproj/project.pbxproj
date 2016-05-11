@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621814661CE3893200434B8A /* DeviceInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 621814651CE3893200434B8A /* DeviceInfoView.m */; };
+		621814681CE3898900434B8A /* DeviceInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 621814671CE3898900434B8A /* DeviceInfoView.xib */; };
 		622218F81CD10C3C00A47434 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218F71CD10C3C00A47434 /* main.m */; };
 		622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218FA1CD10C3C00A47434 /* AppDelegate.m */; };
 		622218FE1CD10C3C00A47434 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218FD1CD10C3C00A47434 /* ViewController.m */; };
@@ -20,6 +22,8 @@
 		6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E92F1CE0CF7E00888475 /* RtOutputView.m */; };
 		6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E9351CE0E3C000888475 /* LocationInfo.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
+		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
+		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
 		D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */; };
 		D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */; };
 		D539D8C91CDE5C1900FF36C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */; };
@@ -30,8 +34,6 @@
 		D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FD1CE0C42F00B1249C /* UIKit.framework */; };
 		D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */; };
 		D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54921041CE0CB4600B1249C /* XDScaningViewController.m */; };
-		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
-		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
 		D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; };
@@ -89,6 +91,9 @@
 
 /* Begin PBXFileReference section */
 		617CE91FC2BBD5ADF436D425 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		621814641CE3893200434B8A /* DeviceInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoView.h; sourceTree = "<group>"; };
+		621814651CE3893200434B8A /* DeviceInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoView.m; sourceTree = "<group>"; };
+		621814671CE3898900434B8A /* DeviceInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceInfoView.xib; sourceTree = "<group>"; };
 		622218F31CD10C3C00A47434 /* KinGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		622218F71CD10C3C00A47434 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		622218F91CD10C3C00A47434 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -431,6 +436,9 @@
 				62CE4E2E1CE2410A007551E4 /* CircleView.m */,
 				62CE4E291CE23D92007551E4 /* DeviceAnnotationView.h */,
 				62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */,
+				621814641CE3893200434B8A /* DeviceInfoView.h */,
+				621814651CE3893200434B8A /* DeviceInfoView.m */,
+				621814671CE3898900434B8A /* DeviceInfoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -754,6 +762,7 @@
 			files = (
 				622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */,
 				622219031CD10C3C00A47434 /* Assets.xcassets in Resources */,
+				621814681CE3898900434B8A /* DeviceInfoView.xib in Resources */,
 				622219011CD10C3C00A47434 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,6 +844,7 @@
 				DA063B831CD9C98D00524689 /* JJSNetworking.m in Sources */,
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
 				6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */,
+				621814661CE3893200434B8A /* DeviceInfoView.m in Sources */,
 				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
 				D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */,
@@ -1017,7 +1027,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1046,7 +1056,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
