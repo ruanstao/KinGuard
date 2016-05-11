@@ -11,6 +11,7 @@
 #import "LeftHeaderTableViewCell.h"
 #import "UserInfoModel.h"
 #import "BindDeviceViewController.h"
+#import "MemberListViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -184,7 +185,9 @@
         }
             break;
         case LeftType_JianKongMember:{
-
+            
+            UINavigationController *navController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"memNavController"];
+            [self presentViewController:navController animated:YES completion:nil];
         }
             break;
         case LeftType_AddDevice:{
