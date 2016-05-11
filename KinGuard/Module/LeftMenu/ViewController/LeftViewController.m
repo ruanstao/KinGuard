@@ -10,6 +10,7 @@
 #import "LeftTableViewCell.h"
 #import "LeftHeaderTableViewCell.h"
 #import "UserInfoModel.h"
+#import "BindDeviceViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -144,17 +145,17 @@
         LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
         switch (type) {
             case LeftType_JianKongLog:{
-                cell.title.text = @"监控日志";
+                cell.title.text = @"监护日志";
             }
                 break;
             case LeftType_JianKongMember:{
-                cell.title.text = @"监控成员";
+                cell.title.text = @"监护成员";
                 
             }
                 break;
             case LeftType_AddDevice:{
                 
-                cell.title.text = @"增加成员";
+                cell.title.text = @"添加设备";
             }
                 break;
             case LeftType_Setting:{
@@ -187,6 +188,8 @@
         }
             break;
         case LeftType_AddDevice:{
+            BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
+            [self.navigationController pushViewController:bindController animated:YES];
         }
             break;
         case LeftType_Setting:{

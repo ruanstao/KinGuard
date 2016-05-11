@@ -20,11 +20,23 @@
 		6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E92F1CE0CF7E00888475 /* RtOutputView.m */; };
 		6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E9351CE0E3C000888475 /* LocationInfo.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
+		D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */; };
+		D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */; };
+		D539D8C91CDE5C1900FF36C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */; };
+		D539D8CB1CDE5C2400FF36C0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8CA1CDE5C2400FF36C0 /* CoreVideo.framework */; };
+		D54920F81CE0C41500B1249C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920F71CE0C41500B1249C /* CoreGraphics.framework */; };
+		D54920FA1CE0C42200B1249C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920F91CE0C42200B1249C /* CoreMedia.framework */; };
+		D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FB1CE0C42A00B1249C /* AVFoundation.framework */; };
+		D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FD1CE0C42F00B1249C /* UIKit.framework */; };
+		D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */; };
+		D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54921041CE0CB4600B1249C /* XDScaningViewController.m */; };
 		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
 		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
-		D554FDC11CDCF93200F1537F /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D554FDC01CDCF93200F1537F /* StudentCardApi.framework */; };
-		D554FDC21CDCFA5400F1537F /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D554FDC01CDCF93200F1537F /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
+		D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; };
+		D55FD9411CE22D470008F54B /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD9481CE23D100008F54B /* MemberListViewController.m */; };
 		D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
@@ -69,7 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D554FDC21CDCFA5400F1537F /* StudentCardApi.framework in CopyFiles */,
+				D55FD9411CE22D470008F54B /* StudentCardApi.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +120,36 @@
 		62CE4E2D1CE2410A007551E4 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		62CE4E2E1CE2410A007551E4 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D539D87E1CDE54FF00FF36C0 /* BindDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindDeviceViewController.h; sourceTree = "<group>"; };
+		D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindDeviceViewController.m; sourceTree = "<group>"; };
+		D539D8C31CDE562400FF36C0 /* UIImage+IAnime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IAnime.h"; sourceTree = "<group>"; };
+		D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IAnime.m"; sourceTree = "<group>"; };
+		D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D539D8CA1CDE5C2400FF36C0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D54920F71CE0C41500B1249C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D54920F91CE0C42200B1249C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D54920FB1CE0C42A00B1249C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D54920FD1CE0C42F00B1249C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D54921031CE0CB4600B1249C /* XDScaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDScaningViewController.h; sourceTree = "<group>"; };
+		D54921041CE0CB4600B1249C /* XDScaningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDScaningViewController.m; sourceTree = "<group>"; };
 		D554FDAC1CDCDD5F00F1537F /* KinGuardDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinGuardDefine.h; sourceTree = "<group>"; };
 		D554FDAD1CDCDE8A00F1537F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		D554FDAE1CDCDE8A00F1537F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		D554FDC01CDCF93200F1537F /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
+		D55FD93C1CE221320008F54B /* FollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowViewController.h; sourceTree = "<group>"; };
+		D55FD93D1CE221320008F54B /* FollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
+		D55FD93F1CE22D120008F54B /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
+		D55FD9471CE23D100008F54B /* MemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberListViewController.h; sourceTree = "<group>"; };
+		D55FD9481CE23D100008F54B /* MemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberListViewController.m; sourceTree = "<group>"; };
 		D58B00F01CDBA80F00A42FDF /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
 		D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		D58EABEF1CDF9AD500AECB3B /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		D58EABF11CDF9AF600AECB3B /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		D58EABF31CDF9B2000AECB3B /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D58EABF51CDF9B2B00AECB3B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		D58EABF71CDF9B3900AECB3B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D58EABF91CDF9B5100AECB3B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D58EABFB1CDF9B8C00AECB3B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D5A379041CDA442600827F16 /* ForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -155,8 +191,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */,
+				D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */,
+				D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */,
+				D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */,
+				D54920FA1CE0C42200B1249C /* CoreMedia.framework in Frameworks */,
+				D54920F81CE0C41500B1249C /* CoreGraphics.framework in Frameworks */,
+				D539D8C91CDE5C1900FF36C0 /* QuartzCore.framework in Frameworks */,
+				D539D8CB1CDE5C2400FF36C0 /* CoreVideo.framework in Frameworks */,
 				E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */,
-				D554FDC11CDCF93200F1537F /* StudentCardApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +223,20 @@
 		0ABBC0F00920C307CF872AB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D54920FD1CE0C42F00B1249C /* UIKit.framework */,
+				D54920FB1CE0C42A00B1249C /* AVFoundation.framework */,
+				D54920F91CE0C42200B1249C /* CoreMedia.framework */,
+				D54920F71CE0C41500B1249C /* CoreGraphics.framework */,
+				D58EABFB1CDF9B8C00AECB3B /* libsqlite3.0.tbd */,
+				D58EABF91CDF9B5100AECB3B /* SystemConfiguration.framework */,
+				D58EABF71CDF9B3900AECB3B /* libz.tbd */,
+				D58EABF51CDF9B2B00AECB3B /* libstdc++.6.0.9.tbd */,
+				D58EABF31CDF9B2000AECB3B /* libstdc++.tbd */,
+				D58EABF11CDF9AF600AECB3B /* libiconv.2.4.0.tbd */,
+				D58EABEF1CDF9AD500AECB3B /* libz.1.2.5.tbd */,
+				D539D8CA1CDE5C2400FF36C0 /* CoreVideo.framework */,
+				D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */,
+				D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */,
 				617CE91FC2BBD5ADF436D425 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -265,11 +322,54 @@
 			path = KinGuardUITests;
 			sourceTree = "<group>";
 		};
+		D55FD9421CE23CFE0008F54B /* MemberList */ = {
+			isa = PBXGroup;
+			children = (
+				D55FD9431CE23CFE0008F54B /* Model */,
+				D55FD9441CE23CFE0008F54B /* View */,
+				D55FD9451CE23CFE0008F54B /* ViewController */,
+				D55FD9461CE23CFE0008F54B /* ViewModel */,
+			);
+			path = MemberList;
+			sourceTree = "<group>";
+		};
+		D55FD9431CE23CFE0008F54B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D55FD9441CE23CFE0008F54B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D55FD9451CE23CFE0008F54B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D55FD9471CE23D100008F54B /* MemberListViewController.h */,
+				D55FD9481CE23D100008F54B /* MemberListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D55FD9461CE23CFE0008F54B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA063B751CD9C98D00524689 /* KinCategory */ = {
 			isa = PBXGroup;
 			children = (
 				DA063B761CD9C98D00524689 /* UIView+Runtime.h */,
 				DA063B771CD9C98D00524689 /* UIView+Runtime.m */,
+				D539D8C31CDE562400FF36C0 /* UIImage+IAnime.h */,
+				D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */,
 			);
 			path = KinCategory;
 			sourceTree = "<group>";
@@ -395,7 +495,7 @@
 		DA87685C1CDAE7BD0072FC50 /* KinApi */ = {
 			isa = PBXGroup;
 			children = (
-				D554FDC01CDCF93200F1537F /* StudentCardApi.framework */,
+				D55FD93F1CE22D120008F54B /* StudentCardApi.framework */,
 			);
 			path = KinApi;
 			sourceTree = "<group>";
@@ -419,6 +519,7 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D55FD9421CE23CFE0008F54B /* MemberList */,
 				DA8861671CD222CA009C6D56 /* LeftMenu */,
 				DA88609C1CD1B5E4009C6D56 /* Login */,
 				DA063B931CD9E06B00524689 /* Locus */,
@@ -467,6 +568,12 @@
 				D5A379051CDA442600827F16 /* ForgetViewController.m */,
 				D5A379061CDA442600827F16 /* RegisterViewController.h */,
 				D5A379071CDA442600827F16 /* RegisterViewController.m */,
+				D539D87E1CDE54FF00FF36C0 /* BindDeviceViewController.h */,
+				D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */,
+				D54921031CE0CB4600B1249C /* XDScaningViewController.h */,
+				D54921041CE0CB4600B1249C /* XDScaningViewController.m */,
+				D55FD93C1CE221320008F54B /* FollowViewController.h */,
+				D55FD93D1CE221320008F54B /* FollowViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -606,7 +713,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = QZL59SN5K2;
+						DevelopmentTeam = 8MUA9S3748;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -730,6 +837,7 @@
 				6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */,
 				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
+				D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */,
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
@@ -737,12 +845,16 @@
 				D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */,
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
 				DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */,
+				D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */,
 				DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */,
+				D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */,
 				D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */,
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
 				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,
+				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
+				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */,
@@ -898,7 +1010,14 @@
 				INFOPLIST_FILE = KinGuard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KinGuard/Library/ZBarLibs/ZBarSDK/Hearders",
+					"$(PROJECT_DIR)/KinGuard/Library/ZBarLibs/ZBarSDK/Hearders/ZBarSDK",
+					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
+					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -920,7 +1039,14 @@
 				INFOPLIST_FILE = KinGuard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KinGuard/Library/ZBarLibs/ZBarSDK/Hearders",
+					"$(PROJECT_DIR)/KinGuard/Library/ZBarLibs/ZBarSDK/Hearders/ZBarSDK",
+					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
+					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -1,0 +1,117 @@
+//
+//  HomeViewController.m
+//  JJSProject
+//
+//  Created by YD-Guozuhong on 15/12/8.
+//  Copyright © 2015年 JJSHome. All rights reserved.
+//
+
+#import "HomeViewController.h"
+//#import "UITableViewCell+Extension.h"
+
+@interface HomeViewController ()
+
+
+@end
+
+
+@implementation HomeViewController
+
+#pragma mark - Life cycle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self initBaseInfo];
+    [self setUpTableView];
+    [self setTableDataSource];
+    [self setTableDelegate];
+    [self initData];
+    
+    // Do any additional setup after loading the view.
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+    
+}
+
+#pragma mark - Custom function
+/**
+ *  Description: Initialize base information
+ */
+- (void)initBaseInfo
+{
+    [self.navigationItem setTitle:@"Title"];
+}
+
+/**
+ *  Description: Initialize data
+ */
+- (void)initData
+{
+    NSDictionary *rowData = @{@"title":@"家家顺第一男神",@"subTitle":@"家家顺网络科技第一届男神选拔赛拉开帷幕，男神一号的荣誉究竟花落谁家...",@"icon":@"http://img.jjshome.com/pic/wokerimg/77843887_samll.jpg"};
+    NSDictionary *rowData1 = @{@"title":@"参赛人数走众多",@"subTitle":@"家家顺网络科技第一届男神选拔赛，众多参与者使出浑身解数勇争第一",@"icon":@"http://img.jjshome.com/pic/wokerimg/77843887_samll.jpg"};
+    NSDictionary *rowData2 = @{@"title":@"获奖者发表获奖感言",@"subTitle":@"家家顺网络科技第一届男神选拔赛，经过几轮选拔后，终于诞生了冠军：罗莱文",@"icon":@"http://img.jjshome.com/pic/wokerimg/77843887_samll.jpg"};
+    NSMutableArray *dataSources = [@[] mutableCopy];
+    [dataSources addObject:rowData];
+    [dataSources addObject:rowData1];
+    [dataSources addObject:rowData2];
+    
+    [self.tableDataSource setTableItems:dataSources];
+    [self.tableDelegate setTableItems:dataSources];
+//    [self.tableView reloadData];
+}
+
+- (void)setUpTableView
+{
+    self.tableView = [[UITableView alloc] initWithFrame:(CGRect){0,0,mScreenWidth,mScreenHeight - 64} style:UITableViewStylePlain];
+    [self.view addSubview:self.tableView];
+}
+
+- (void)setTableDataSource
+{
+    CellConfigureBlock cellConfigure = ^(UITableViewCell *cell,NSDictionary *cellDatas){
+//        [cell configure:cell cellDatas:cellDatas];
+    };
+    self.tableDataSource = [[JJSTableDataSource alloc] initWithCellIdentifier:@"homeCellIdentifier" cellconfigureBlock:cellConfigure cellClass:[HomeCell class]];
+    self.tableView.dataSource = self.tableDataSource;
+//    [self.tableDataSource handleTableViewDatasource:self.tableView ];
+}
+
+- (void)setTableDelegate
+{
+    self.tableDelegate = [[JJSTableDelegate alloc] init];
+    self.tableView.delegate = self.tableDelegate;
+//    [self.tableDelegate handleTableViewDelegate:self.tableView];
+    
+    // Congifure height
+    CellHeightBlock cellHeight = ^(NSIndexPath *indexPath) {
+        NSDictionary *items = self.tableDelegate.tableItems[indexPath.row];
+        return [HomeCell cellHeightForCellDatas:items];
+    };
+    [self.tableDelegate setCellHeight:cellHeight];
+    
+    // Did select row
+    SelectCellBlock selectCell = ^(NSIndexPath *indexPath, id item){
+        NSLog(@"row %ld selected",indexPath.row);
+    };
+    
+    [self.tableDelegate setSelectCell:selectCell];
+}
+
+@end

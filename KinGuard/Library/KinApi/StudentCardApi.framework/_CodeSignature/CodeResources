@@ -34,7 +34,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		n+P2JV4iTn7K1BmOKs0lgAahiuc=
+		01EfGwOQKLubB1yQHqybM+H6Lig=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -44,93 +44,37 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/KinDeviceApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3f6P92Cw4sG1f6CgM4pEiCDlcl4=
-			</data>
-			<key>hash2</key>
-			<data>
-			sQmd8yGlN64Ozc/5wBZjOAXBVO1ztbWba1SKybWsCeE=
-			</data>
-		</dict>
+		<data>
+		3f6P92Cw4sG1f6CgM4pEiCDlcl4=
+		</data>
 		<key>Headers/KinFileApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			nc6gDm00mlH/GUoFPqb5qpE0aH0=
-			</data>
-			<key>hash2</key>
-			<data>
-			ggw+eeud27+GNQf4PjWB0Rd0onpKT4OlSnYxSpp9TDc=
-			</data>
-		</dict>
+		<data>
+		nc6gDm00mlH/GUoFPqb5qpE0aH0=
+		</data>
 		<key>Headers/KinGuartApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qw6gPEUHSs5ClHXc9GmrMEXYMBE=
-			</data>
-			<key>hash2</key>
-			<data>
-			yndZSdtXF+HHjZ5HFrG2kkAJu71WRJNzK9uPkaZIQ6M=
-			</data>
-		</dict>
+		<data>
+		qw6gPEUHSs5ClHXc9GmrMEXYMBE=
+		</data>
 		<key>Headers/KinLocationApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+l97Y+ShX3I/74/A7bOHu3Sv9wU=
-			</data>
-			<key>hash2</key>
-			<data>
-			P0oYvVC5nAAUQXXdcac/CyKYsqzKbzpoxCUDvYDcXsQ=
-			</data>
-		</dict>
+		<data>
+		+l97Y+ShX3I/74/A7bOHu3Sv9wU=
+		</data>
 		<key>Headers/KinRecordApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HUYnspW8Me2UP18kLjGyZn8igQE=
-			</data>
-			<key>hash2</key>
-			<data>
-			Hns6iPb9FFCrKexAVAZAbIrwNHdFZGmPhdrtFG5IuNY=
-			</data>
-		</dict>
+		<data>
+		HUYnspW8Me2UP18kLjGyZn8igQE=
+		</data>
 		<key>Headers/StudentCardApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			93bCX3QUtW8gs2PgdWXTYkz4sF0=
-			</data>
-			<key>hash2</key>
-			<data>
-			qWVp+To0Q0+w73BzBZcTWn7D7gHuDm5q2PNPvtpHCV4=
-			</data>
-		</dict>
+		<data>
+		93bCX3QUtW8gs2PgdWXTYkz4sF0=
+		</data>
 		<key>Headers/TypeDefines.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			z1PL7DjE9GygX/L6pgiihUdHmyA=
-			</data>
-			<key>hash2</key>
-			<data>
-			IygtdLrMvanbA7t4wDiHMAjqQhgLtdISZzJ6zDgJtgU=
-			</data>
-		</dict>
+		<data>
+		z1PL7DjE9GygX/L6pgiihUdHmyA=
+		</data>
 		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jhUQgKJuNeD78zTRtFlb6lTHrVo=
-			</data>
-			<key>hash2</key>
-			<data>
-			pHfbV3MQbNBqveLXsvlC455xTSNl8GkZJ1UPA2sdpsE=
-			</data>
-		</dict>
+		<data>
+		jhUQgKJuNeD78zTRtFlb6lTHrVo=
+		</data>
 	</dict>
 	<key>rules</key>
 	<dict>
