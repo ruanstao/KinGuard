@@ -63,8 +63,15 @@
     // Do any additional setup after loading the view.
 }
 
--(void)back{
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)back
+{
+    if (self.fromType == TransType_FromHomePage) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
 }
 /**
  *  如何获得设备ID和安全码

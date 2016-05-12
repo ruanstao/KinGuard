@@ -24,6 +24,7 @@
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
 		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
+		D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */; };
 		D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */; };
 		D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */; };
 		D539D8C91CDE5C1900FF36C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */; };
@@ -128,6 +129,8 @@
 		62CE4E2D1CE2410A007551E4 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		62CE4E2E1CE2410A007551E4 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D538FEBD1CE4DE9D002D60EB /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		D539D87E1CDE54FF00FF36C0 /* BindDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindDeviceViewController.h; sourceTree = "<group>"; };
 		D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindDeviceViewController.m; sourceTree = "<group>"; };
 		D539D8C31CDE562400FF36C0 /* UIImage+IAnime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IAnime.h"; sourceTree = "<group>"; };
@@ -335,6 +338,47 @@
 			path = KinGuardUITests;
 			sourceTree = "<group>";
 		};
+		D538FEB81CE4DE8A002D60EB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D538FEB91CE4DE8A002D60EB /* Model */,
+				D538FEBA1CE4DE8A002D60EB /* View */,
+				D538FEBB1CE4DE8A002D60EB /* ViewController */,
+				D538FEBC1CE4DE8A002D60EB /* ViewModel */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		D538FEB91CE4DE8A002D60EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D538FEBA1CE4DE8A002D60EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D538FEBB1CE4DE8A002D60EB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D538FEBD1CE4DE9D002D60EB /* SettingViewController.h */,
+				D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D538FEBC1CE4DE8A002D60EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D55FD9421CE23CFE0008F54B /* MemberList */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +584,7 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D538FEB81CE4DE8A002D60EB /* Setting */,
 				D55FD9421CE23CFE0008F54B /* MemberList */,
 				DA8861671CD222CA009C6D56 /* LeftMenu */,
 				DA88609C1CD1B5E4009C6D56 /* Login */,
@@ -885,6 +930,7 @@
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */,
 				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
+				D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */,
 				6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1043,7 +1089,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1072,7 +1118,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -24,8 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"监护成员";
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0 green:124/255.0 blue:195/255.0 alpha:1];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:244/255.0 green:243/255.0 blue:239/255.0 alpha:1];
     
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self. navigationItem.leftBarButtonItem = leftItem;
@@ -38,6 +39,8 @@
 {
     self.memberListTableView.delegate = self;
     self.memberListTableView.dataSource = self;
+    self.memberListTableView.tableFooterView = [UIView new];
+    self.memberListTableView.backgroundColor = [UIColor colorWithRed:244/255.0 green:243/255.0 blue:239/255.0 alpha:1];
 }
 
 - (void)getMemerInfo
