@@ -7,7 +7,7 @@
 //
 
 #import <MAMapKit/MAMapKit.h>
-
+#import "LocationInfo.h"
 #import "DeviceInfoView.h"
 
 @interface DeviceAnnotationView : MAAnnotationView
@@ -17,5 +17,6 @@
 @property (nonatomic, strong) UIImage *portrait;
 
 @property (nonatomic, strong) DeviceInfoView *calloutView;
+@property (nonatomic, strong) LocationInfo *locationInfo;
 
 @end

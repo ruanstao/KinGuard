@@ -176,12 +176,17 @@
     right.backgroundColor = [UIColor yellowColor];
     annotaionView.leftCalloutAccessoryView = leftView;
     annotaionView.rightCalloutAccessoryView = right;
+    annotaionView.locationInfo = self.currentLocation;
     return annotaionView;
 }
 
 #pragma mark - 定位当前位置
-
-- (IBAction)userLocationAction:(id)sender {
+- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
+{
     
+}
+- (IBAction)userLocationAction:(id)sender {
+    [self.mapView addAnnotation:self.mapView.userLocation];
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 @end

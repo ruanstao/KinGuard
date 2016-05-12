@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationInfo.h"
 
 @interface DeviceInfoView : UIView
 
 + (instancetype)creatByNib;
+
+- (void)initWithLocationModel:(LocationInfo *)info;
 
 @end
