@@ -8,6 +8,18 @@
 
 #import "DeviceInfoView.h"
 
+@interface DeviceInfoView()
+
+@property (strong, nonatomic) IBOutlet UILabel *time;
+
+@property (strong, nonatomic) IBOutlet UILabel *accuracy;//精度
+
+@property (strong, nonatomic) IBOutlet UILabel *address;
+@property (strong, nonatomic) IBOutlet UILabel *power;
+@property (strong, nonatomic) IBOutlet UIImageView *powerImage;
+
+@end
+
 @implementation DeviceInfoView
 
 + (instancetype)creatByNib
@@ -24,4 +36,11 @@
 }
 */
 
+- (void)initWithLocationModel:(LocationInfo *)info{
+    self.power.text =[NSString stringWithFormat:@"%@", @(info.battery)];;
+    self.time.text = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:info.timestamp] type:10];
+    self.accuracy.text = [NSString stringWithFormat:@"%@",@(info.range)];
+    self.address.text = [NSString stringWithFormat:@"%@",info.addr];
+    
+}
 @end

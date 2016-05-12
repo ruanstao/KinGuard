@@ -52,6 +52,7 @@
             
             self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
                                                   -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
+            [self.calloutView initWithLocationModel:self.locationInfo];
 
         }
         
