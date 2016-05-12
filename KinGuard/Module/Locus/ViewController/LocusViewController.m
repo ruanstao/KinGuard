@@ -69,11 +69,6 @@
         DeviceInfo *info = self.info[self.showIndex];
         [self.headerTitle setTitle:info.asset_name forState:UIControlStateNormal];
         //开始定位
-//        [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
-//            NSLog(@"%@",data);
-//        } fail:^(NSString *error) {
-//            NSLog(@"%@",error);
-//        }];
         
         [[KinLocationApi sharedKinLocation]readLocationInfo:info.asset_id success:^(NSDictionary *data) {
             
@@ -189,4 +184,36 @@
     [self.mapView addAnnotation:self.mapView.userLocation];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
+#pragma mark - 北斗定位
+- (IBAction)beiDouDingWei:(id)sender {
+    DeviceInfo *info = self.info[self.showIndex];
+    [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+    } fail:^(NSString *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+#pragma mark - 紧急追踪
+- (IBAction)jinJiZhuiZong:(id)sender {
+    
+    DeviceInfo *info = self.info[self.showIndex];
+    [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
+        
+    } fail:^(NSString *error) {
+        
+    }];
+}
+
+#pragma mark - 远程监护
+- (IBAction)yuanChenJianHu:(id)sender {
+    DeviceInfo *info = self.info[self.showIndex];
+    [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
+        
+    } fail:^(NSString *error) {
+        
+    }];
+}
+
+
 @end
