@@ -101,7 +101,14 @@
     UIBezierPath * path = [UIBezierPath bezierPath];
     _circleLayer.fillColor = [self.borderColor colorWithAlphaComponent:0.8].CGColor;//[UIColor whiteColor].CGColor;
     if ((!self.isAnimationEnabled) && b) {
-        [path addArcWithCenter:centerPoint radius: CGRectGetHeight(rect) / 2.0 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+        UIBezierPath * insidePath = [UIBezierPath bezierPath];
+        CAShapeLayer *insideLayer = [[CAShapeLayer alloc] initWithLayer:_circleLayer];
+        insideLayer.fillColor = [self.holeColor colorWithAlphaComponent:0.8].CGColor;
+        [insidePath addArcWithCenter:centerPoint radius: CGRectGetHeight(rect) / 4.0 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+        insideLayer.path = insidePath.CGPath;
+        [_circleLayer addSublayer:insideLayer];
+        [path addArcWithCenter:centerPoint radius: CGRectGetHeight(rect) / 1.0 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+
         _circleLayer.fillColor = [self.holeColor colorWithAlphaComponent:0.4].CGColor;
         
     }

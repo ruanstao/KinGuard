@@ -26,6 +26,7 @@
 
 @property (nonatomic,strong) LocationInfo *currentLocation;
 
+@property (nonatomic,assign) BOOL annotationAnimation;
 @end
 
 @implementation LocusViewController
@@ -69,12 +70,12 @@
         DeviceInfo *info = self.info[self.showIndex];
         [self.headerTitle setTitle:info.asset_name forState:UIControlStateNormal];
         //开始定位
-        
+        [self beginLocationAnimation:YES];
         [[KinLocationApi sharedKinLocation]readLocationInfo:info.asset_id success:^(NSDictionary *data) {
             
             NSLog(@"%@",data);
             self.currentLocation = [LocationInfo mj_objectWithKeyValues:data];
-            [self beginLocation];
+            [self beginLocationAnimation:NO];
         } fail:^(NSString *error) {
             
             NSLog(@"%@",error);
@@ -146,15 +147,18 @@
 
 #pragma mark - <MAMapViewDelegate>
 
-- (void)beginLocation
+- (void)beginLocationAnimation:(BOOL)animation
 {
 //    self.mapView.showsUserLocation = YES;
-    
 //    DeviceInfo *info = self.info[self.showIndex];
+    self.annotationAnimation = animation;
     MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
     pointAnno.title = self.currentLocation.addr;
     pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:10];
     pointAnno.coordinate = CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude);
+    [self.mapView.annotations enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.mapView removeAnnotation:obj];
+    }];
     [self.mapView addAnnotation:pointAnno];
     self.mapView.region = MACoordinateRegionMake(CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude), MACoordinateSpanMake(0.1, 0.1));
     [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude) animated:YES];
@@ -165,6 +169,7 @@
     DeviceAnnotationView *annotaionView = [[DeviceAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MainAnotation"];
 //    annotaionView.image = [UIImage imageNamed:@"father"];
     annotaionView.canShowCallout = YES;
+    annotaionView.animation = self.annotationAnimation;
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
     UIView *right = [[UIView alloc] init];
     leftView.backgroundColor = [UIColor blueColor];
@@ -189,6 +194,7 @@
     DeviceInfo *info = self.info[self.showIndex];
     [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
         NSLog(@"%@",data);
+        [self refreshUI];
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
     }];
@@ -199,8 +205,10 @@
     
     DeviceInfo *info = self.info[self.showIndex];
     [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
-        
+        NSLog(@"%@",data);
+        [self refreshUI];
     } fail:^(NSString *error) {
+        NSLog(@"%@",error);
         
     }];
 }
@@ -209,8 +217,10 @@
 - (IBAction)yuanChenJianHu:(id)sender {
     DeviceInfo *info = self.info[self.showIndex];
     [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
-        
+        NSLog(@"%@",data);
+        [self refreshUI];
     } fail:^(NSString *error) {
+        NSLog(@"%@",error);
         
     }];
 }
