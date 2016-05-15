@@ -20,6 +20,11 @@
 
 #define kCalloutWidth   260.0
 #define kCalloutHeight  60.0
+@interface DeviceAnnotationView ()
+
+@property (nonatomic, strong) CircleView *circle;
+
+@end
 
 @implementation DeviceAnnotationView
 
@@ -92,23 +97,28 @@
         self.bounds = CGRectMake(0.f, 0.f, kWidth, kHeight);
         
         self.backgroundColor = [UIColor clearColor];
-        CircleView *circle = [[CircleView alloc] initWithFrame:self.bounds];
+        self.circle = [[CircleView alloc] initWithFrame:self.bounds];
 //        circle.frame = rect;
-        circle.borderColor = HexRGB(0x4A90E2);
-        circle.borderWidth = 1;
-        circle.holeColor = HexRGB(0x4A90E2);
-        circle.isSelected = YES;
-        circle.isAnimationEnabled = YES;
+        self.circle.borderColor = HexRGB(0x4A90E2);
+        self.circle.borderWidth = 1;
+        self.circle.holeColor = HexRGB(0x4A90E2);
+        self.circle.isSelected = YES;
+        self.circle.isAnimationEnabled = YES;
         __weak typeof(self) weakSelf = self;
-        circle.circleClickBlock = ^(CircleView *circleView){
+        self.circle.circleClickBlock = ^(CircleView *circleView){
             __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf setSelected:!self.selected animated:YES];
+            [strongSelf setSelected:!strongSelf.selected animated:YES];
         };
-        [self addSubview:circle];
+        [self addSubview:self.circle];
         
     }
     
     return self;
 }
 
+- (void)setAnimation:(BOOL)animation
+{
+    _animation = animation;
+    self.circle.isAnimationEnabled = animation;
+}
 @end

@@ -19,4 +19,5 @@
 @property (nonatomic, strong) DeviceInfoView *calloutView;
 @property (nonatomic, strong) LocationInfo *locationInfo;
 
+@property (nonatomic, assign) BOOL animation;
 @end
