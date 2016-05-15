@@ -35,6 +35,9 @@
 		D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FD1CE0C42F00B1249C /* UIKit.framework */; };
 		D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */; };
 		D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54921041CE0CB4600B1249C /* XDScaningViewController.m */; };
+		D551C8961CE8C7FE00D23FAC /* AccountSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */; };
+		D551C89A1CE8CCA700D23FAC /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C8991CE8CCA700D23FAC /* VPImageCropperViewController.m */; };
+		D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C89C1CE8D02800D23FAC /* AccountInfo.m */; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
 		D55FD9401CE22D120008F54B /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55FD93F1CE22D120008F54B /* StudentCardApi.framework */; };
@@ -144,6 +147,12 @@
 		D54920FD1CE0C42F00B1249C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D54921031CE0CB4600B1249C /* XDScaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDScaningViewController.h; sourceTree = "<group>"; };
 		D54921041CE0CB4600B1249C /* XDScaningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDScaningViewController.m; sourceTree = "<group>"; };
+		D551C8941CE8C7FE00D23FAC /* AccountSafeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSafeViewController.h; sourceTree = "<group>"; };
+		D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSafeViewController.m; sourceTree = "<group>"; };
+		D551C8981CE8CCA700D23FAC /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		D551C8991CE8CCA700D23FAC /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		D551C89B1CE8D02800D23FAC /* AccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfo.h; sourceTree = "<group>"; };
+		D551C89C1CE8D02800D23FAC /* AccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfo.m; sourceTree = "<group>"; };
 		D554FDAC1CDCDD5F00F1537F /* KinGuardDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinGuardDefine.h; sourceTree = "<group>"; };
 		D554FDAD1CDCDE8A00F1537F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		D554FDAE1CDCDE8A00F1537F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
@@ -379,6 +388,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D551C8971CE8CCA700D23FAC /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				D551C8981CE8CCA700D23FAC /* VPImageCropperViewController.h */,
+				D551C8991CE8CCA700D23FAC /* VPImageCropperViewController.m */,
+			);
+			path = VPImageCropper;
+			sourceTree = "<group>";
+		};
 		D55FD9421CE23CFE0008F54B /* MemberList */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +548,8 @@
 		DA063B9C1CDA075000524689 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D551C89B1CE8D02800D23FAC /* AccountInfo.h */,
+				D551C89C1CE8D02800D23FAC /* AccountInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -546,6 +566,8 @@
 			children = (
 				DA063BA01CDA077D00524689 /* MoreViewController.h */,
 				DA063BA11CDA077D00524689 /* MoreViewController.m */,
+				D551C8941CE8C7FE00D23FAC /* AccountSafeViewController.h */,
+				D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -576,6 +598,7 @@
 		DA8860951CD1B5E4009C6D56 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D551C8971CE8CCA700D23FAC /* VPImageCropper */,
 				DA87685C1CDAE7BD0072FC50 /* KinApi */,
 			);
 			path = Library;
@@ -779,7 +802,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Q8G47UAD38;
+						DevelopmentTeam = 8MUA9S3748;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -904,6 +927,7 @@
 				DA063B8F1CD9D22400524689 /* LoginNavigationController.m in Sources */,
 				D57E97821CE37D0B002089F8 /* MemberListCell.m in Sources */,
 				6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */,
+				D551C8961CE8C7FE00D23FAC /* AccountSafeViewController.m in Sources */,
 				621814661CE3893200434B8A /* DeviceInfoView.m in Sources */,
 				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
@@ -911,6 +935,7 @@
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
+				D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */,
 				D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */,
 				D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */,
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
@@ -929,6 +954,7 @@
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */,
+				D551C89A1CE8CCA700D23FAC /* VPImageCropperViewController.m in Sources */,
 				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
 				D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */,
 				6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */,

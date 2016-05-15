@@ -20,9 +20,7 @@
     
     self.title = @"设置";
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0 green:124/255.0 blue:195/255.0 alpha:1];
-    
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self. navigationItem.leftBarButtonItem = leftItem;
+    [self.backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)back

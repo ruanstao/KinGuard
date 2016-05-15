@@ -58,9 +58,7 @@
     //默认选中二维码扫描
     [_codeBtn setSelected:YES];
     
-    UIBarButtonItem* leftItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self. navigationItem.leftBarButtonItem=leftItem;
-    // Do any additional setup after loading the view.
+    [self.backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)back

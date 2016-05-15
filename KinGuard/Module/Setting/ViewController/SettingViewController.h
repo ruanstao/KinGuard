@@ -8,6 +8,6 @@
 
 #import "KinViewController.h"
 
-@interface SettingViewController : UITableViewController
+@interface SettingViewController : KinTableViewController
 
 @end
