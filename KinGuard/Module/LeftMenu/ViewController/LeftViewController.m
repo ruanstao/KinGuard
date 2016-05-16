@@ -11,6 +11,8 @@
 #import "LeftHeaderTableViewCell.h"
 #import "UserInfoModel.h"
 #import "BindDeviceViewController.h"
+#import "MemberListViewController.h"
+#import "SettingViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -184,16 +186,23 @@
         }
             break;
         case LeftType_JianKongMember:{
-
+            
+            UINavigationController *navController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"memNavController"];
+            [self presentViewController:navController animated:YES completion:nil];
         }
             break;
         case LeftType_AddDevice:{
             BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
-            [self.navigationController pushViewController:bindController animated:YES];
+            bindController.fromType = TransType_FromHomePage;
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:bindController];
+            [self presentViewController:navController animated:YES completion:nil];
         }
             break;
         case LeftType_Setting:{
 
+            SettingViewController *setController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SettingVC"];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:setController];
+            [self presentViewController:navController animated:YES completion:nil];
         }
             break;
         case LeftType_Login:{

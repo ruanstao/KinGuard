@@ -25,13 +25,6 @@
     // Do any additional setup after loading the view.
     
     self.title = @"注册";
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self. navigationItem.leftBarButtonItem = leftItem;
-}
-
-- (void)back
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)getCode:(JKCountDownButton *)sender

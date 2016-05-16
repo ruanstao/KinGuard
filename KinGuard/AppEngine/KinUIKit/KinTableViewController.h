@@ -10,6 +10,8 @@
 
 @interface KinTableViewController : UITableViewController
 
+@property (nonatomic, strong) UIButton *backBtn;
+
 + (instancetype)creatByNib;
 
 @end
