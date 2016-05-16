@@ -7,10 +7,11 @@
 //
 
 #import "BindDeviceViewController.h"
-//#import "XDScaningViewController.h"
+#import "XDScaningViewController.h"
 #import "UIImage+IAnime.h"
+#import "FollowViewController.h"
 
-@interface BindDeviceViewController ()//<ZBarReaderDelegate>
+@interface BindDeviceViewController ()<UIAlertViewDelegate>
 /**
  *  如何获取ID和安全码的提示
  */
@@ -39,7 +40,8 @@
 @implementation BindDeviceViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"添加卡片";
+    
+    self.title = @"添加设备";
     _bindBtn.layer.cornerRadius=5;
     _bindBtn.layer.masksToBounds=YES;
     
@@ -96,75 +98,68 @@
  */
 - (IBAction)shaoMiao2DCode:(id)sender {
     //初始化相机控制器
-//    XDScaningViewController* scanVC=[[UIStoryboard storyboardWithName:@"LoginRegister" bundle:nil] instantiateViewControllerWithIdentifier:@"XDScaningVC"];
-//    [scanVC setBackValue:^(NSString * qr_code) {
-//        [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"绑定中" duration:10 allowEdit:nil beginBlock:nil completeBlock:nil];
-//       NSDictionary* result= [serverAPI BindDevice:qr_code];
-//        if ([result[@"state"] intValue]>4) {
-//            [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"未知错误，请重试" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//        }
-//        switch ([result[@"state"] intValue]) {
-//            case 0:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"绑定成功" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//            case 1:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"绑定中，请等待设备确认" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//            case 2:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"工厂未登记" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//            case 3:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"已被其他人绑定" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//    }];
-    //设置代理
-//    reader.readerDelegate = self;
-//    //基本适配
-//    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
-//    
-//    //二维码/条形码识别设置
-//    ZBarImageScanner *scanner = reader.scanner;
-//    
-//    [scanner setSymbology: ZBAR_I25
-//                   config: ZBAR_CFG_ENABLE
-//                       to: 0];
+    XDScaningViewController* scanVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"XDScaningVC"];
+    [scanVC setBackValue:^(NSString * qr_code) {
+        [JJSUtil showHUDWithWaitingMessage:@"绑定中..."];
+        
+        [[KinDeviceApi sharedKinDevice] bindDeviceByQRCode:qr_code success:^(NSDictionary *data) {
+            NSLog(@"%@",data);
+            [JJSUtil hideHUD];
+            //被别人绑定之后
+            if ([data objectForKey:@"state"] && [[data objectForKey:@"state"] integerValue] == 2) {
+                
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否关注设备？" message:nil delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+                [alertView show];
+                
+            }else{
+                [JJSUtil showHUDWithMessage:@"绑定成功" autoHide:YES];
+                //跳转到关系设定页面
+                
+            }
+        } fail:^(NSString *error) {
+            [JJSUtil hideHUD];
+            [JJSUtil showHUDWithMessage:error autoHide:YES];
+        }];
+    }];
     //弹出系统照相机，全屏拍摄
-//    [self presentModalViewController: scanVC
-//                            animated: YES];
+    [self presentViewController:scanVC animated:YES completion:nil];
 }
 /**
  *  ID激活并绑定
  */
 - (IBAction)bindDevice:(id)sender {
-//    NSDictionary* result= [serverAPI BindDeviceID:_deviceIdField.text AKey:_safeCodeField.text];
-//    if ([result[@"state"] intValue]>4) {
-//        [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"未知错误，请重试" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//    }
-//    else{
-//        switch ([result[@"state"] intValue]) {
-//            case 0:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"绑定成功" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//            case 1:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"绑定中，请等待设备确认" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//            case 2:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"工厂未登记" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//            case 3:
-//                [CoreSVP showSVPWithType:CoreSVPTypeCenterMsg Msg:@"已被其他人绑定" duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-//                break;
-//                
-//            default:
-//                break;
-//
-//    }
-//        }
+    
+    NSString *pid = self.deviceIdField.text;
+    NSString *savecode = self.safeCodeField.text;
+    
+    [[KinDeviceApi sharedKinDevice] bindDeviceByPid:pid withKey:savecode success:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+        [JJSUtil hideHUD];
+        //被别人绑定之后
+        if ([data objectForKey:@"state"] && [[data objectForKey:@"state"] integerValue] == 2) {
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否关注设备？" message:nil delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+            [alertView show];
+            
+        }else{
+            [JJSUtil showHUDWithMessage:@"绑定成功" autoHide:YES];
+            //跳转到关系设定页面
+            
+        }
+    } fail:^(NSString *error) {
+        [JJSUtil hideHUD];
+        [JJSUtil showHUDWithMessage:error autoHide:YES];
+    }];
+    
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex) {
+        //跳转关注页面
+        FollowViewController *followController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"FollowVC"];
+        [self.navigationController pushViewController:followController animated:YES];
+    }
+}
 
 @end

@@ -37,6 +37,10 @@
 - (void)setRelationshipWithPid:(NSString *)pid withRelationship:(NSString *)relationship success:(KSFinishedBlock)successed fail:(KSFailedBlock)failed;
 
 #pragma mark - 宝贝信息
+
+//宝贝列表
+- (void)deviceListSuccess:(KSFinishedBlock)successed fail:(KSFailedBlock)failed;
+
 //宝贝信息
 - (void)deviceInfoPid:(NSString *)pid success:(KSFinishedBlock)successed fail:(KSFailedBlock)failed;
 

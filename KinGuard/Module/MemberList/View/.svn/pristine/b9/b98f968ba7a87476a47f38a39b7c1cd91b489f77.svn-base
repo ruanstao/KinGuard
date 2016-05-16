@@ -1,0 +1,46 @@
+//
+//  HomeCell.m
+//  JJSProject
+//
+//  Created by YD-Guozuhong on 15/12/19.
+//  Copyright © 2015年 JJSHome. All rights reserved.
+//
+
+#import "HomeCell.h"
+//#import "UITableViewCell+Extension.h"
+
+@implementation HomeCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self setUpView];
+    }
+    return self;
+}
+
+- (void)setUpView
+{
+    // initialize view
+    // base configure
+    [self setSelectionStyle:UITableViewCellSelectionStyleGray];
+}
+
+- (void)configure:(UITableViewCell *)cell cellDatas:(id)cellDatas
+{
+    [super configureCellWithCellDatas:cellDatas];
+    HomeCell *homeCell = (HomeCell *)cell;
+    [homeCell.textLabel setText:cellDatas[@"title"]];
+    [homeCell.detailTextLabel setText:cellDatas[@"subTitle"]];
+    [homeCell.imageView setImageWithURL:[NSURL URLWithString:cellDatas[@"icon"]] placeholderImage:[UIImage imageNamed:@"iPhone-120"]];
+}
+
++ (CGFloat)cellHeightForCellDatas:(NSDictionary *)cellDatas
+{
+    CGFloat contentHeight = [JJSUtil heightForString:cellDatas[@"subTitle"] Font:kContentFontMiddle andWidth:mScreenWidth - 110];
+    if (contentHeight < 15)
+        return 44;
+    return contentHeight + 30;
+}
+
+@end
