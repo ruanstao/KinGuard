@@ -28,8 +28,7 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:244/255.0 green:243/255.0 blue:239/255.0 alpha:1];
     
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self. navigationItem.leftBarButtonItem = leftItem;
+    [self.backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     [self initilizeBaseView];
     [self getMemerInfo];
