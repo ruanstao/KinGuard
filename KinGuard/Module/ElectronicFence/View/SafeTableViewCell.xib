@@ -18,10 +18,10 @@
                         <rect key="frame" x="15" y="8" width="290" height="71.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="father" translatesAutoresizingMaskIntoConstraints="NO" id="Pza-jn-fjj">
-                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                <rect key="frame" x="15" y="10" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="5Ej-YB-M0A"/>
-                                    <constraint firstAttribute="height" constant="40" id="cpW-Dc-S42"/>
+                                    <constraint firstAttribute="width" constant="50" id="5Ej-YB-M0A"/>
+                                    <constraint firstAttribute="height" constant="50" id="cpW-Dc-S42"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
@@ -29,7 +29,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J7-8Q-f1x">
-                                <rect key="frame" x="65" y="15" width="210" height="21"/>
+                                <rect key="frame" x="75" y="10" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="DgA-wg-ieh"/>
                                 </constraints>
@@ -38,11 +38,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="福建省厦门市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdA-BW-umY">
-                                <rect key="frame" x="65" y="34" width="210" height="21"/>
+                                <rect key="frame" x="75" y="39" width="200" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kBt-x5-qSV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
