@@ -44,6 +44,10 @@
 		D572009B1CEB6B2A001FD02F /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */; };
 		D572009C1CEB6B31001FD02F /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D572009E1CEB6E78001FD02F /* AboutViewController.m */; };
+		D57200A71CEB769A001FD02F /* ElectronicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D57200A61CEB769A001FD02F /* ElectronicViewController.m */; };
+		D57200AA1CEB78E3001FD02F /* SafeZoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D57200A91CEB78E3001FD02F /* SafeZoneModel.m */; };
+		D57200AE1CEB7C69001FD02F /* SafeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D57200AC1CEB7C69001FD02F /* SafeTableViewCell.m */; };
+		D57200AF1CEB7C69001FD02F /* SafeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D57200AD1CEB7C69001FD02F /* SafeTableViewCell.xib */; };
 		D57E97821CE37D0B002089F8 /* MemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E97811CE37D0B002089F8 /* MemberListCell.m */; };
 		D57E97841CE38D52002089F8 /* MemberListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D57E97831CE38D52002089F8 /* MemberListCell.xib */; };
 		D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E97861CE39721002089F8 /* GuarderInfo.m */; };
@@ -164,6 +168,13 @@
 		D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
 		D572009D1CEB6E78001FD02F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D572009E1CEB6E78001FD02F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		D57200A51CEB769A001FD02F /* ElectronicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectronicViewController.h; sourceTree = "<group>"; };
+		D57200A61CEB769A001FD02F /* ElectronicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectronicViewController.m; sourceTree = "<group>"; };
+		D57200A81CEB78E3001FD02F /* SafeZoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeZoneModel.h; sourceTree = "<group>"; };
+		D57200A91CEB78E3001FD02F /* SafeZoneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeZoneModel.m; sourceTree = "<group>"; };
+		D57200AB1CEB7C69001FD02F /* SafeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeTableViewCell.h; sourceTree = "<group>"; };
+		D57200AC1CEB7C69001FD02F /* SafeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeTableViewCell.m; sourceTree = "<group>"; };
+		D57200AD1CEB7C69001FD02F /* SafeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafeTableViewCell.xib; sourceTree = "<group>"; };
 		D57E97801CE37D0B002089F8 /* MemberListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberListCell.h; sourceTree = "<group>"; };
 		D57E97811CE37D0B002089F8 /* MemberListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberListCell.m; sourceTree = "<group>"; };
 		D57E97831CE38D52002089F8 /* MemberListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberListCell.xib; sourceTree = "<group>"; };
@@ -485,6 +496,52 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D57200A01CEB75AD001FD02F /* ElectronicFence */ = {
+			isa = PBXGroup;
+			children = (
+				D57200A11CEB75AD001FD02F /* Model */,
+				D57200A21CEB75AD001FD02F /* View */,
+				D57200A31CEB75AD001FD02F /* ViewController */,
+				D57200A41CEB75AD001FD02F /* ViewModel */,
+			);
+			path = ElectronicFence;
+			sourceTree = "<group>";
+		};
+		D57200A11CEB75AD001FD02F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D57200A81CEB78E3001FD02F /* SafeZoneModel.h */,
+				D57200A91CEB78E3001FD02F /* SafeZoneModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D57200A21CEB75AD001FD02F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D57200AB1CEB7C69001FD02F /* SafeTableViewCell.h */,
+				D57200AC1CEB7C69001FD02F /* SafeTableViewCell.m */,
+				D57200AD1CEB7C69001FD02F /* SafeTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D57200A31CEB75AD001FD02F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D57200A51CEB769A001FD02F /* ElectronicViewController.h */,
+				D57200A61CEB769A001FD02F /* ElectronicViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D57200A41CEB75AD001FD02F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA063B751CD9C98D00524689 /* KinCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +708,7 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D57200A01CEB75AD001FD02F /* ElectronicFence */,
 				D53B4CE61CEA039C0049F2CA /* Message */,
 				D538FEB81CE4DE8A002D60EB /* Setting */,
 				D55FD9421CE23CFE0008F54B /* MemberList */,
@@ -888,6 +946,7 @@
 			files = (
 				622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */,
 				622219031CD10C3C00A47434 /* Assets.xcassets in Resources */,
+				D57200AF1CEB7C69001FD02F /* SafeTableViewCell.xib in Resources */,
 				621814681CE3898900434B8A /* DeviceInfoView.xib in Resources */,
 				622219011CD10C3C00A47434 /* Main.storyboard in Resources */,
 				D57E97841CE38D52002089F8 /* MemberListCell.xib in Resources */,
@@ -975,12 +1034,14 @@
 				D551C8961CE8C7FE00D23FAC /* AccountSafeViewController.m in Sources */,
 				621814661CE3893200434B8A /* DeviceInfoView.m in Sources */,
 				DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */,
+				D57200A71CEB769A001FD02F /* ElectronicViewController.m in Sources */,
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
 				D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */,
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
 				D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */,
+				D57200AA1CEB78E3001FD02F /* SafeZoneModel.m in Sources */,
 				D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */,
 				D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */,
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
@@ -993,6 +1054,7 @@
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
 				D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */,
 				D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */,
+				D57200AE1CEB7C69001FD02F /* SafeTableViewCell.m in Sources */,
 				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,
 				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,

@@ -47,11 +47,14 @@
     [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
         NSLog(@"%@",data);
         self.pids = @[[data objectForKey:@"pids"]?:@[]];
-        [self requestDeviceInfoFinish:^(NSArray *info) {
-            self.info = info;
-            NSLog(@"kkk:%@",self.info);
-            [self.memberListTableView reloadData];
-        }];
+        if (self.pids.count > 0) {
+            [self requestDeviceInfoFinish:^(NSArray *info) {
+                self.info = info;
+                NSLog(@"kkk:%@",self.info);
+                [self.memberListTableView reloadData];
+            }];
+        }
+        
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
     }];

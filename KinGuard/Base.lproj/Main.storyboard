@@ -473,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="3126" y="3232"/>
         </scene>
-        <!--View Controller-->
+        <!--Electronic View Controller-->
         <scene sceneID="19R-iv-Q67">
             <objects>
-                <viewController id="RC4-9k-cXu" sceneMemberID="viewController">
+                <viewController id="RC4-9k-cXu" customClass="ElectronicViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FpB-Pe-hNh"/>
                         <viewControllerLayoutGuide type="bottom" id="X23-Hk-xAf"/>
