@@ -549,6 +549,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="68A-er-RhQ" secondAttribute="bottom" id="izW-Fr-tVM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ucg-qY-imh" kind="push" id="R2v-Ae-XTa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1864,11 +1867,70 @@
             </objects>
             <point key="canvasLocation" x="3772" y="1428"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="0S8-80-ADe">
+            <objects>
+                <viewController storyboardIdentifier="AboutVC" hidesBottomBarWhenPushed="YES" id="Ucg-qY-imh" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HHA-8r-5rm"/>
+                        <viewControllerLayoutGuide type="bottom" id="fh6-N5-ajy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y9u-nj-mAq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_60" translatesAutoresizingMaskIntoConstraints="NO" id="932-NR-3sP">
+                                <rect key="frame" x="260" y="94" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="JNz-Cc-QKj"/>
+                                    <constraint firstAttribute="height" constant="80" id="wJg-h4-k7L"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-8U-YQs">
+                                <rect key="frame" x="20" y="184" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7GH-j7-5Dj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvy-j3-QgU">
+                                <rect key="frame" x="20" y="570" width="560" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.17835080149999999" green="0.17513157739999999" blue="0.2470175097" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lvy-j3-QgU" firstAttribute="leading" secondItem="Y9u-nj-mAq" secondAttribute="leadingMargin" id="9Nf-Os-ctu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gPw-8U-YQs" secondAttribute="trailing" id="HZa-EC-mcu"/>
+                            <constraint firstItem="gPw-8U-YQs" firstAttribute="leading" secondItem="Y9u-nj-mAq" secondAttribute="leadingMargin" id="RXb-nu-l7v"/>
+                            <constraint firstItem="fh6-N5-ajy" firstAttribute="top" secondItem="lvy-j3-QgU" secondAttribute="bottom" constant="30" id="gaV-nl-AM8"/>
+                            <constraint firstItem="gPw-8U-YQs" firstAttribute="top" secondItem="932-NR-3sP" secondAttribute="bottom" constant="10" id="mjh-2U-0uL"/>
+                            <constraint firstItem="932-NR-3sP" firstAttribute="centerX" secondItem="Y9u-nj-mAq" secondAttribute="centerX" id="mlR-Kh-cXt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lvy-j3-QgU" secondAttribute="trailing" id="oME-6i-41f"/>
+                            <constraint firstItem="932-NR-3sP" firstAttribute="top" secondItem="HHA-8r-5rm" secondAttribute="bottom" constant="30" id="yuZ-hy-nuq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1d8-51-FZZ"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="labCopyright" destination="lvy-j3-QgU" id="hfK-Jh-ynr"/>
+                        <outlet property="labVersion" destination="gPw-8U-YQs" id="2Ya-ag-3cF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbU-ub-1r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3772" y="2204"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.png" width="15" height="40"/>
         <image name="brother" width="116" height="121"/>
         <image name="grandmother" width="117" height="116"/>
+        <image name="icon_60" width="60" height="60"/>
         <image name="icon_light" width="80" height="80"/>
         <image name="icon_pic" width="80" height="80"/>
         <image name="map" width="32" height="32"/>

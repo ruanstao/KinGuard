@@ -19,9 +19,9 @@
     // Do any additional setup after loading the view.
     
     self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.backBtn.frame = CGRectMake(0, 0, 40, 23);
+    self.backBtn.frame = CGRectMake(0, 0, 23, 23);
     self.backBtn.contentHorizontalAlignment = UIViewContentModeLeft;
-    [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
+//    [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
     
     // Replace backItem with real back button image
     [self.backBtn setImage:[UIImage imageNamed:@"topbtn_back"] forState:UIControlStateNormal];

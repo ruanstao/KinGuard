@@ -29,8 +29,6 @@
 		D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */; };
 		D539D8C91CDE5C1900FF36C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */; };
 		D539D8CB1CDE5C2400FF36C0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8CA1CDE5C2400FF36C0 /* CoreVideo.framework */; };
-		D53B4CEC1CEA27280049F2CA /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53B4CEB1CEA27280049F2CA /* StudentCardApi.framework */; };
-		D53B4CED1CEA27300049F2CA /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D53B4CEB1CEA27280049F2CA /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D54920F81CE0C41500B1249C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920F71CE0C41500B1249C /* CoreGraphics.framework */; };
 		D54920FA1CE0C42200B1249C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920F91CE0C42200B1249C /* CoreMedia.framework */; };
 		D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FB1CE0C42A00B1249C /* AVFoundation.framework */; };
@@ -43,6 +41,9 @@
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
 		D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD9481CE23D100008F54B /* MemberListViewController.m */; };
+		D572009B1CEB6B2A001FD02F /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */; };
+		D572009C1CEB6B31001FD02F /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D572009E1CEB6E78001FD02F /* AboutViewController.m */; };
 		D57E97821CE37D0B002089F8 /* MemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E97811CE37D0B002089F8 /* MemberListCell.m */; };
 		D57E97841CE38D52002089F8 /* MemberListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D57E97831CE38D52002089F8 /* MemberListCell.xib */; };
 		D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E97861CE39721002089F8 /* GuarderInfo.m */; };
@@ -90,7 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D53B4CED1CEA27300049F2CA /* StudentCardApi.framework in CopyFiles */,
+				D572009C1CEB6B31001FD02F /* StudentCardApi.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +142,6 @@
 		D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		D539D8C81CDE5C1900FF36C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D539D8CA1CDE5C2400FF36C0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		D53B4CEB1CEA27280049F2CA /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
 		D54920F71CE0C41500B1249C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D54920F91CE0C42200B1249C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D54920FB1CE0C42A00B1249C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -161,6 +161,9 @@
 		D55FD93D1CE221320008F54B /* FollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
 		D55FD9471CE23D100008F54B /* MemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberListViewController.h; sourceTree = "<group>"; };
 		D55FD9481CE23D100008F54B /* MemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberListViewController.m; sourceTree = "<group>"; };
+		D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
+		D572009D1CEB6E78001FD02F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		D572009E1CEB6E78001FD02F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		D57E97801CE37D0B002089F8 /* MemberListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberListCell.h; sourceTree = "<group>"; };
 		D57E97811CE37D0B002089F8 /* MemberListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberListCell.m; sourceTree = "<group>"; };
 		D57E97831CE38D52002089F8 /* MemberListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberListCell.xib; sourceTree = "<group>"; };
@@ -217,7 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */,
-				D53B4CEC1CEA27280049F2CA /* StudentCardApi.framework in Frameworks */,
+				D572009B1CEB6B2A001FD02F /* StudentCardApi.framework in Frameworks */,
 				D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */,
 				D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */,
 				D54920FA1CE0C42200B1249C /* CoreMedia.framework in Frameworks */,
@@ -607,6 +610,8 @@
 				DA063BA11CDA077D00524689 /* MoreViewController.m */,
 				D551C8941CE8C7FE00D23FAC /* AccountSafeViewController.h */,
 				D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */,
+				D572009D1CEB6E78001FD02F /* AboutViewController.h */,
+				D572009E1CEB6E78001FD02F /* AboutViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -621,7 +626,7 @@
 		DA87685C1CDAE7BD0072FC50 /* KinApi */ = {
 			isa = PBXGroup;
 			children = (
-				D53B4CEB1CEA27280049F2CA /* StudentCardApi.framework */,
+				D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */,
 			);
 			path = KinApi;
 			sourceTree = "<group>";
@@ -987,6 +992,7 @@
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
 				D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */,
+				D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */,
 				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,
 				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,

@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) AccountInfo *accountInfo;
 @property (nonatomic, strong) NSData *headData;//待上传头像数据
+@property (nonatomic, copy) NSString *nickName;//更改昵称待上传
+@property (nonatomic, copy) NSString *email;//更改邮箱待上传
 
 @end
 
@@ -46,7 +48,7 @@
     self.backBtn.titleLabel.font = [UIFont systemFontOfSize:0];
     self.backBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
     
-    [self.backBtn addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    [self.backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     self.backBtn.showsTouchWhenHighlighted = YES;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
@@ -54,7 +56,58 @@
     [self getUserInfo];
 }
 
-//下载用户头像
+- (void)back
+{
+    if (![JJSUtil isBlankString:self.nickName] || ![JJSUtil isBlankString:self.email] || self.headData != nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您的账号信息已改变，是否保存？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"保存", nil];
+        [alert setTag:40];
+        [alert show];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+}
+
+//更新用户信息
+- (void)updateUserInfoToServer
+{
+    if (![JJSUtil isBlankString:self.nickName] || ![JJSUtil isBlankString:self.email]) {
+        NSString *alias = self.accountInfo.alias;
+        if (![JJSUtil isBlankString:self.nickName]) {
+            alias = self.nickName;
+        }
+        NSString *addr = self.accountInfo.alias;
+        if (![JJSUtil isBlankString:self.email]) {
+            addr = self.email;
+        }
+        [JJSUtil showHUDWithWaitingMessage:@"账号信息更新中..."];
+        [[KinGuartApi sharedKinGuard] updateUserInfoWithMobile:self.accountInfo.acc withAddr:addr withIddno:@"" withAccName:self.accountInfo.acc_name withAlias:alias withSex:@"" withBirthdate:@"" success:^(NSDictionary *data) {
+            [JJSUtil hideHUD];
+            NSLog(@"update:%@",data);
+            //若有头像需要更新则上传头像
+            if (self.headData != nil) {
+                //待完成
+                
+            }
+            [JJSUtil showHUDWithMessage:@"更新成功" autoHide:YES];
+            
+        } fail:^(NSString *error) {
+            [JJSUtil hideHUD];
+            [JJSUtil showHUDWithMessage:error autoHide:YES];
+        }];
+    }else{
+        //待完成
+        [[KinGuartApi sharedKinGuard] uploadHeadPortraitByPid:@"" withImageData:self.headData uploadProgress:^(NSProgress *progress) {
+            
+        } finished:^(NSDictionary *data) {
+            
+        } failed:^(NSString *error) {
+            
+        }];
+    }
+}
+
+//下载用户头像（待完成）
 - (void)downHeadImageInfo
 {
     [[KinGuartApi sharedKinGuard] downloadHeadPortraitByPid:@"" andProgress:^(NSProgress *progress) {
@@ -88,7 +141,13 @@
 
 - (IBAction)logout:(id)sender
 {
-    
+    [[KinGuartApi sharedKinGuard] loginOutWithMobile:self.accountInfo.acc success:^(NSDictionary *data) {
+        [JJSUtil showHUDWithMessage:@"退出成功" autoHide:YES];
+        
+        self.view.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+    } fail:^(NSString *error) {
+        NSLog(@"logOut:%@",error);
+    }];
 }
 
 - (void)updateUserInfo
@@ -133,6 +192,7 @@
         if (!buttonIndex) {
             if (![JJSUtil isBlankString:text]) {
                 [self.labNickName setText:text];
+                self.nickName = text;
             }
         }
     }else if (alertView.tag == 2)
@@ -140,7 +200,16 @@
         if (!buttonIndex) {
             if (![JJSUtil isBlankString:text]) {
                 [self.labEmail setText:text];
+                self.email = text;
             }
+        }
+    }else if (alertView.tag == 40)
+    {
+        if (buttonIndex) {
+            //保存用户信息
+            [self updateUserInfoToServer];
+        }else{
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }
 }
