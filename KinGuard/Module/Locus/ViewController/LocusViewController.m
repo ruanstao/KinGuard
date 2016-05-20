@@ -62,6 +62,11 @@
     self.mapView.delegate = self;
     self.mapView.showsScale = NO;
     self.mapView.showsCompass = NO;
+    self.backBtn.frame = CGRectMake(0, 0, 40, 23);
+    [self.backBtn setTitle:@"菜单" forState:UIControlStateNormal];
+    [self.backBtn setImage:nil forState:UIControlStateNormal];
+    [self.backBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.backBtn addTarget:self action:@selector(leftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)refreshUI

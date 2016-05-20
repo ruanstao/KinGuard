@@ -7,5 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+
+typedef enum:NSUInteger{
+
+    TransType_FromHomePage = 0,
+    TransType_FromLoginPage = 1
+    
+}TransType;
+
 @interface BindDeviceViewController : KinViewController
+
+@property(nonatomic, assign) TransType fromType;
+
 @end

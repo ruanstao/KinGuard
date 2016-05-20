@@ -10,6 +10,8 @@
 
 @interface KinViewController : UIViewController
 
+@property (nonatomic, strong) UIButton *backBtn;
+
 + (instancetype)creatByNib;
 
 @end

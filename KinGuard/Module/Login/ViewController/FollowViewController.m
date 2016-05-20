@@ -18,12 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIBarButtonItem* leftItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self. navigationItem.leftBarButtonItem=leftItem;
-}
-
--(void)back{
-    [self.navigationController popViewControllerAnimated:YES];
+    self.title = @"关注设备";
 }
 
 - (void)didReceiveMemoryWarning {

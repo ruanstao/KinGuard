@@ -26,13 +26,6 @@
     
     self.title = @"忘记密码";
     [self.labUsername setText:self.phone];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"topbtn_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    self. navigationItem.leftBarButtonItem = leftItem;
-}
-
-- (void)back
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)resetAction:(id)sender
