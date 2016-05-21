@@ -11,6 +11,7 @@
 #import "RtOutputView.h"
 #import "LocationInfo.h"
 #import "DeviceAnnotationView.h"
+#import "PosHisInfoViewController.h"
 
 @interface LocusViewController ()<MAMapViewDelegate>
 
@@ -156,7 +157,8 @@
 {
 //    self.mapView.showsUserLocation = YES;
 //    DeviceInfo *info = self.info[self.showIndex];
-    self.annotationAnimation = animation;
+    self.annotationAnimation = YES;
+//    self.annotationAnimation = animation;
     MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
     pointAnno.title = self.currentLocation.addr;
     pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:10];
@@ -171,8 +173,11 @@
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
-    DeviceAnnotationView *annotaionView = [[DeviceAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MainAnotation"];
-//    annotaionView.image = [UIImage imageNamed:@"father"];
+    NSString *reuseIndetifier = @"MainAnotation";
+    DeviceAnnotationView *annotaionView =(DeviceAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
+    if (annotaionView == nil) {
+        annotaionView = [[DeviceAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
+    }
     annotaionView.canShowCallout = YES;
     annotaionView.animation = self.annotationAnimation;
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
@@ -190,10 +195,12 @@
 {
     
 }
+
 - (IBAction)userLocationAction:(id)sender {
     [self.mapView addAnnotation:self.mapView.userLocation];
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
+
 #pragma mark - 北斗定位
 - (IBAction)beiDouDingWei:(id)sender {
     DeviceInfo *info = self.info[self.showIndex];
@@ -228,6 +235,17 @@
         NSLog(@"%@",error);
         
     }];
+}
+
+- (IBAction)rightBarButtonClick:(id)sender {
+
+    DeviceInfo *info = self.info[self.showIndex];
+
+    PosHisInfoViewController *posCtl = [PosHisInfoViewController creatByNib];
+    posCtl.pid = info.asset_id;
+
+    [self.navigationController pushViewController:posCtl animated:YES];
+
 }
 
 

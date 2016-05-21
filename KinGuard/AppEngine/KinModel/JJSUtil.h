@@ -189,4 +189,24 @@ typedef void (^CompletionBlock)(BOOL finish);
  */
 + (BOOL)isOnlyChinese:(NSString *)string;
 
+
+/**
+ *  当天的起始时间
+ *
+ *  @param date
+ *
+ *  @return
+ */
++ (NSDate *)beginTime:(NSDate *)date;
+
+/**
+ *  当天的结束时间
+ *
+ *  @param date
+ *
+ *  @return
+ */
++ (NSDate *)endTime:(NSDate *)date;
+
+
 @end
