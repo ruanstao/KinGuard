@@ -184,6 +184,7 @@
     }
     return format;
 }
+
 /*
  获取字符串的宽度
  */
@@ -1225,5 +1226,20 @@
     return [string isMatchedByRegex:@"^[A-Za-z\u4E00-\u9FA5\\s]+$"];
 }
 
+
++ (NSDate *)beginTime:(NSDate *)date
+{
+    NSDateFormatter *formatter = [JJSUtil getDateFormatWithStyle:@"yyyy-MM-dd"];
+    NSDate *changeDate = [formatter dateFromString:[formatter stringFromDate:date]];
+    return changeDate;
+}
+
++ (NSDate *)endTime:(NSDate *)date
+{
+    NSDateFormatter *formatter = [JJSUtil getDateFormatWithStyle:@"yyyy-MM-dd"];
+    NSDate *changeDate = [formatter dateFromString:[formatter stringFromDate:date]];
+    NSDate *endDate = [NSDate dateWithTimeInterval:60 * 60 * 24 sinceDate:changeDate];
+    return endDate;
+}
 
 @end

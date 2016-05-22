@@ -65,6 +65,7 @@
 		DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B981CD9E06B00524689 /* LocusViewController.m */; };
 		DA063BA21CDA077D00524689 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063BA11CDA077D00524689 /* MoreViewController.m */; };
 		DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063BA41CDA07FF00524689 /* KinTableViewController.m */; };
+		DA493C341CF0411B008F21C4 /* PosHisInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA493C331CF0411B008F21C4 /* PosHisInfoViewController.m */; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
 		DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */; };
@@ -215,6 +216,8 @@
 		DA063BA11CDA077D00524689 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		DA063BA31CDA07FF00524689 /* KinTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinTableViewController.h; sourceTree = "<group>"; };
 		DA063BA41CDA07FF00524689 /* KinTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KinTableViewController.m; sourceTree = "<group>"; };
+		DA493C321CF0411B008F21C4 /* PosHisInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosHisInfoViewController.h; sourceTree = "<group>"; };
+		DA493C331CF0411B008F21C4 /* PosHisInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosHisInfoViewController.m; sourceTree = "<group>"; };
 		DA88616C1CD222FE009C6D56 /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
 		DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
@@ -622,6 +625,8 @@
 			children = (
 				DA063B971CD9E06B00524689 /* LocusViewController.h */,
 				DA063B981CD9E06B00524689 /* LocusViewController.m */,
+				DA493C321CF0411B008F21C4 /* PosHisInfoViewController.h */,
+				DA493C331CF0411B008F21C4 /* PosHisInfoViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -905,7 +910,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 8MUA9S3748;
+						DevelopmentTeam = QZL59SN5K2;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1062,6 +1067,7 @@
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */,
+				DA493C341CF0411B008F21C4 /* PosHisInfoViewController.m in Sources */,
 				D551C89A1CE8CCA700D23FAC /* VPImageCropperViewController.m in Sources */,
 				DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */,
 				D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */,
@@ -1223,7 +1229,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1252,7 +1258,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard1;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
