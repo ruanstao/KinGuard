@@ -9,6 +9,7 @@
 #import "ElectronicViewController.h"
 #import "SafeZoneModel.h"
 #import "SafeTableViewCell.h"
+#import "SafeZoneViewController.h"
 
 @interface ElectronicViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -143,6 +144,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    SafeZoneModel *safeModel = [self.safeInfo objectAtIndex:indexPath.row];
+    SafeZoneViewController *safeController = [[SafeZoneViewController alloc] init];
+    safeController.safeModel = safeModel;
+    safeController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:safeController animated:YES];
 }
 
 - (void)addSafeZone:(id)sender

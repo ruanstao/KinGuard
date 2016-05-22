@@ -52,6 +52,7 @@
 		D57E97841CE38D52002089F8 /* MemberListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D57E97831CE38D52002089F8 /* MemberListCell.xib */; };
 		D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E97861CE39721002089F8 /* GuarderInfo.m */; };
 		D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */; };
+		D594387F1CF1E9E100AD5170 /* SafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D594387E1CF1E9E100AD5170 /* SafeZoneViewController.m */; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
 		DA063B741CD9C8FD00524689 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA063B731CD9C8FD00524689 /* LoginViewController.m */; };
@@ -190,6 +191,8 @@
 		D58EABF71CDF9B3900AECB3B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D58EABF91CDF9B5100AECB3B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D58EABFB1CDF9B8C00AECB3B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		D594387D1CF1E9E100AD5170 /* SafeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeZoneViewController.h; sourceTree = "<group>"; };
+		D594387E1CF1E9E100AD5170 /* SafeZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeZoneViewController.m; sourceTree = "<group>"; };
 		D5A379041CDA442600827F16 /* ForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -534,6 +537,8 @@
 			children = (
 				D57200A51CEB769A001FD02F /* ElectronicViewController.h */,
 				D57200A61CEB769A001FD02F /* ElectronicViewController.m */,
+				D594387D1CF1E9E100AD5170 /* SafeZoneViewController.h */,
+				D594387E1CF1E9E100AD5170 /* SafeZoneViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -910,7 +915,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = QZL59SN5K2;
+						DevelopmentTeam = 8MUA9S3748;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1052,6 +1057,7 @@
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
 				DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */,
 				D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */,
+				D594387F1CF1E9E100AD5170 /* SafeZoneViewController.m in Sources */,
 				DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */,
 				D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */,
 				D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */,
@@ -1229,7 +1235,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1258,7 +1264,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
