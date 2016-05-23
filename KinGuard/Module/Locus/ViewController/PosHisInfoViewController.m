@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initUI];
-    [self requestData:[NSDate date]];
+    [self requestData:[NSDate dateWithTimeIntervalSinceNow:-3600*24]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,15 +73,36 @@
         [self.mapView removeAnnotation:obj];
     }];
     CLLocationCoordinate2D lineCoords[self.locationArray.count];
-    
+    MAMapPoint mapPoints[self.locationArray.count];
+    MAMapPoint range_X; //X轴范围，x最小，y最大
+    MAMapPoint range_Y; //Y轴范围，x最小，y最大
     for (int i = 0; i < self.locationArray.count;i++ ) {
         LocationInfo *info = self.locationArray[i];
         MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
-        //        pointAnno.title = self.currentLocation.addr;
-        //        pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:10];
+
         CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(info.latitude, info.longitude);
         pointAnno.coordinate = coord;
         lineCoords[i] = coord;
+        MAMapPoint pp = MAMapPointForCoordinate(coord);
+        mapPoints[i] = pp;
+        //算这些点的范围
+        if (i == 0) {
+            range_X = MAMapPointMake(mapPoints[0].x, mapPoints[0].x);
+            range_Y = MAMapPointMake(mapPoints[0].y, mapPoints[0].y);
+        }else {
+            if (mapPoints[i].x < range_X.x) {
+                range_X.x = mapPoints[i].x;
+            }
+            if (mapPoints[i].x > range_X.y) {
+                range_X.y = mapPoints[i].x;
+            }
+            if (mapPoints[i].y < range_Y.x) {
+                range_Y.x = mapPoints[i].y;
+            }
+            if (mapPoints[i].y > range_Y.y) {
+                range_Y.y = mapPoints[i].y;
+            }
+        }
         [self.mapView addAnnotation:pointAnno];
         
     }
@@ -90,7 +111,15 @@
     MAPolyline *commonPolyline = [MAPolyline polylineWithCoordinates:lineCoords count:self.locationArray.count];
     //在地图上添加折线对象
     [_mapView addOverlay: commonPolyline];
-    self.mapView.region = MACoordinateRegionMakeWithDistance( lineCoords[0], 100, 100);
+
+//    CLLocationDistance maxDistance = MAMetersBetweenMapPoints(MAMapPointMake(range_X.x,range_Y.x),MAMapPointMake(range_X.y,range_Y.y));
+    CLLocationDistance distance_X = MAMetersBetweenMapPoints(MAMapPointMake(range_X.x,range_Y.x),MAMapPointMake(range_X.y,range_Y.x));
+    CLLocationDistance distance_Y = MAMetersBetweenMapPoints(MAMapPointMake(range_X.x,range_Y.x),MAMapPointMake(range_X.x,range_Y.y));
+    CLLocationCoordinate2D middle = MACoordinateForMapPoint(MAMapPointMake((range_X.x + range_X.y) / 2, (range_Y.x + range_Y.y) / 2));
+    self.mapView.region = MACoordinateRegionMakeWithDistance( middle, distance_X * 3 / 2  , distance_Y * 3 / 2);
+    [self.mapView setCenterCoordinate:middle animated:YES];
+    
+    
     //    MAMetersBetweenMapPoints
     //    MACoordinateRegionMake(CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude), MACoordinateSpanMake(0.1, 0.1));
     //    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude) animated:YES];
@@ -115,7 +144,7 @@
     {
         MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:overlay];
         
-        polylineRenderer.lineWidth = 4.f;
+        polylineRenderer.lineWidth = 3.f;
         polylineRenderer.strokeColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.6];
         polylineRenderer.lineJoin = kCGLineJoinRound;//连接类型
         polylineRenderer.lineCap = kCGLineCapRound;//端点类型
