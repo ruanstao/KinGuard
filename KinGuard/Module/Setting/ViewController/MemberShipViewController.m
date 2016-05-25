@@ -191,6 +191,24 @@
 }
 
 - (IBAction)bottomAction:(UIButton *)sender {
+    
+    if ([sender.titleLabel.text isEqualToString:@"确定"]) {
+        [JJSUtil showHUDWithWaitingMessage:nil];
+        [[KinDeviceApi sharedKinDevice] setRelationshipWithPid:@"" withRelationship:self.labMemerShip.text success:^(NSDictionary *data) {
+            [JJSUtil hideHUD];
+            [JJSUtil showHUDWithMessage:@"关系设定成功" autoHide:YES];
+            
+        } fail:^(NSString *error) {
+            [JJSUtil hideHUD];
+            [JJSUtil showHUDWithMessage:error autoHide:YES];
+        }];
+    }else{
+        UIAlertView *dialog = [[UIAlertView alloc] initWithTitle:@"其他关系" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+        [dialog setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        [[dialog textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeDefault];
+        dialog.tag = 2;
+        [dialog show];
+    }
 }
 
 /*
