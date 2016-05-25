@@ -35,6 +35,8 @@
 		D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54920FD1CE0C42F00B1249C /* UIKit.framework */; };
 		D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D539D8C61CDE5BF800FF36C0 /* libiconv.tbd */; };
 		D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54921041CE0CB4600B1249C /* XDScaningViewController.m */; };
+		D54B7BE61CF5E9F300503D51 /* MemberShipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54B7BE41CF5E9F300503D51 /* MemberShipViewController.m */; };
+		D54B7BE71CF5E9F300503D51 /* MemberShipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54B7BE51CF5E9F300503D51 /* MemberShipViewController.xib */; };
 		D551C8961CE8C7FE00D23FAC /* AccountSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */; };
 		D551C89A1CE8CCA700D23FAC /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C8991CE8CCA700D23FAC /* VPImageCropperViewController.m */; };
 		D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C89C1CE8D02800D23FAC /* AccountInfo.m */; };
@@ -158,6 +160,9 @@
 		D54920FD1CE0C42F00B1249C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D54921031CE0CB4600B1249C /* XDScaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDScaningViewController.h; sourceTree = "<group>"; };
 		D54921041CE0CB4600B1249C /* XDScaningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDScaningViewController.m; sourceTree = "<group>"; };
+		D54B7BE31CF5E9F300503D51 /* MemberShipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberShipViewController.h; sourceTree = "<group>"; };
+		D54B7BE41CF5E9F300503D51 /* MemberShipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberShipViewController.m; sourceTree = "<group>"; };
+		D54B7BE51CF5E9F300503D51 /* MemberShipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberShipViewController.xib; sourceTree = "<group>"; };
 		D551C8941CE8C7FE00D23FAC /* AccountSafeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSafeViewController.h; sourceTree = "<group>"; };
 		D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSafeViewController.m; sourceTree = "<group>"; };
 		D551C8981CE8CCA700D23FAC /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
@@ -408,6 +413,9 @@
 			children = (
 				D538FEBD1CE4DE9D002D60EB /* SettingViewController.h */,
 				D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */,
+				D54B7BE31CF5E9F300503D51 /* MemberShipViewController.h */,
+				D54B7BE41CF5E9F300503D51 /* MemberShipViewController.m */,
+				D54B7BE51CF5E9F300503D51 /* MemberShipViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -971,6 +979,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D54B7BE71CF5E9F300503D51 /* MemberShipViewController.xib in Resources */,
 				622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */,
 				622219031CD10C3C00A47434 /* Assets.xcassets in Resources */,
 				D57200AF1CEB7C69001FD02F /* SafeTableViewCell.xib in Resources */,
@@ -1082,6 +1091,7 @@
 				D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */,
 				D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */,
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
+				D54B7BE61CF5E9F300503D51 /* MemberShipViewController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
 				D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */,
 				D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "DeviceInfo.h"
+#import "MemberShipViewController.h"
 
 @interface SettingViewController ()
 
@@ -84,6 +85,24 @@
         NSLog(@"%@",error);
     }];
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSLog(@"%d",indexPath.row);
+    switch (indexPath.row) {
+        case 1:
+        {
+            //关系设置
+            MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+            [self.navigationController pushViewController:memberController animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

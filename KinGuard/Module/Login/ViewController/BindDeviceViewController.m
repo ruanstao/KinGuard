@@ -10,6 +10,7 @@
 #import "XDScaningViewController.h"
 #import "UIImage+IAnime.h"
 #import "FollowViewController.h"
+#import "MemberListViewController.h"
 
 @interface BindDeviceViewController ()<UIAlertViewDelegate>
 /**
@@ -149,7 +150,8 @@
         }else{
             [JJSUtil showHUDWithMessage:@"绑定成功" autoHide:YES];
             //跳转到关系设定页面
-            
+            MemberListViewController *memberController = [[MemberListViewController alloc] initWithNibName:@"MemberListViewController" bundle:nil];
+            [self.navigationController pushViewController:memberController animated:YES];
         }
     } fail:^(NSString *error) {
         [JJSUtil hideHUD];
