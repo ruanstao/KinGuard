@@ -21,6 +21,13 @@
 		6242E92D1CE0C7DB00888475 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E92C1CE0C7DB00888475 /* DeviceInfo.m */; };
 		6242E9301CE0CF7E00888475 /* RtOutputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E92F1CE0CF7E00888475 /* RtOutputView.m */; };
 		6242E9361CE0E3C000888475 /* LocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6242E9351CE0E3C000888475 /* LocationInfo.m */; };
+		6255BEF71CF5F3A6006E6C18 /* WHUCalendarCal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEE91CF5F3A6006E6C18 /* WHUCalendarCal.m */; };
+		6255BEF81CF5F3A6006E6C18 /* WHUCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEEB1CF5F3A6006E6C18 /* WHUCalendarCell.m */; };
+		6255BEF91CF5F3A6006E6C18 /* WHUCalendarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEED1CF5F3A6006E6C18 /* WHUCalendarFlowLayout.m */; };
+		6255BEFA1CF5F3A6006E6C18 /* WHUCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEEF1CF5F3A6006E6C18 /* WHUCalendarItem.m */; };
+		6255BEFB1CF5F3A6006E6C18 /* WHUCalendarPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEF21CF5F3A6006E6C18 /* WHUCalendarPopView.m */; };
+		6255BEFC1CF5F3A6006E6C18 /* WHUCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEF41CF5F3A6006E6C18 /* WHUCalendarView.m */; };
+		6255BEFD1CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6255BEF61CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m */; };
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
 		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
@@ -136,6 +143,21 @@
 		6242E92F1CE0CF7E00888475 /* RtOutputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RtOutputView.m; sourceTree = "<group>"; };
 		6242E9341CE0E3C000888475 /* LocationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInfo.h; sourceTree = "<group>"; };
 		6242E9351CE0E3C000888475 /* LocationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInfo.m; sourceTree = "<group>"; };
+		6255BEE81CF5F3A6006E6C18 /* WHUCalendarCal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarCal.h; sourceTree = "<group>"; };
+		6255BEE91CF5F3A6006E6C18 /* WHUCalendarCal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarCal.m; sourceTree = "<group>"; };
+		6255BEEA1CF5F3A6006E6C18 /* WHUCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarCell.h; sourceTree = "<group>"; };
+		6255BEEB1CF5F3A6006E6C18 /* WHUCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarCell.m; sourceTree = "<group>"; };
+		6255BEEC1CF5F3A6006E6C18 /* WHUCalendarFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarFlowLayout.h; sourceTree = "<group>"; };
+		6255BEED1CF5F3A6006E6C18 /* WHUCalendarFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarFlowLayout.m; sourceTree = "<group>"; };
+		6255BEEE1CF5F3A6006E6C18 /* WHUCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarItem.h; sourceTree = "<group>"; };
+		6255BEEF1CF5F3A6006E6C18 /* WHUCalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarItem.m; sourceTree = "<group>"; };
+		6255BEF01CF5F3A6006E6C18 /* WHUCalendarMarcro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarMarcro.h; sourceTree = "<group>"; };
+		6255BEF11CF5F3A6006E6C18 /* WHUCalendarPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarPopView.h; sourceTree = "<group>"; };
+		6255BEF21CF5F3A6006E6C18 /* WHUCalendarPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarPopView.m; sourceTree = "<group>"; };
+		6255BEF31CF5F3A6006E6C18 /* WHUCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarView.h; sourceTree = "<group>"; };
+		6255BEF41CF5F3A6006E6C18 /* WHUCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarView.m; sourceTree = "<group>"; };
+		6255BEF51CF5F3A6006E6C18 /* WHUCalendarYMSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUCalendarYMSelectView.h; sourceTree = "<group>"; };
+		6255BEF61CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUCalendarYMSelectView.m; sourceTree = "<group>"; };
 		628759DB1CD11EBE00CD92A5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		62CE4E291CE23D92007551E4 /* DeviceAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceAnnotationView.h; sourceTree = "<group>"; };
@@ -376,6 +398,28 @@
 				6222191D1CD10C3C00A47434 /* Info.plist */,
 			);
 			path = KinGuardUITests;
+			sourceTree = "<group>";
+		};
+		6255BEE71CF5F3A6006E6C18 /* WHUCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				6255BEE81CF5F3A6006E6C18 /* WHUCalendarCal.h */,
+				6255BEE91CF5F3A6006E6C18 /* WHUCalendarCal.m */,
+				6255BEEA1CF5F3A6006E6C18 /* WHUCalendarCell.h */,
+				6255BEEB1CF5F3A6006E6C18 /* WHUCalendarCell.m */,
+				6255BEEC1CF5F3A6006E6C18 /* WHUCalendarFlowLayout.h */,
+				6255BEED1CF5F3A6006E6C18 /* WHUCalendarFlowLayout.m */,
+				6255BEEE1CF5F3A6006E6C18 /* WHUCalendarItem.h */,
+				6255BEEF1CF5F3A6006E6C18 /* WHUCalendarItem.m */,
+				6255BEF01CF5F3A6006E6C18 /* WHUCalendarMarcro.h */,
+				6255BEF11CF5F3A6006E6C18 /* WHUCalendarPopView.h */,
+				6255BEF21CF5F3A6006E6C18 /* WHUCalendarPopView.m */,
+				6255BEF31CF5F3A6006E6C18 /* WHUCalendarView.h */,
+				6255BEF41CF5F3A6006E6C18 /* WHUCalendarView.m */,
+				6255BEF51CF5F3A6006E6C18 /* WHUCalendarYMSelectView.h */,
+				6255BEF61CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m */,
+			);
+			path = WHUCalendar;
 			sourceTree = "<group>";
 		};
 		D538FEB81CE4DE8A002D60EB /* Setting */ = {
@@ -727,6 +771,7 @@
 		DA8860951CD1B5E4009C6D56 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				6255BEE71CF5F3A6006E6C18 /* WHUCalendar */,
 				D551C8971CE8CCA700D23FAC /* VPImageCropper */,
 				DA87685C1CDAE7BD0072FC50 /* KinApi */,
 			);
@@ -1067,6 +1112,7 @@
 				DA063B9A1CD9E06B00524689 /* LocusViewController.m in Sources */,
 				D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */,
 				D5E518CD1CF4A72700BFB49D /* SafeDetailTableViewCell.m in Sources */,
+				6255BEFC1CF5F3A6006E6C18 /* WHUCalendarView.m in Sources */,
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
@@ -1080,17 +1126,23 @@
 				D594387F1CF1E9E100AD5170 /* SafeZoneViewController.m in Sources */,
 				DA063B821CD9C98D00524689 /* UIView+Runtime.m in Sources */,
 				D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */,
+				6255BEF91CF5F3A6006E6C18 /* WHUCalendarFlowLayout.m in Sources */,
+				6255BEFA1CF5F3A6006E6C18 /* WHUCalendarItem.m in Sources */,
 				D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */,
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
 				D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */,
 				D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */,
 				D57200AE1CEB7C69001FD02F /* SafeTableViewCell.m in Sources */,
+				6255BEF81CF5F3A6006E6C18 /* WHUCalendarCell.m in Sources */,
 				DA063B891CD9C9CB00524689 /* KinViewController.m in Sources */,
 				D5E518C91CF4A08400BFB49D /* ElectronicVM.m in Sources */,
 				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
+				6255BEFD1CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m in Sources */,
+				6255BEF71CF5F3A6006E6C18 /* WHUCalendarCal.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
 				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
+				6255BEFB1CF5F3A6006E6C18 /* WHUCalendarPopView.m in Sources */,
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
 				DA063B851CD9C98D00524689 /* TransparentView.m in Sources */,
 				62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */,
@@ -1256,7 +1308,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1285,7 +1337,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -271,11 +271,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uba-YW-yVq">
                                 <rect key="frame" x="20" y="381" width="50" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <inset key="titleEdgeInsets" minX="-16" minY="27" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="12" minY="-8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="北斗定位" image="arrow.png">
+                                <inset key="titleEdgeInsets" minX="-30" minY="27" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="15"/>
+                                <state key="normal" title="北斗定位" image="location_1">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="location_2"/>
+                                <state key="highlighted" image="location_2"/>
                                 <connections>
                                     <action selector="beiDouDingWei:" destination="Wpg-KV-NsK" eventType="touchUpInside" id="yzx-uk-Xhn"/>
                                 </connections>
@@ -283,11 +285,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-sl-g3P" userLabel="紧急追踪">
                                 <rect key="frame" x="20" y="421" width="50" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <inset key="titleEdgeInsets" minX="-16" minY="27" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="12" minY="-8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="紧急追踪" image="arrow.png">
+                                <inset key="titleEdgeInsets" minX="-30" minY="27" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="13" minY="5" maxX="13" maxY="11"/>
+                                <state key="normal" title="紧急追踪" image="urgent_location_1">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="urgent_location_2"/>
+                                <state key="highlighted" image="urgent_location_2"/>
                                 <connections>
                                     <action selector="jinJiZhuiZong:" destination="Wpg-KV-NsK" eventType="touchUpInside" id="iHF-fl-Lqs"/>
                                 </connections>
@@ -299,11 +303,13 @@
                                     <constraint firstAttribute="height" constant="40" id="mKY-3d-o6I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <inset key="titleEdgeInsets" minX="-16" minY="27" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="12" minY="-8" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="远程监护" image="arrow.png">
+                                <inset key="titleEdgeInsets" minX="-30" minY="27" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="13" minY="0.0" maxX="13" maxY="15"/>
+                                <state key="normal" title="远程监护" image="listen_1">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" image="listen_2"/>
+                                <state key="highlighted" image="listen_2"/>
                                 <connections>
                                     <action selector="yuanChenJianHu:" destination="Wpg-KV-NsK" eventType="touchUpInside" id="78j-KY-lx1"/>
                                 </connections>
@@ -1944,6 +1950,10 @@
         <image name="icon_60" width="60" height="60"/>
         <image name="icon_light" width="80" height="80"/>
         <image name="icon_pic" width="80" height="80"/>
+        <image name="listen_1" width="33" height="33"/>
+        <image name="listen_2" width="33" height="33"/>
+        <image name="location_1" width="33" height="33"/>
+        <image name="location_2" width="33" height="33"/>
         <image name="map" width="32" height="32"/>
         <image name="map_on" width="32" height="32"/>
         <image name="message" width="32" height="32"/>
@@ -1953,6 +1963,8 @@
         <image name="street" width="32" height="32"/>
         <image name="street_on" width="32" height="32"/>
         <image name="street_w" width="15" height="40"/>
+        <image name="urgent_location_1" width="33" height="33"/>
+        <image name="urgent_location_2" width="33" height="33"/>
         <image name="二维码框__" width="351" height="351"/>
     </resources>
 </document>
