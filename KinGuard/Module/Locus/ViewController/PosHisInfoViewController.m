@@ -206,7 +206,7 @@
     if (self.currentLocationIndex == [self.locationArray count] )
     {
         self.currentLocationIndex = 0;
-        [self actionPlayAndStop];
+//        [self actionPlayAndStop];
         return;
     }
     LocationInfo *info = self.locationArray[self.currentLocationIndex];
@@ -215,15 +215,14 @@
     MAMapPoint nextPoint = MAMapPointForCoordinate(nextCoord);
     MAMapPoint currentPoint = MAMapPointForCoordinate(self.personLocation.coordinate);
     CLLocationDistance distance = MAMetersBetweenMapPoints(currentPoint,nextPoint);
+    if (distance < 1) {
+        self.currentLocationIndex++;
+        [self animateToNextCoordinate];
+        return;
+    }
     CLLocationDistance distance_X = MAMetersBetweenMapPoints(MAMapPointMake(currentPoint.x,currentPoint.y),MAMapPointMake(nextPoint.x,currentPoint.y));
     CLLocationDistance distance_Y = MAMetersBetweenMapPoints(MAMapPointMake(currentPoint.x,currentPoint.y),MAMapPointMake(currentPoint.x,nextPoint.y));
     CLLocationCoordinate2D middle = MACoordinateForMapPoint(MAMapPointMake((currentPoint.x +nextPoint.x) / 2, (currentPoint.y + nextPoint.y) / 2));
-    if (distance_X < 10) {
-        distance_X = 10;
-    }
-    if (distance_Y < 10) {
-        distance_Y = 10;
-    }
 
     [self.mapView setRegion:MACoordinateRegionMakeWithDistance( middle, distance_X * 3 / 2  , distance_Y * 3 / 2) animated:YES];
     [self.mapView setCenterCoordinate:middle animated:YES];
@@ -241,5 +240,7 @@
 
 }
 
+
+#pragma mark - 日历
 
 @end

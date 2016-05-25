@@ -203,38 +203,51 @@
 
 #pragma mark - 北斗定位
 - (IBAction)beiDouDingWei:(id)sender {
-    DeviceInfo *info = self.info[self.showIndex];
-    [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-        [self refreshUI];
-    } fail:^(NSString *error) {
-        NSLog(@"%@",error);
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            DeviceInfo *info = self.info[self.showIndex];
+            [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
+                NSLog(@"%@",data);
+                [self refreshUI];
+            } fail:^(NSString *error) {
+                NSLog(@"%@",error);
+            }];
+        });
+    });
+
 }
 
 #pragma mark - 紧急追踪
 - (IBAction)jinJiZhuiZong:(id)sender {
-    
-    DeviceInfo *info = self.info[self.showIndex];
-    [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-        [self refreshUI];
-    } fail:^(NSString *error) {
-        NSLog(@"%@",error);
-        
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            DeviceInfo *info = self.info[self.showIndex];
+            [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
+                NSLog(@"%@",data);
+                [self refreshUI];
+            } fail:^(NSString *error) {
+                NSLog(@"%@",error);
+                
+            }];
+        });
+    });
+
 }
 
 #pragma mark - 远程监护
 - (IBAction)yuanChenJianHu:(id)sender {
-    DeviceInfo *info = self.info[self.showIndex];
-    [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-        [self refreshUI];
-    } fail:^(NSString *error) {
-        NSLog(@"%@",error);
-        
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            DeviceInfo *info = self.info[self.showIndex];
+            [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
+                NSLog(@"%@",data);
+                [self refreshUI];
+            } fail:^(NSString *error) {
+                NSLog(@"%@",error);
+                
+            }];
+        });
+    });
 }
 
 - (IBAction)rightBarButtonClick:(id)sender {
