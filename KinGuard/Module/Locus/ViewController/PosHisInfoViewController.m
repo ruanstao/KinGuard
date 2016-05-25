@@ -16,6 +16,14 @@
 
 @property (nonatomic,strong) NSArray *locationArray;
 
+//@property (nonatomic, strong) Record *currentRecord;
+
+@property (nonatomic, strong) MAPointAnnotation *personLocation;
+
+@property (nonatomic, assign) double averageSpeed;
+
+@property (nonatomic, assign) NSInteger currentLocationIndex;
+
 @end
 
 @implementation PosHisInfoViewController
@@ -119,15 +127,31 @@
     self.mapView.region = MACoordinateRegionMakeWithDistance( middle, distance_X * 3 / 2  , distance_Y * 3 / 2);
     [self.mapView setCenterCoordinate:middle animated:YES];
     
-    
-    //    MAMetersBetweenMapPoints
-    //    MACoordinateRegionMake(CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude), MACoordinateSpanMake(0.1, 0.1));
-    //    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude) animated:YES];
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+
+    [self actionPlayAndStop];
+
 }
 #pragma mark - <MAMapViewDelegate>
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
+    if([annotation isEqual:self.personLocation]) {
+
+        static NSString *annotationIdentifier = @"personLcoationIdentifier";
+
+        MAAnnotationView *poiAnnotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+        if (poiAnnotationView == nil)
+        {
+            poiAnnotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+        }
+
+        poiAnnotationView.image = [UIImage imageNamed:@"brother"];
+        poiAnnotationView.canShowCallout = NO;
+
+        return poiAnnotationView;
+    }
+
     NSString *reuseIndetifier = @"PosHisInfoAnnotationView";
     MAAnnotationView *annotaionView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
     if (annotaionView == nil) {
@@ -153,4 +177,69 @@
     }
     return nil;
 }
+
+#pragma mark - Action
+
+- (void)actionPlayAndStop
+{
+
+        if (self.personLocation == nil)
+        {
+            LocationInfo *info = self.locationArray[0];
+            self.personLocation = [[MAPointAnnotation alloc] init];
+//            self.personLocation.title = @"AMap";
+            self.personLocation.coordinate = CLLocationCoordinate2DMake(info.latitude, info.longitude);
+
+            [self.mapView addAnnotation:self.personLocation];
+        }
+        self.averageSpeed = 1;
+        [self animateToNextCoordinate];
+
+}
+
+- (void)animateToNextCoordinate
+{
+    if (self.personLocation == nil)
+    {
+        return;
+    }
+    if (self.currentLocationIndex == [self.locationArray count] )
+    {
+        self.currentLocationIndex = 0;
+        [self actionPlayAndStop];
+        return;
+    }
+    LocationInfo *info = self.locationArray[self.currentLocationIndex];
+    CLLocationCoordinate2D nextCoord = CLLocationCoordinate2DMake(info.latitude, info.longitude);
+//    CLLocationCoordinate2D preCoord = self.currentLocationIndex == 0 ? nextCoord : self.myLocation.coordinate;
+    MAMapPoint nextPoint = MAMapPointForCoordinate(nextCoord);
+    MAMapPoint currentPoint = MAMapPointForCoordinate(self.personLocation.coordinate);
+    CLLocationDistance distance = MAMetersBetweenMapPoints(currentPoint,nextPoint);
+    CLLocationDistance distance_X = MAMetersBetweenMapPoints(MAMapPointMake(currentPoint.x,currentPoint.y),MAMapPointMake(nextPoint.x,currentPoint.y));
+    CLLocationDistance distance_Y = MAMetersBetweenMapPoints(MAMapPointMake(currentPoint.x,currentPoint.y),MAMapPointMake(currentPoint.x,nextPoint.y));
+    CLLocationCoordinate2D middle = MACoordinateForMapPoint(MAMapPointMake((currentPoint.x +nextPoint.x) / 2, (currentPoint.y + nextPoint.y) / 2));
+    if (distance_X < 10) {
+        distance_X = 10;
+    }
+    if (distance_Y < 10) {
+        distance_Y = 10;
+    }
+
+    [self.mapView setRegion:MACoordinateRegionMakeWithDistance( middle, distance_X * 3 / 2  , distance_Y * 3 / 2) animated:YES];
+    [self.mapView setCenterCoordinate:middle animated:YES];
+
+//    NSTimeInterval duration = distance / (self.averageSpeed * 1000) ;
+    [UIView animateWithDuration:2
+                     animations:^{
+                         self.personLocation.coordinate = nextCoord;}
+                     completion:^(BOOL finished){
+                         self.currentLocationIndex++;
+                         if (finished)
+                         {
+                             [self animateToNextCoordinate];
+                         }}];
+
+}
+
+
 @end
