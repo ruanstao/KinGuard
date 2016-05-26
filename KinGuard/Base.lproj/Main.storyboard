@@ -390,8 +390,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAm-hi-4qI" customClass="MAMapView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAm-hi-4qI" customClass="MAMapView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -400,11 +400,20 @@
                             <constraint firstItem="NAm-hi-4qI" firstAttribute="top" secondItem="EeA-70-zYP" secondAttribute="bottom" id="S1F-5W-4Gr"/>
                             <constraint firstItem="NAm-hi-4qI" firstAttribute="leading" secondItem="caD-HU-NMc" secondAttribute="leading" id="SJH-TP-ffe"/>
                             <constraint firstItem="7AN-yc-rOM" firstAttribute="top" secondItem="NAm-hi-4qI" secondAttribute="bottom" id="aSG-hg-OKv"/>
+                            <constraint firstItem="NAm-hi-4qI" firstAttribute="top" secondItem="EeA-70-zYP" secondAttribute="bottom" id="hwn-6q-eW0"/>
                             <constraint firstAttribute="trailing" secondItem="NAm-hi-4qI" secondAttribute="trailing" id="rFI-v2-NAQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S1F-5W-4Gr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="历史轨迹" id="aDH-4Z-xOG">
                         <barButtonItem key="leftBarButtonItem" title="返回" id="GC4-ij-G1h">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ac9-48-FDd" userLabel="日历">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
