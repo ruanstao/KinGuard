@@ -9,6 +9,7 @@
 #import "PosHisInfoViewController.h"
 #import "LocationInfo.h"
 #import <MAMapKit/MAMapKit.h>
+#import "WHUCalendarView.h"
 
 @interface PosHisInfoViewController()<MAMapViewDelegate>
 
@@ -24,6 +25,8 @@
 
 @property (nonatomic, assign) NSInteger currentLocationIndex;
 
+@property (nonatomic, strong) WHUCalendarView *calView;
+
 @end
 
 @implementation PosHisInfoViewController
@@ -31,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initNavi];
     [self initUI];
     [self requestData:[NSDate dateWithTimeIntervalSinceNow:-3600*24]];
 }
@@ -38,6 +42,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initNavi
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"日历" style:UIBarButtonItemStylePlain target:self action:@selector(showCalendarView)];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+}
+
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)initUI
@@ -242,5 +259,44 @@
 
 
 #pragma mark - 日历
+
+- (void)showCalendarView
+{
+     self.calView=[[WHUCalendarView alloc] init];
+    self.calView.translatesAutoresizingMaskIntoConstraints=NO;
+    CGSize s=[ self.calView sizeThatFits:CGSizeMake(mScreenWidth, FLT_MAX)];
+    typeof(self) weakSelf = self;
+    _calView.onDateSelectBlk=^(NSDate* date){
+        typeof(weakSelf) strongSelf = weakSelf;
+        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC));
+        dispatch_after(time, dispatch_get_main_queue(), ^{
+            [strongSelf dismiss];
+        });
+    };
+    [self.view addSubview:self.calView];
+}
+
+-(void)show{
+//    [self setNeedsLayout];
+//    [self layoutIfNeeded];
+//    self.backgroundColor=[[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+//    self.hidden=NO;
+//    _bottomGapCts.constant=0;
+//    [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseIn animations:^{
+//        [self setNeedsLayout];
+//        [self layoutIfNeeded];
+//    } completion:nil];
+}
+
+
+-(void)dismiss{
+//    _bottomGapCts.constant=_calHeight;
+//    [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.8 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//        [self setNeedsLayout];
+//        [self layoutIfNeeded];
+//    } completion:^(BOOL b){
+//        self.hidden=YES;
+//    }];
+}
 
 @end
