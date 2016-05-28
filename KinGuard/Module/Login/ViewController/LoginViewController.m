@@ -43,7 +43,7 @@
     }
     [[KinGuartApi sharedKinGuard] loginWithMobile:phone withPassword:pwd success:^(NSDictionary *data) {
         [JJSUtil hideHUD];
-        [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
+//        [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
         
         //存储登录信息
         UserModel *model = [[UserModel alloc] init];

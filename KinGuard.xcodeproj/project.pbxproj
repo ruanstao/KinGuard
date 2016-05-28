@@ -50,8 +50,6 @@
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
 		D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD9481CE23D100008F54B /* MemberListViewController.m */; };
-		D572009B1CEB6B2A001FD02F /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */; };
-		D572009C1CEB6B31001FD02F /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D572009E1CEB6E78001FD02F /* AboutViewController.m */; };
 		D57200A71CEB769A001FD02F /* ElectronicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D57200A61CEB769A001FD02F /* ElectronicViewController.m */; };
 		D57200AA1CEB78E3001FD02F /* SafeZoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D57200A91CEB78E3001FD02F /* SafeZoneModel.m */; };
@@ -62,6 +60,8 @@
 		D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E97861CE39721002089F8 /* GuarderInfo.m */; };
 		D58B00F21CDBA80F00A42FDF /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D58B00F11CDBA80F00A42FDF /* JKCountDownButton.m */; };
 		D594387F1CF1E9E100AD5170 /* SafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D594387E1CF1E9E100AD5170 /* SafeZoneViewController.m */; };
+		D5946E081CF96E72003E0D9A /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5946E071CF96E72003E0D9A /* StudentCardApi.framework */; };
+		D5946E091CF96E81003E0D9A /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5946E071CF96E72003E0D9A /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
 		D5E518C61CF49E0F00BFB49D /* SetSafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518C51CF49E0F00BFB49D /* SetSafeZoneViewController.m */; };
@@ -110,7 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D572009C1CEB6B31001FD02F /* StudentCardApi.framework in CopyFiles */,
+				D5946E091CF96E81003E0D9A /* StudentCardApi.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +198,6 @@
 		D55FD93D1CE221320008F54B /* FollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
 		D55FD9471CE23D100008F54B /* MemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberListViewController.h; sourceTree = "<group>"; };
 		D55FD9481CE23D100008F54B /* MemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberListViewController.m; sourceTree = "<group>"; };
-		D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
 		D572009D1CEB6E78001FD02F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D572009E1CEB6E78001FD02F /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		D57200A51CEB769A001FD02F /* ElectronicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectronicViewController.h; sourceTree = "<group>"; };
@@ -224,6 +223,7 @@
 		D58EABFB1CDF9B8C00AECB3B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D594387D1CF1E9E100AD5170 /* SafeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeZoneViewController.h; sourceTree = "<group>"; };
 		D594387E1CF1E9E100AD5170 /* SafeZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeZoneViewController.m; sourceTree = "<group>"; };
+		D5946E071CF96E72003E0D9A /* StudentCardApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StudentCardApi.framework; sourceTree = "<group>"; };
 		D5A379041CDA442600827F16 /* ForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */,
-				D572009B1CEB6B2A001FD02F /* StudentCardApi.framework in Frameworks */,
+				D5946E081CF96E72003E0D9A /* StudentCardApi.framework in Frameworks */,
 				D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */,
 				D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */,
 				D54920FA1CE0C42200B1249C /* CoreMedia.framework in Frameworks */,
@@ -763,7 +763,7 @@
 		DA87685C1CDAE7BD0072FC50 /* KinApi */ = {
 			isa = PBXGroup;
 			children = (
-				D572009A1CEB6B2A001FD02F /* StudentCardApi.framework */,
+				D5946E071CF96E72003E0D9A /* StudentCardApi.framework */,
 			);
 			path = KinApi;
 			sourceTree = "<group>";
@@ -1318,7 +1318,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1347,7 +1347,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

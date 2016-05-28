@@ -8,6 +8,13 @@
 
 #import "KinViewController.h"
 
+typedef enum :NSInteger{
+
+    FromType_Login = 0,
+    FromType_Setting = 1
+}FromType;
 @interface MemberShipViewController : KinViewController
+
+@property(nonatomic, assign) FromType type;
 
 @end

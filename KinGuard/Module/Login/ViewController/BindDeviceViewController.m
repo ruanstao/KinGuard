@@ -10,7 +10,7 @@
 #import "XDScaningViewController.h"
 #import "UIImage+IAnime.h"
 #import "FollowViewController.h"
-#import "MemberListViewController.h"
+#import "MemberShipViewController.h"
 
 @interface BindDeviceViewController ()<UIAlertViewDelegate>
 /**
@@ -35,6 +35,10 @@
  *  安全吗输入框
  */
 @property (weak, nonatomic) IBOutlet UITextField *safeCodeField;
+
+@property (nonatomic, copy) NSString *qrcode;
+@property (nonatomic, copy) NSString *pid;
+@property (nonatomic, copy) NSString *akey;
 
 @end
 
@@ -113,14 +117,17 @@
             [JJSUtil hideHUD];
             //被别人绑定之后
             if ([data objectForKey:@"state"] && [[data objectForKey:@"state"] integerValue] == 2) {
-                
+                self.qrcode = qr_code;
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否关注设备？" message:nil delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+                [alertView setTag:1];
                 [alertView show];
                 
             }else{
                 [JJSUtil showHUDWithMessage:@"绑定成功" autoHide:YES];
                 //跳转到关系设定页面
-                
+                MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+                memberController.type = FromType_Login;
+                [self.navigationController pushViewController:memberController animated:YES];
             }
         } fail:^(NSString *error) {
             [JJSUtil hideHUD];
@@ -143,14 +150,17 @@
         [JJSUtil hideHUD];
         //被别人绑定之后
         if ([data objectForKey:@"state"] && [[data objectForKey:@"state"] integerValue] == 2) {
-            
+            self.pid = pid;
+            self.akey = savecode;
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否关注设备？" message:nil delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+            [alertView setTag:2];
             [alertView show];
             
         }else{
             [JJSUtil showHUDWithMessage:@"绑定成功" autoHide:YES];
             //跳转到关系设定页面
-            MemberListViewController *memberController = [[MemberListViewController alloc] initWithNibName:@"MemberListViewController" bundle:nil];
+            MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+            memberController.type = FromType_Login;
             [self.navigationController pushViewController:memberController animated:YES];
         }
     } fail:^(NSString *error) {
@@ -163,8 +173,17 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex) {
+        
         //跳转关注页面
         FollowViewController *followController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"FollowVC"];
+        if (alertView.tag == 1) {
+            followController.type = BindType_QRCode;
+            followController.qrcode = self.qrcode;
+        }else{
+            followController.type = BindType_Pid;
+            followController.pid = self.pid;
+            followController.akey = self.akey;
+        }
         [self.navigationController pushViewController:followController animated:YES];
     }
 }
