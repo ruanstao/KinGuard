@@ -22,6 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [MAMapServices sharedServices].apiKey = GaoDeDiTu_Key;
     //注册服务器识别key
     [KinGuartApi sharedKinGuard].appKey = KinGuardAppKey;

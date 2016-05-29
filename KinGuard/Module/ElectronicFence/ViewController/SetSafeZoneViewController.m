@@ -80,7 +80,14 @@ typedef enum: NSInteger{
     NSArray *rowArray = [self.dataSource objectAtIndex:indexPath.section];
     NSDictionary *body = [rowArray objectAtIndex:indexPath.row];
     [cell.labTitle setText:[body objectForKey:@"title"]];
-    [cell.labContent setText:[body objectForKey:@"value"]];
+    
+    if (indexPath.section == 1) {
+        NSMutableString  *a = [[NSMutableString alloc ] initWithString :[body objectForKey:@"value"]];
+        [a insertString:@":"  atIndex:a.length - 2];
+        [cell.labContent setText:a];
+    }else{
+        [cell.labContent setText:[body objectForKey:@"value"]];
+    }
     return cell;
 }
 

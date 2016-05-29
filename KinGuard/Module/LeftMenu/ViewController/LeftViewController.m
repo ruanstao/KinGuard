@@ -14,6 +14,8 @@
 #import "MemberListViewController.h"
 #import "SettingViewController.h"
 
+#define AutoSizeH [UIScreen mainScreen].bounds.size.height/736//6sp标准
+
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -76,7 +78,7 @@
     [array addObject:@(LeftType_JianKongMember)];
     [array addObject:@(LeftType_AddDevice)];
     [array addObject:@(LeftType_Setting)];
-    [array addObject:@(LeftType_Login)];
+//    [array addObject:@(LeftType_Login)];
 
     [self.tableViewContent addObject:array];
 
@@ -115,17 +117,17 @@
     LeftType type = [[[self.tableViewContent objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] integerValue];
     switch (type) {
         case LeftType_Space:{
-            return 100;
+            return 50 * AutoSizeH;
         }
         case LeftType_HeaderView:{
-            return 100;
+            return 110 * AutoSizeH;
         }
         case LeftType_JianKongLog:
         case LeftType_JianKongMember:
         case LeftType_AddDevice:
         case LeftType_Setting:
         case LeftType_Login:{
-            return 44;
+            return 75 * AutoSizeH;
         }
             break;
         default:
@@ -148,20 +150,24 @@
         switch (type) {
             case LeftType_JianKongLog:{
                 cell.title.text = @"监护日志";
+                [cell.titleImage setImage:[UIImage imageNamed:@"log_w"]];
             }
                 break;
             case LeftType_JianKongMember:{
                 cell.title.text = @"监护成员";
+                [cell.titleImage setImage:[UIImage imageNamed:@"user_w"]];
                 
             }
                 break;
             case LeftType_AddDevice:{
                 
                 cell.title.text = @"添加设备";
+                [cell.titleImage setImage:[UIImage imageNamed:@"card_w"]];
             }
                 break;
             case LeftType_Setting:{
                 cell.title.text = @"设置";
+                [cell.titleImage setImage:[UIImage imageNamed:@"settings_w"]];
             }
                 break;
             case LeftType_Login:{

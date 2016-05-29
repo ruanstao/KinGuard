@@ -63,6 +63,8 @@
     //默认选中二维码扫描
     [_codeBtn setSelected:YES];
     
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0 green:124/255.0 blue:195/255.0 alpha:1];
+    
     [self.backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 }
 
