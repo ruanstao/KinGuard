@@ -14,8 +14,11 @@
 #import "MemberListViewController.h"
 #import "SettingViewController.h"
 #import "MonitoringLogsViewController.h"
+<<<<<<< HEAD
 
 #define AutoSizeH [UIScreen mainScreen].bounds.size.height/736//6sp标准
+=======
+>>>>>>> ruanstao/master
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
