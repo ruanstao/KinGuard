@@ -184,7 +184,9 @@
 
     switch (type) {
         case LeftType_JianKongLog:{
-            MonitoringLogsViewController *monitor = [MonitoringLogsViewController creatByNib];
+//            MonitoringLogsViewController *monitor = [MonitoringLogsViewController creatByNib];
+            UINavigationController *navController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MonitoringLogsNavigationView"];
+            [self presentViewController:navController animated:YES completion:nil];
         }
             break;
         case LeftType_JianKongMember:{
@@ -194,9 +196,12 @@
         }
             break;
         case LeftType_AddDevice:{
-            BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
+//            BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
+//            bindController.fromType = TransType_FromHomePage;
+//            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:bindController];
+            UINavigationController *navController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindNavigation"];
+            BindDeviceViewController *bindController = (BindDeviceViewController *)[navController topViewController];
             bindController.fromType = TransType_FromHomePage;
-            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:bindController];
             [self presentViewController:navController animated:YES completion:nil];
         }
             break;
