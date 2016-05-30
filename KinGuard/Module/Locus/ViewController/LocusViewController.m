@@ -201,53 +201,92 @@
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 
+- (void)bulingbuling:(UIButton *)button
+{
+    button.selected = YES;
+    [UIView beginAnimations:@"buling" context:nil];
+    [UIView setAnimationRepeatCount:30];
+    [UIView setAnimationDuration:1];
+    button.imageView.alpha = 0.0;
+     button.imageView.alpha = 1;
+    [UIView commitAnimations];
+//    [UIView animateKeyframesWithDuration:1 delay:0 options:UIViewKeyframeAnimationOptionAutoreverse | UIViewKeyframeAnimationOptionRepeat animations:^{
+//        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
+//            button.imageView.alpha = 0.0;
+//        }];
+//        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.5 animations:^{
+//            NSLog(@"blingbling");
+//            button.imageView.alpha = 1;
+//        }];
+//    } completion:^(BOOL finished) {
+//    
+//    }];
+    
+}
+
+- (void)stopBuling:(UIButton*) button
+{
+    button.selected = NO;
+    
+}
 #pragma mark - 北斗定位
 - (IBAction)beiDouDingWei:(id)sender {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            DeviceInfo *info = self.info[self.showIndex];
-            [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
-                NSLog(@"%@",data);
+    [self bulingbuling:sender];
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            
+//        });
+//    });
+    DeviceInfo *info = self.info[self.showIndex];
+    [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self stopBuling:sender];
                 [self refreshUI];
-            } fail:^(NSString *error) {
-                NSLog(@"%@",error);
-            }];
+            });
         });
-    });
-
+    } fail:^(NSString *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 #pragma mark - 紧急追踪
 - (IBAction)jinJiZhuiZong:(id)sender {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            DeviceInfo *info = self.info[self.showIndex];
-            [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
-                NSLog(@"%@",data);
+ [self bulingbuling:sender];
+    DeviceInfo *info = self.info[self.showIndex];
+    [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                 [self stopBuling:sender];
                 [self refreshUI];
-            } fail:^(NSString *error) {
-                NSLog(@"%@",error);
-                
-            }];
+            });
         });
-    });
-
+    } fail:^(NSString *error) {
+        NSLog(@"%@",error);
+        
+    }];
 }
 
 #pragma mark - 远程监护
 - (IBAction)yuanChenJianHu:(id)sender {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            DeviceInfo *info = self.info[self.showIndex];
-            [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
-                NSLog(@"%@",data);
-                [self refreshUI];
-            } fail:^(NSString *error) {
-                NSLog(@"%@",error);
-                
-            }];
+     [self bulingbuling:sender];
+    DeviceInfo *info = self.info[self.showIndex];
+    [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                 [self stopBuling:sender];
+                 [self refreshUI];
+            });
         });
-    });
+       
+    } fail:^(NSString *error) {
+        NSLog(@"%@",error);
+        
+    }];
+
 }
 
 - (IBAction)rightBarButtonClick:(id)sender {

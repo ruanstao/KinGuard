@@ -394,14 +394,24 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-HJ-EOd" customClass="WHUCalendarView">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.97926931013992635" green="1" blue="0.31250863560652642" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="370" id="lkS-dm-xw2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NAm-hi-4qI" firstAttribute="top" secondItem="EeA-70-zYP" secondAttribute="bottom" id="S1F-5W-4Gr"/>
                             <constraint firstItem="NAm-hi-4qI" firstAttribute="leading" secondItem="caD-HU-NMc" secondAttribute="leading" id="SJH-TP-ffe"/>
+                            <constraint firstItem="cH3-HJ-EOd" firstAttribute="top" secondItem="EeA-70-zYP" secondAttribute="bottom" id="TgM-js-jyc"/>
+                            <constraint firstItem="cH3-HJ-EOd" firstAttribute="leading" secondItem="caD-HU-NMc" secondAttribute="leadingMargin" id="VOT-H6-DvA"/>
                             <constraint firstItem="7AN-yc-rOM" firstAttribute="top" secondItem="NAm-hi-4qI" secondAttribute="bottom" id="aSG-hg-OKv"/>
                             <constraint firstItem="NAm-hi-4qI" firstAttribute="top" secondItem="EeA-70-zYP" secondAttribute="bottom" id="hwn-6q-eW0"/>
                             <constraint firstAttribute="trailing" secondItem="NAm-hi-4qI" secondAttribute="trailing" id="rFI-v2-NAQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cH3-HJ-EOd" secondAttribute="trailing" id="zdE-23-6lQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -418,12 +428,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="calView" destination="cH3-HJ-EOd" id="XLR-Zh-AU3"/>
+                        <outlet property="calViewHeight" destination="lkS-dm-xw2" id="ioV-2J-euu"/>
                         <outlet property="mapView" destination="NAm-hi-4qI" id="QeQ-yQ-Cmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6G-XY-eUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3813" y="-672"/>
+            <point key="canvasLocation" x="3892" y="-704"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s7T-qi-8NX">
