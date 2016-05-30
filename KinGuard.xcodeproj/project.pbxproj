@@ -80,6 +80,7 @@
 		DA493C341CF0411B008F21C4 /* PosHisInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA493C331CF0411B008F21C4 /* PosHisInfoViewController.m */; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
+		DAAA956B1CFC27AE00113202 /* MonitoringLogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAA956A1CFC27AE00113202 /* MonitoringLogsViewController.m */; };
 		DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */; };
 		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -258,6 +259,8 @@
 		DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		DA8861701CD22322009C6D56 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		DAAA95691CFC27AE00113202 /* MonitoringLogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringLogsViewController.h; sourceTree = "<group>"; };
+		DAAA956A1CFC27AE00113202 /* MonitoringLogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringLogsViewController.m; sourceTree = "<group>"; };
 		DAEF09F91CD1AE20008CBDF4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DAF53AC91CDC775D0029BDC2 /* LeftHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHeaderTableViewCell.h; sourceTree = "<group>"; };
 		DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHeaderTableViewCell.m; sourceTree = "<group>"; };
@@ -781,6 +784,7 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DAAA95641CFC278F00113202 /* MonitoringLogs */,
 				D57200A01CEB75AD001FD02F /* ElectronicFence */,
 				D53B4CE61CEA039C0049F2CA /* Message */,
 				D538FEB81CE4DE8A002D60EB /* Setting */,
@@ -901,6 +905,47 @@
 			sourceTree = "<group>";
 		};
 		DA88616B1CD222CA009C6D56 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DAAA95641CFC278F00113202 /* MonitoringLogs */ = {
+			isa = PBXGroup;
+			children = (
+				DAAA95651CFC278F00113202 /* Model */,
+				DAAA95661CFC278F00113202 /* View */,
+				DAAA95671CFC278F00113202 /* ViewController */,
+				DAAA95681CFC278F00113202 /* ViewModel */,
+			);
+			path = MonitoringLogs;
+			sourceTree = "<group>";
+		};
+		DAAA95651CFC278F00113202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAAA95661CFC278F00113202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAAA95671CFC278F00113202 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAAA95691CFC27AE00113202 /* MonitoringLogsViewController.h */,
+				DAAA956A1CFC27AE00113202 /* MonitoringLogsViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAAA95681CFC278F00113202 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1140,6 +1185,7 @@
 				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
 				6255BEFD1CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m in Sources */,
 				6255BEF71CF5F3A6006E6C18 /* WHUCalendarCal.m in Sources */,
+				DAAA956B1CFC27AE00113202 /* MonitoringLogsViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
 				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
 				6255BEFB1CF5F3A6006E6C18 /* WHUCalendarPopView.m in Sources */,
@@ -1308,7 +1354,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1337,7 +1383,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -13,6 +13,7 @@
 #import "BindDeviceViewController.h"
 #import "MemberListViewController.h"
 #import "SettingViewController.h"
+#import "MonitoringLogsViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -76,7 +77,7 @@
     [array addObject:@(LeftType_JianKongMember)];
     [array addObject:@(LeftType_AddDevice)];
     [array addObject:@(LeftType_Setting)];
-    [array addObject:@(LeftType_Login)];
+//    [array addObject:@(LeftType_Login)];
 
     [self.tableViewContent addObject:array];
 
@@ -183,6 +184,7 @@
 
     switch (type) {
         case LeftType_JianKongLog:{
+            MonitoringLogsViewController *monitor = [MonitoringLogsViewController creatByNib];
         }
             break;
         case LeftType_JianKongMember:{
