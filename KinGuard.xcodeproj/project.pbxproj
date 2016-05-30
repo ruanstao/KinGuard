@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2C554E1CFBD94B0044B265 /* DateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C554C1CFBD94B0044B265 /* DateCell.m */; };
+		1A2C554F1CFBD94B0044B265 /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C554D1CFBD94B0044B265 /* DateCell.xib */; };
 		621814661CE3893200434B8A /* DeviceInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 621814651CE3893200434B8A /* DeviceInfoView.m */; };
 		621814681CE3898900434B8A /* DeviceInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 621814671CE3898900434B8A /* DeviceInfoView.xib */; };
 		622218F81CD10C3C00A47434 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 622218F71CD10C3C00A47434 /* main.m */; };
@@ -118,6 +120,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2C554B1CFBD94B0044B265 /* DateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCell.h; sourceTree = "<group>"; };
+		1A2C554C1CFBD94B0044B265 /* DateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCell.m; sourceTree = "<group>"; };
+		1A2C554D1CFBD94B0044B265 /* DateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		617CE91FC2BBD5ADF436D425 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		621814641CE3893200434B8A /* DeviceInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoView.h; sourceTree = "<group>"; };
 		621814651CE3893200434B8A /* DeviceInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoView.m; sourceTree = "<group>"; };
@@ -597,6 +602,9 @@
 				D5E518CA1CF4A72700BFB49D /* SafeDetailTableViewCell.h */,
 				D5E518CB1CF4A72700BFB49D /* SafeDetailTableViewCell.m */,
 				D5E518CC1CF4A72700BFB49D /* SafeDetailTableViewCell.xib */,
+				1A2C554B1CFBD94B0044B265 /* DateCell.h */,
+				1A2C554C1CFBD94B0044B265 /* DateCell.m */,
+				1A2C554D1CFBD94B0044B265 /* DateCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1036,6 +1044,7 @@
 				622219011CD10C3C00A47434 /* Main.storyboard in Resources */,
 				D5E518CE1CF4A72700BFB49D /* SafeDetailTableViewCell.xib in Resources */,
 				D57E97841CE38D52002089F8 /* MemberListCell.xib in Resources */,
+				1A2C554F1CFBD94B0044B265 /* DateCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,6 +1154,7 @@
 				628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */,
 				D54B7BE61CF5E9F300503D51 /* MemberShipViewController.m in Sources */,
 				622218F81CD10C3C00A47434 /* main.m in Sources */,
+				1A2C554E1CFBD94B0044B265 /* DateCell.m in Sources */,
 				D57E97871CE39721002089F8 /* GuarderInfo.m in Sources */,
 				D572009F1CEB6E78001FD02F /* AboutViewController.m in Sources */,
 				D57200AE1CEB7C69001FD02F /* SafeTableViewCell.m in Sources */,
