@@ -13,6 +13,7 @@
 #import "BindDeviceViewController.h"
 #import "MemberListViewController.h"
 #import "SettingViewController.h"
+#import "MonitoringLogsViewController.h"
 
 #define AutoSizeH [UIScreen mainScreen].bounds.size.height/736//6sp标准
 
@@ -189,6 +190,7 @@
 
     switch (type) {
         case LeftType_JianKongLog:{
+            MonitoringLogsViewController *monitor = [MonitoringLogsViewController creatByNib];
         }
             break;
         case LeftType_JianKongMember:{
