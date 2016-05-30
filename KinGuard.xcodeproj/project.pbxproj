@@ -65,6 +65,8 @@
 		D5946E091CF96E81003E0D9A /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5946E071CF96E72003E0D9A /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
+		D5DCF6211CFCB1610016B8BC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */; };
+		D5DCF6221CFCB1610016B8BC /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */; };
 		D5E518C61CF49E0F00BFB49D /* SetSafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518C51CF49E0F00BFB49D /* SetSafeZoneViewController.m */; };
 		D5E518C91CF4A08400BFB49D /* ElectronicVM.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518C81CF4A08400BFB49D /* ElectronicVM.m */; };
 		D5E518CD1CF4A72700BFB49D /* SafeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518CB1CF4A72700BFB49D /* SafeDetailTableViewCell.m */; };
@@ -231,6 +233,9 @@
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D5A379071CDA442600827F16 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		D5DCF61E1CFCB1610016B8BC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
 		D5E518C41CF49E0F00BFB49D /* SetSafeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetSafeZoneViewController.h; sourceTree = "<group>"; };
 		D5E518C51CF49E0F00BFB49D /* SetSafeZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetSafeZoneViewController.m; sourceTree = "<group>"; };
 		D5E518C71CF4A08400BFB49D /* ElectronicVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectronicVM.h; sourceTree = "<group>"; };
@@ -466,6 +471,9 @@
 				D54B7BE31CF5E9F300503D51 /* MemberShipViewController.h */,
 				D54B7BE41CF5E9F300503D51 /* MemberShipViewController.m */,
 				D54B7BE51CF5E9F300503D51 /* MemberShipViewController.xib */,
+				D5DCF61E1CFCB1610016B8BC /* QRCodeViewController.h */,
+				D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */,
+				D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1077,6 +1085,7 @@
 				622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */,
 				622219031CD10C3C00A47434 /* Assets.xcassets in Resources */,
 				D57200AF1CEB7C69001FD02F /* SafeTableViewCell.xib in Resources */,
+				D5DCF6221CFCB1610016B8BC /* QRCodeViewController.xib in Resources */,
 				D53FEE201CFB36E400932E1B /* 欢迎界面.bmp in Resources */,
 				621814681CE3898900434B8A /* DeviceInfoView.xib in Resources */,
 				622219011CD10C3C00A47434 /* Main.storyboard in Resources */,
@@ -1175,6 +1184,7 @@
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
+				D5DCF6211CFCB1610016B8BC /* QRCodeViewController.m in Sources */,
 				D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */,
 				D57200AA1CEB78E3001FD02F /* SafeZoneModel.m in Sources */,
 				D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */,
