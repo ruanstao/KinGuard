@@ -25,7 +25,8 @@
 
 @property (nonatomic, assign) NSInteger currentLocationIndex;
 
-@property (nonatomic, strong) WHUCalendarView *calView;
+@property (strong, nonatomic) IBOutlet WHUCalendarView *calView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *calViewHeight;
 
 @end
 
@@ -36,7 +37,8 @@
     // Do any additional setup after loading the view.
     [self initNavi];
     [self initUI];
-    [self requestData:[NSDate dateWithTimeIntervalSinceNow:-3600*24]];
+    [self requestData:[NSDate date]];
+    [self initCalendarView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,7 +50,7 @@
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"日历" style:UIBarButtonItemStylePlain target:self action:@selector(showCalendarView)];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"日历" style:UIBarButtonItemStylePlain target:self action:@selector(show)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
 }
 
@@ -77,19 +79,28 @@
     
     NSMutableString *beginTimeStr =[NSMutableString stringWithString: [formatter stringFromDate:[JJSUtil beginTime:date]]];
     NSMutableString *endTimeStr = [NSMutableString stringWithString:[formatter stringFromDate:[JJSUtil endTime:date]]];
-    [beginTimeStr insertString:@"T" atIndex:[beginTimeStr rangeOfString:@" "].location];
-    [endTimeStr insertString:@"T" atIndex:[endTimeStr rangeOfString:@" "].location];
+    NSMutableString *currentData =[NSMutableString stringWithString: [formatter stringFromDate:[JJSUtil beginTime:[NSDate date]]]];
+//    [beginTimeStr insertString:@"T" atIndex:[beginTimeStr rangeOfString:@" "].location];
+//    [endTimeStr insertString:@"T" atIndex:[endTimeStr rangeOfString:@" "].location];
     //    2016-03-29T 08:00:00
+    [JJSUtil showHUDWithWaitingMessage:@""];
     [[KinLocationApi sharedKinLocation] readPosHisInfo:self.pid?:@"" withBegdt:beginTimeStr withEnddt:endTimeStr success:^(NSDictionary *data) {
+        [JJSUtil hideHUD];
         NSLog(@"%@",data);
         self.locationArray = [LocationInfo mj_objectArrayWithKeyValuesArray:(NSArray *)data];
-        [self refreashUI];
+        if ([currentData isEqualToString:beginTimeStr]) {
+            [self refreashUI:NO];
+        }else{
+            
+            [self refreashUI:YES];
+            
+        }
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
     }];
 }
 
-- (void)refreashUI
+- (void)refreashUI:(BOOL)animation
 {
     if (self.locationArray.count < 1) {
         return;
@@ -145,8 +156,10 @@
     [self.mapView setCenterCoordinate:middle animated:YES];
     
     [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+    if (animation) {
+        [self actionPlayAndStop];
+    }
 
-    [self actionPlayAndStop];
 
 }
 #pragma mark - <MAMapViewDelegate>
@@ -199,18 +212,27 @@
 
 - (void)actionPlayAndStop
 {
+    if (self.personLocation !=nil) {
+        [self.mapView removeAnnotation:self.personLocation];
+        self.personLocation = nil;
+    }
 
-        if (self.personLocation == nil)
-        {
-            LocationInfo *info = self.locationArray[0];
-            self.personLocation = [[MAPointAnnotation alloc] init];
+    if (self.personLocation == nil)
+    {
+        LocationInfo *info = self.locationArray[0];
+        self.personLocation = [[MAPointAnnotation alloc] init];
 //            self.personLocation.title = @"AMap";
-            self.personLocation.coordinate = CLLocationCoordinate2DMake(info.latitude, info.longitude);
+        self.personLocation.coordinate = CLLocationCoordinate2DMake(info.latitude, info.longitude);
 
-            [self.mapView addAnnotation:self.personLocation];
-        }
-        self.averageSpeed = 1;
-        [self animateToNextCoordinate];
+        [self.mapView addAnnotation:self.personLocation];
+    }
+    self.averageSpeed = 1;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self animateToNextCoordinate];
+        });
+    });
 
 }
 
@@ -260,43 +282,34 @@
 
 #pragma mark - 日历
 
-- (void)showCalendarView
+- (void)initCalendarView
 {
-     self.calView=[[WHUCalendarView alloc] init];
-    self.calView.translatesAutoresizingMaskIntoConstraints=NO;
+
     CGSize s=[ self.calView sizeThatFits:CGSizeMake(mScreenWidth, FLT_MAX)];
+    self.calViewHeight.constant = s.height;
+    self.calView.hidden = YES;
     typeof(self) weakSelf = self;
     _calView.onDateSelectBlk=^(NSDate* date){
         typeof(weakSelf) strongSelf = weakSelf;
         dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC));
         dispatch_after(time, dispatch_get_main_queue(), ^{
+            [strongSelf requestData:date];
             [strongSelf dismiss];
         });
     };
-    [self.view addSubview:self.calView];
+    
 }
 
 -(void)show{
-//    [self setNeedsLayout];
-//    [self layoutIfNeeded];
-//    self.backgroundColor=[[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
-//    self.hidden=NO;
-//    _bottomGapCts.constant=0;
-//    [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseIn animations:^{
-//        [self setNeedsLayout];
-//        [self layoutIfNeeded];
-//    } completion:nil];
+
+    self.calView.hidden = NO;
 }
 
 
 -(void)dismiss{
-//    _bottomGapCts.constant=_calHeight;
-//    [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.8 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseOut animations:^{
-//        [self setNeedsLayout];
-//        [self layoutIfNeeded];
-//    } completion:^(BOOL b){
-//        self.hidden=YES;
-//    }];
+
+    self.calView.hidden = YES;
+    
 }
 
 @end
