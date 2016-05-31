@@ -476,18 +476,18 @@ typedef NS_ENUM(NSUInteger, WHUCalendarViewMonthOption) {
             [_topView addSubview:nextBtn];
             [nextBtn addTarget:self action:@selector(yearMonthSelectAction:) forControlEvents:UIControlEventTouchUpInside];
             CGFloat totalHeight=_contentView.frame.size.height;
-            UILabel* info1=[[UILabel alloc] initWithFrame:CGRectMake(10, totalHeight-35, 300, 12)];
-            info1.text=@"1.向左滑动,跳转到上一月,向右滑动,跳转到下一月.";
-            info1.textColor=[UIColor lightGrayColor];
-            info1.font=[UIFont systemFontOfSize:11.0f];
-            UILabel* info2=[[UILabel alloc] initWithFrame:CGRectMake(10, totalHeight-18, 300, 12)];
-            info2.text=@"2.向下滑动可以跳转到选择年份月份界面.";
-            info2.textColor=[UIColor lightGrayColor];
-            info2.font=[UIFont systemFontOfSize:11.0f];
-            [_contentView addSubview:info1];
-            [_contentView addSubview:info2];
-            [_contentView sendSubviewToBack:info1];
-            [_contentView sendSubviewToBack:info2];
+//            UILabel* info1=[[UILabel alloc] initWithFrame:CGRectMake(10, totalHeight-35, 300, 12)];
+//            info1.text=@"1.向左滑动,跳转到上一月,向右滑动,跳转到下一月.";
+//            info1.textColor=[UIColor lightGrayColor];
+//            info1.font=[UIFont systemFontOfSize:11.0f];
+//            UILabel* info2=[[UILabel alloc] initWithFrame:CGRectMake(10, totalHeight-18, 300, 12)];
+//            info2.text=@"2.向下滑动可以跳转到选择年份月份界面.";
+//            info2.textColor=[UIColor lightGrayColor];
+//            info2.font=[UIFont systemFontOfSize:11.0f];
+//            [_contentView addSubview:info1];
+//            [_contentView addSubview:info2];
+//            [_contentView sendSubviewToBack:info1];
+//            [_contentView sendSubviewToBack:info2];
         });
     }
 }

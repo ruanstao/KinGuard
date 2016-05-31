@@ -25,7 +25,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
             endingLineNumber = "217"
-            landmarkName = "-animateToNextCoordinate"
+            landmarkName = "-actionPlayAndStop"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,7 +41,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "227"
             endingLineNumber = "227"
-            landmarkName = "-animateToNextCoordinate"
+            landmarkName = "-actionPlayAndStop"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

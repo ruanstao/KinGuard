@@ -86,14 +86,16 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRr-51-hWF">
-                                            <rect key="frame" x="128" y="23" width="0.0" height="0.0"/>
-                                            <attributedString key="attributedText"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星联守护" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRr-51-hWF">
+                                            <rect key="frame" x="128" y="23" width="68" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Is-PMg">
-                                            <rect key="frame" x="128" y="28" width="0.0" height="0.0"/>
-                                            <attributedString key="attributedText"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id:000001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Is-PMg">
+                                            <rect key="frame" x="128" y="48" width="78" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhh-7a-ptd">
@@ -394,9 +396,8 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-HJ-EOd" customClass="WHUCalendarView">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.97926931013992635" green="1" blue="0.31250863560652642" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cH3-HJ-EOd" customClass="WHUCalendarView">
+                                <rect key="frame" x="20" y="20" width="560" height="370"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="370" id="lkS-dm-xw2"/>
                                 </constraints>
@@ -435,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6G-XY-eUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3892" y="-704"/>
+            <point key="canvasLocation" x="3706" y="-672"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s7T-qi-8NX">
@@ -1416,7 +1417,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-jO-koJ">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-jO-koJ">
                                                     <rect key="frame" x="383" y="23" width="18" height="35"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                     <color key="textColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1664,6 +1665,56 @@
             </objects>
             <point key="canvasLocation" x="3126" y="3928"/>
         </scene>
+        <!--监控日志-->
+        <scene sceneID="Hqc-kj-VNp">
+            <objects>
+                <viewController id="mnM-99-5w9" userLabel="监控日志" customClass="MonitoringLogsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zmB-u5-hsD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ApR-Ce-JjP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1bR-wE-L3p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TTN-I1-2aK">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" id="jZq-gM-OM4">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="定位信息"/>
+                                <segment title="系统信息"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="kbz-f3-zdO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1PU-Qs-eaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3126" y="4607"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V7k-VC-d37">
+            <objects>
+                <navigationController id="ezO-i4-0jG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fqj-Ux-i2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mnM-99-5w9" kind="relationship" relationship="rootViewController" id="Lnl-YD-2jm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2q-xC-cro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="4607"/>
+        </scene>
         <!--账号与安全-->
         <scene sceneID="1XG-zL-oRR">
             <objects>
@@ -1700,6 +1751,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uuN-8q-dcF" secondAttribute="height" id="feC-1s-Jpz"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="vDj-oR-aUC" appends="YES" id="oLe-gj-qkB"/>
                                                     </connections>

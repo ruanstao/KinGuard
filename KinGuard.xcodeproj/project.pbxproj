@@ -67,6 +67,8 @@
 		D5946E091CF96E81003E0D9A /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D5946E071CF96E72003E0D9A /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
+		D5DCF6211CFCB1610016B8BC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */; };
+		D5DCF6221CFCB1610016B8BC /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */; };
 		D5E518C61CF49E0F00BFB49D /* SetSafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518C51CF49E0F00BFB49D /* SetSafeZoneViewController.m */; };
 		D5E518C91CF4A08400BFB49D /* ElectronicVM.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518C81CF4A08400BFB49D /* ElectronicVM.m */; };
 		D5E518CD1CF4A72700BFB49D /* SafeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518CB1CF4A72700BFB49D /* SafeDetailTableViewCell.m */; };
@@ -85,6 +87,7 @@
 		DA493C341CF0411B008F21C4 /* PosHisInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA493C331CF0411B008F21C4 /* PosHisInfoViewController.m */; };
 		DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */; };
 		DA8861711CD22322009C6D56 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8861701CD22322009C6D56 /* LeftViewController.m */; };
+		DAAA956B1CFC27AE00113202 /* MonitoringLogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAA956A1CFC27AE00113202 /* MonitoringLogsViewController.m */; };
 		DAF53ACB1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */; };
 		E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617CE91FC2BBD5ADF436D425 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -235,6 +238,9 @@
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D5A379071CDA442600827F16 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		D5DCF61E1CFCB1610016B8BC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
 		D5E518C41CF49E0F00BFB49D /* SetSafeZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetSafeZoneViewController.h; sourceTree = "<group>"; };
 		D5E518C51CF49E0F00BFB49D /* SetSafeZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetSafeZoneViewController.m; sourceTree = "<group>"; };
 		D5E518C71CF4A08400BFB49D /* ElectronicVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectronicVM.h; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 		DA88616D1CD222FE009C6D56 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		DA88616F1CD22322009C6D56 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		DA8861701CD22322009C6D56 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		DAAA95691CFC27AE00113202 /* MonitoringLogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringLogsViewController.h; sourceTree = "<group>"; };
+		DAAA956A1CFC27AE00113202 /* MonitoringLogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringLogsViewController.m; sourceTree = "<group>"; };
 		DAEF09F91CD1AE20008CBDF4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DAF53AC91CDC775D0029BDC2 /* LeftHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHeaderTableViewCell.h; sourceTree = "<group>"; };
 		DAF53ACA1CDC775D0029BDC2 /* LeftHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHeaderTableViewCell.m; sourceTree = "<group>"; };
@@ -468,6 +476,9 @@
 				D54B7BE31CF5E9F300503D51 /* MemberShipViewController.h */,
 				D54B7BE41CF5E9F300503D51 /* MemberShipViewController.m */,
 				D54B7BE51CF5E9F300503D51 /* MemberShipViewController.xib */,
+				D5DCF61E1CFCB1610016B8BC /* QRCodeViewController.h */,
+				D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */,
+				D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -800,6 +811,7 @@
 		DA8860961CD1B5E4009C6D56 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DAAA95641CFC278F00113202 /* MonitoringLogs */,
 				D57200A01CEB75AD001FD02F /* ElectronicFence */,
 				D53B4CE61CEA039C0049F2CA /* Message */,
 				D538FEB81CE4DE8A002D60EB /* Setting */,
@@ -926,6 +938,47 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DAAA95641CFC278F00113202 /* MonitoringLogs */ = {
+			isa = PBXGroup;
+			children = (
+				DAAA95651CFC278F00113202 /* Model */,
+				DAAA95661CFC278F00113202 /* View */,
+				DAAA95671CFC278F00113202 /* ViewController */,
+				DAAA95681CFC278F00113202 /* ViewModel */,
+			);
+			path = MonitoringLogs;
+			sourceTree = "<group>";
+		};
+		DAAA95651CFC278F00113202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAAA95661CFC278F00113202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAAA95671CFC278F00113202 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAAA95691CFC27AE00113202 /* MonitoringLogsViewController.h */,
+				DAAA956A1CFC27AE00113202 /* MonitoringLogsViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAAA95681CFC278F00113202 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -997,6 +1050,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8MUA9S3748;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1039,6 +1093,7 @@
 				622219061CD10C3C00A47434 /* LaunchScreen.storyboard in Resources */,
 				622219031CD10C3C00A47434 /* Assets.xcassets in Resources */,
 				D57200AF1CEB7C69001FD02F /* SafeTableViewCell.xib in Resources */,
+				D5DCF6221CFCB1610016B8BC /* QRCodeViewController.xib in Resources */,
 				D53FEE201CFB36E400932E1B /* 欢迎界面.bmp in Resources */,
 				621814681CE3898900434B8A /* DeviceInfoView.xib in Resources */,
 				622219011CD10C3C00A47434 /* Main.storyboard in Resources */,
@@ -1138,6 +1193,7 @@
 				623BD1C61CDF7CFD005DFCEC /* UserInfoModel.m in Sources */,
 				DA88616E1CD222FE009C6D56 /* LeftTableViewCell.m in Sources */,
 				622218FE1CD10C3C00A47434 /* ViewController.m in Sources */,
+				D5DCF6211CFCB1610016B8BC /* QRCodeViewController.m in Sources */,
 				D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */,
 				D57200AA1CEB78E3001FD02F /* SafeZoneModel.m in Sources */,
 				D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */,
@@ -1164,6 +1220,7 @@
 				D54921051CE0CB4600B1249C /* XDScaningViewController.m in Sources */,
 				6255BEFD1CF5F3A6006E6C18 /* WHUCalendarYMSelectView.m in Sources */,
 				6255BEF71CF5F3A6006E6C18 /* WHUCalendarCal.m in Sources */,
+				DAAA956B1CFC27AE00113202 /* MonitoringLogsViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
 				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
 				6255BEFB1CF5F3A6006E6C18 /* WHUCalendarPopView.m in Sources */,
@@ -1332,7 +1389,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1361,7 +1418,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

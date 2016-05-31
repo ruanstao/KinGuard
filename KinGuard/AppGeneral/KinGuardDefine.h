@@ -73,5 +73,6 @@ typedef NS_ENUM(NSInteger, XDScaningWarningTone) {
 #define LineMoveSpeed 1 //扫描线移动的速度，值为每1/60秒移动的点数，数值越大移动速度越快
 
 #define KinGuard_UserInfo @"user_info"
-
+#define KinGuard_Device @"device_pids"
+#define CurrentBaby_Info @"baby_info"
 #endif /* KinGuardDefine_h */

@@ -9,10 +9,11 @@
 #import "LeftViewController.h"
 #import "LeftTableViewCell.h"
 #import "LeftHeaderTableViewCell.h"
-#import "UserInfoModel.h"
+#import "DeviceInfo.h"
 #import "BindDeviceViewController.h"
 #import "MemberListViewController.h"
 #import "SettingViewController.h"
+#import "MonitoringLogsViewController.h"
 
 #define AutoSizeH [UIScreen mainScreen].bounds.size.height/736//6sp标准
 
@@ -22,7 +23,7 @@
 
 @property (nonatomic,strong) NSMutableArray *tableViewContent;
 
-@property (nonatomic,strong) UserInfoModel *userModel;
+@property (nonatomic,strong) DeviceInfo *userModel;
 
 @end
 
@@ -31,8 +32,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self initTableViewContent];
-    [self requestData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:CurrentBaby_Info];
+    self.userModel = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,14 +56,31 @@
 
 - (void)requestData
 {
-    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
-        NSLog(@"success:%@",data);
-        if (data) {
-            self.userModel = [UserInfoModel mj_objectWithKeyValues:data];
-            [self.tableView reloadData];
+//    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
+//        NSLog(@"success:%@",data);
+//        if (data) {
+//            self.userModel = [UserInfoModel mj_objectWithKeyValues:data];
+//            [self.tableView reloadData];
+//        }
+//    } fail:^(NSString *error) {
+//        NSLog(@"error :%@",error);
+//    }];
+    
+    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+//        [[NSUserDefaults standardUserDefaults] setObject:[data objectForKey:@"pids"] forKey:KinGuard_Device];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+        if (![JJSUtil isBlankString:@"c202237b"/*[data objectForKey:@"pids"]*/]) {
+            [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b"/*[data objectForKey:@"pids"]*/ success:^(NSDictionary *data) {
+                NSLog(@"宝贝：%@",data);
+                self.userModel = [DeviceInfo mj_objectWithKeyValues:data];
+                [self.tableView reloadData];
+            } fail:^(NSString *error) {
+                
+            }];
         }
     } fail:^(NSString *error) {
-        NSLog(@"error :%@",error);
+        NSLog(@"%@",error);
     }];
 }
 
@@ -143,7 +169,14 @@
         return cell;
     }else if (type == LeftType_HeaderView) {
         LeftHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftHeaderTableViewCell"];
-//        cell.headerImage.image = [UIImage imageNamed:@""];
+        if (![JJSUtil isBlankString:self.userModel.asset_name]) {
+            cell.title.text = self.userModel.asset_name;
+        }
+        if (![JJSUtil isBlankString:self.userModel.asset_id]) {
+            cell.detailTitle.text = self.userModel.asset_id;
+        }
+        
+        cell.headerImage.image = [UIImage imageNamed:@"head_default"];
         return cell;
     }else{
         LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
@@ -189,6 +222,7 @@
 
     switch (type) {
         case LeftType_JianKongLog:{
+            MonitoringLogsViewController *monitor = [MonitoringLogsViewController creatByNib];
         }
             break;
         case LeftType_JianKongMember:{

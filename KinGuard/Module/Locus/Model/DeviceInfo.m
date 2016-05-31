@@ -9,5 +9,5 @@
 #import "DeviceInfo.h"
 
 @implementation DeviceInfo
-
+MJCodingImplementation
 @end

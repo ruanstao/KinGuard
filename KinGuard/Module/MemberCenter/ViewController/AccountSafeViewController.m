@@ -53,7 +53,11 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
     
+    self.headView.clipsToBounds = YES;
+    self.headView.layer.cornerRadius = mScreenWidth *(300/736);
+    
     [self getUserInfo];
+    [self downHeadImageInfo];
 }
 
 - (void)back
@@ -87,9 +91,25 @@
             //若有头像需要更新则上传头像
             if (self.headData != nil) {
                 //待完成
-                
+                NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
+                if (![JJSUtil isBlankString:pid]) {
+                    [[KinGuartApi sharedKinGuard] uploadHeadPortraitByPid:pid withImageData:self.headData uploadProgress:^(NSProgress *progress) {
+                        
+                    } finished:^(NSDictionary *data) {
+                        [JJSUtil showHUDWithMessage:@"更新成功" autoHide:YES];
+                        [self.navigationController popViewControllerAnimated:YES];
+                    } failed:^(NSString *error) {
+                        [JJSUtil showHUDWithMessage:error autoHide:YES];
+                    }];
+                }else{
+                    [JJSUtil showHUDWithMessage:@"未绑定设备号无法更新信息" autoHide:YES];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            }else{
+                [JJSUtil showHUDWithMessage:@"更新成功" autoHide:YES];
+                [self.navigationController popViewControllerAnimated:YES];
             }
-            [JJSUtil showHUDWithMessage:@"更新成功" autoHide:YES];
+            
             
         } fail:^(NSString *error) {
             [JJSUtil hideHUD];
@@ -97,26 +117,37 @@
         }];
     }else{
         //待完成
-        [[KinGuartApi sharedKinGuard] uploadHeadPortraitByPid:@"" withImageData:self.headData uploadProgress:^(NSProgress *progress) {
-            
-        } finished:^(NSDictionary *data) {
-            
-        } failed:^(NSString *error) {
-            
-        }];
+        NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
+        if (![JJSUtil isBlankString:pid]) {
+            [[KinGuartApi sharedKinGuard] uploadHeadPortraitByPid:pid withImageData:self.headData uploadProgress:^(NSProgress *progress) {
+                
+            } finished:^(NSDictionary *data) {
+                [JJSUtil showHUDWithMessage:@"更新成功" autoHide:YES];
+                [self.navigationController popViewControllerAnimated:YES];
+            } failed:^(NSString *error) {
+                [JJSUtil showHUDWithMessage:error autoHide:YES];
+            }];
+        }else{
+            [JJSUtil showHUDWithMessage:@"未绑定设备号无法更新信息" autoHide:YES];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 
 //下载用户头像（待完成）
 - (void)downHeadImageInfo
 {
-    [[KinGuartApi sharedKinGuard] downloadHeadPortraitByPid:@"" andProgress:^(NSProgress *progress) {
-        
-    } finished:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-    } failed:^(NSString *error) {
-        
-    }];
+    NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
+    if (![JJSUtil isBlankString:pid]) {
+        [[KinGuartApi sharedKinGuard] downloadHeadPortraitByPid:@"" andProgress:^(NSProgress *progress) {
+            
+        } finished:^(NSDictionary *data) {
+            NSLog(@"%@",data);
+        } failed:^(NSString *error) {
+            
+        }];
+    }
+    
 }
 
 //获取用户数据
