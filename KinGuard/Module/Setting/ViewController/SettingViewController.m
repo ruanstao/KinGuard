@@ -141,8 +141,7 @@
                 break;
             case 2:{
                 //设备二维码
-                QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
-                [self.navigationController pushViewController:memberController animated:YES];
+
             }
                 break;
             case 3:{
@@ -197,6 +196,8 @@
                 break;
             case 2:{
                 //设备二维码
+                QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
             }
                 break;
             case 3:{
