@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MemberShipViewController">
+            <connections>
+                <outlet property="bottomButton" destination="UJf-7m-SK6" id="mch-bf-3ii"/>
+                <outlet property="fatherButton" destination="xhO-dp-04x" id="cn7-0a-ZEM"/>
+                <outlet property="grandFatherButton" destination="mKd-AH-8Kv" id="ZWy-AY-lis"/>
+                <outlet property="grandMaButton" destination="BLu-rL-WGh" id="SVT-BT-JaE"/>
+                <outlet property="grandMotherButton" destination="GDQ-ar-i5r" id="k5e-ap-7tK"/>
+                <outlet property="grandPaButton" destination="43m-wy-Taj" id="ARE-LG-Cjd"/>
+                <outlet property="labMemerShip" destination="txf-lA-hEY" id="ouL-pe-D47"/>
+                <outlet property="motherButton" destination="3JH-VS-K7G" id="IOs-gr-73v"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是宝贝的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42r-8c-LTO">
+                    <rect key="frame" x="45" y="25" width="85" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="yva-eg-A6d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JH-VS-K7G">
+                    <rect key="frame" x="165" y="66" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="A8a-Cd-rFU"/>
+                        <constraint firstAttribute="width" constant="70" id="YO6-UZ-ZE0"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="mother"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="35"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="motherAction:" destination="-1" eventType="touchUpInside" id="hku-Os-OLA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtK-S2-gM2">
+                    <rect key="frame" x="183" y="151" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-dp-04x">
+                    <rect key="frame" x="365" y="66" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Nt9-yy-TxO"/>
+                        <constraint firstAttribute="height" constant="70" id="Qji-SK-amM"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="father"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="35"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="fatherAction:" destination="-1" eventType="touchUpInside" id="m61-Kj-adA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爸爸" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-5V-HqE">
+                    <rect key="frame" x="383" y="151" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43m-wy-Taj">
+                    <rect key="frame" x="165" y="195" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="FyU-Vr-kBO"/>
+                        <constraint firstAttribute="width" constant="70" id="dL3-ZZ-qwb"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="grandfather"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="35"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="grandPaAction:" destination="-1" eventType="touchUpInside" id="ktG-0H-MxA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姥爷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-Es-vgC">
+                    <rect key="frame" x="183" y="280" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKd-AH-8Kv">
+                    <rect key="frame" x="365" y="195" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="8l3-ox-8BR"/>
+                        <constraint firstAttribute="width" constant="70" id="EfI-ap-dUD"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="grandfather"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="35"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="grandFatherAction:" destination="-1" eventType="touchUpInside" id="Nm9-NF-a9v"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爷爷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pas-uU-pLs">
+                    <rect key="frame" x="383" y="280" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDQ-ar-i5r">
+                    <rect key="frame" x="365" y="325" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="WuE-5r-IKv"/>
+                        <constraint firstAttribute="height" constant="70" id="drr-pI-DNo"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="grandmother"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="35"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="grandMotherAction:" destination="-1" eventType="touchUpInside" id="mGh-kB-RXM"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姥姥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCN-pv-Qng">
+                    <rect key="frame" x="183" y="410" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奶奶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwE-mY-qGM">
+                    <rect key="frame" x="383" y="410" width="34" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-7m-SK6">
+                    <rect key="frame" x="30" y="526" width="540" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.48627450979999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="akn-Zl-lAD"/>
+                    </constraints>
+                    <state key="normal" title="其他关系">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bottomAction:" destination="-1" eventType="touchUpInside" id="9Q3-Zd-ufx"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txf-lA-hEY">
+                    <rect key="frame" x="541" y="25" width="34" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="lZD-jh-s1h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLu-rL-WGh">
+                    <rect key="frame" x="165" y="325" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="LkV-cM-bD6"/>
+                        <constraint firstAttribute="width" constant="70" id="oIT-gG-6uQ"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="grandmother"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="35"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="grandMaAction:" destination="-1" eventType="touchUpInside" id="f5o-Fs-J4W"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3JH-VS-K7G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-100" id="2LB-pm-1h0"/>
+                <constraint firstItem="pwE-mY-qGM" firstAttribute="centerX" secondItem="mKd-AH-8Kv" secondAttribute="centerX" id="4tM-ZG-wky"/>
+                <constraint firstItem="pas-uU-pLs" firstAttribute="centerX" secondItem="mKd-AH-8Kv" secondAttribute="centerX" id="8ng-Hy-dla"/>
+                <constraint firstItem="gtK-S2-gM2" firstAttribute="top" secondItem="3JH-VS-K7G" secondAttribute="bottom" constant="15" id="96S-ep-NX9"/>
+                <constraint firstAttribute="trailing" secondItem="UJf-7m-SK6" secondAttribute="trailing" constant="30" id="ATo-dh-d4r"/>
+                <constraint firstItem="ia5-5V-HqE" firstAttribute="centerX" secondItem="xhO-dp-04x" secondAttribute="centerX" id="Ari-VS-Eek"/>
+                <constraint firstItem="UJf-7m-SK6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="BUz-wa-uzn"/>
+                <constraint firstItem="xhO-dp-04x" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="100" id="D4h-1R-wy2"/>
+                <constraint firstItem="42r-8c-LTO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="45" id="DFA-LG-rdH"/>
+                <constraint firstItem="GDQ-ar-i5r" firstAttribute="centerY" secondItem="BLu-rL-WGh" secondAttribute="centerY" id="EJV-k3-SZe"/>
+                <constraint firstItem="mKd-AH-8Kv" firstAttribute="centerY" secondItem="43m-wy-Taj" secondAttribute="centerY" id="F3N-DU-07Y"/>
+                <constraint firstItem="pwE-mY-qGM" firstAttribute="top" secondItem="GDQ-ar-i5r" secondAttribute="bottom" constant="15" id="Ky9-0E-TV5"/>
+                <constraint firstItem="BLu-rL-WGh" firstAttribute="centerX" secondItem="eDP-Es-vgC" secondAttribute="centerX" id="N0W-1F-Soy"/>
+                <constraint firstItem="ia5-5V-HqE" firstAttribute="centerX" secondItem="mKd-AH-8Kv" secondAttribute="centerX" id="Nxh-lw-vbp"/>
+                <constraint firstAttribute="bottom" secondItem="UJf-7m-SK6" secondAttribute="bottom" constant="30" id="S6J-q5-1dG"/>
+                <constraint firstItem="43m-wy-Taj" firstAttribute="centerX" secondItem="gtK-S2-gM2" secondAttribute="centerX" id="S7l-XU-HnY"/>
+                <constraint firstItem="gtK-S2-gM2" firstAttribute="centerX" secondItem="3JH-VS-K7G" secondAttribute="centerX" id="UqQ-KD-5p5"/>
+                <constraint firstItem="pas-uU-pLs" firstAttribute="top" secondItem="mKd-AH-8Kv" secondAttribute="bottom" constant="15" id="Z7Q-pc-yQ3"/>
+                <constraint firstItem="VCN-pv-Qng" firstAttribute="centerX" secondItem="BLu-rL-WGh" secondAttribute="centerX" id="aiO-55-xoX"/>
+                <constraint firstItem="ia5-5V-HqE" firstAttribute="top" secondItem="xhO-dp-04x" secondAttribute="bottom" constant="15" id="bzT-Dj-EBy"/>
+                <constraint firstItem="GDQ-ar-i5r" firstAttribute="centerX" secondItem="mKd-AH-8Kv" secondAttribute="centerX" id="dF8-LJ-Unt"/>
+                <constraint firstItem="eDP-Es-vgC" firstAttribute="top" secondItem="43m-wy-Taj" secondAttribute="bottom" constant="15" id="dNZ-9T-kRJ"/>
+                <constraint firstItem="43m-wy-Taj" firstAttribute="top" secondItem="gtK-S2-gM2" secondAttribute="bottom" constant="24" id="foa-SG-P42"/>
+                <constraint firstItem="txf-lA-hEY" firstAttribute="centerY" secondItem="42r-8c-LTO" secondAttribute="centerY" id="h6l-YZ-3zu"/>
+                <constraint firstItem="3JH-VS-K7G" firstAttribute="top" secondItem="42r-8c-LTO" secondAttribute="bottom" constant="20" id="l1N-nt-5od"/>
+                <constraint firstItem="eDP-Es-vgC" firstAttribute="centerX" secondItem="43m-wy-Taj" secondAttribute="centerX" id="p2J-lS-xG8"/>
+                <constraint firstAttribute="trailing" secondItem="txf-lA-hEY" secondAttribute="trailing" constant="25" id="pZa-0W-7H1"/>
+                <constraint firstItem="VCN-pv-Qng" firstAttribute="top" secondItem="BLu-rL-WGh" secondAttribute="bottom" constant="15" id="rqX-LD-asx"/>
+                <constraint firstItem="42r-8c-LTO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="uXY-qC-jzR"/>
+                <constraint firstItem="BLu-rL-WGh" firstAttribute="top" secondItem="eDP-Es-vgC" secondAttribute="bottom" constant="24" id="yeF-YF-Gvj"/>
+                <constraint firstItem="xhO-dp-04x" firstAttribute="centerY" secondItem="3JH-VS-K7G" secondAttribute="centerY" id="zCu-QW-maa"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="father" width="116" height="116"/>
+        <image name="grandfather" width="116" height="119"/>
+        <image name="grandmother" width="117" height="116"/>
+        <image name="mother" width="117" height="117"/>
+    </resources>
+</document>

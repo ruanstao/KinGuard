@@ -9,6 +9,7 @@
 #import "SetSafeZoneViewController.h"
 #import "ElectronicVM.h"
 #import "SafeDetailTableViewCell.h"
+#import "DateCell.h"
 
 typedef enum: NSInteger{
     areaName,
@@ -76,12 +77,31 @@ typedef enum: NSInteger{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SafeDetailTableViewCell *cell = [SafeDetailTableViewCell cellForTableView:tableView];
+    
     NSArray *rowArray = [self.dataSource objectAtIndex:indexPath.section];
     NSDictionary *body = [rowArray objectAtIndex:indexPath.row];
-    [cell.labTitle setText:[body objectForKey:@"title"]];
-    [cell.labContent setText:[body objectForKey:@"value"]];
-    return cell;
+    
+    if (indexPath.section == 1) {
+        SafeDetailTableViewCell *cell = [SafeDetailTableViewCell cellForTableView:tableView];
+        [cell.labTitle setText:[body objectForKey:@"title"]];
+        
+        NSMutableString  *a = [[NSMutableString alloc ] initWithString :[body objectForKey:@"value"]];
+        [a insertString:@":"  atIndex:a.length - 2];
+        [cell.labContent setText:a];
+        return cell;
+        
+    }else if(indexPath.section == 0){
+        SafeDetailTableViewCell *cell = [SafeDetailTableViewCell cellForTableView:tableView];
+        [cell.labTitle setText:[body objectForKey:@"title"]];
+        [cell.labContent setText:[body objectForKey:@"value"]];
+        return cell;
+    }else if (indexPath.section == 2) {
+        DateCell *cell = [DateCell cellForTableView:tableView];
+        [cell cellWithData:body];
+        return cell;
+    }
+    
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

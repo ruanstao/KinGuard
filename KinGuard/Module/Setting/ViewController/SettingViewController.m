@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 #import "DeviceInfo.h"
+#import "MemberShipViewController.h"
+#import "QRCodeViewController.h"
 
 @interface SettingViewController ()
 
@@ -77,9 +79,11 @@
 
 - (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
 {
+
 //    c202237b
     [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b"//pid
                                           success:^(NSDictionary *data) {
+
         NSLog(@"%@",data);
         if (block) {
             block([DeviceInfo mj_objectWithKeyValues:data]);
@@ -137,6 +141,8 @@
                 break;
             case 2:{
                 //设备二维码
+                QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
             }
                 break;
             case 3:{
@@ -176,6 +182,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:{
@@ -183,7 +190,9 @@
             }
                 break;
             case 1:{
-                //我是宝贝的XX
+                //关系设置 //我是宝贝的XX
+                MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
             }
                 break;
             case 2:{

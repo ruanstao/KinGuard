@@ -9,11 +9,13 @@
 #import "LeftViewController.h"
 #import "LeftTableViewCell.h"
 #import "LeftHeaderTableViewCell.h"
-#import "UserInfoModel.h"
+#import "DeviceInfo.h"
 #import "BindDeviceViewController.h"
 #import "MemberListViewController.h"
 #import "SettingViewController.h"
 #import "MonitoringLogsViewController.h"
+
+#define AutoSizeH [UIScreen mainScreen].bounds.size.height/736//6sp标准
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -21,7 +23,7 @@
 
 @property (nonatomic,strong) NSMutableArray *tableViewContent;
 
-@property (nonatomic,strong) UserInfoModel *userModel;
+@property (nonatomic,strong) DeviceInfo *userModel;
 
 @end
 
@@ -30,8 +32,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self initTableViewContent];
-    [self requestData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:CurrentBaby_Info];
+    self.userModel = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,14 +56,31 @@
 
 - (void)requestData
 {
-    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
-        NSLog(@"success:%@",data);
-        if (data) {
-            self.userModel = [UserInfoModel mj_objectWithKeyValues:data];
-            [self.tableView reloadData];
+//    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
+//        NSLog(@"success:%@",data);
+//        if (data) {
+//            self.userModel = [UserInfoModel mj_objectWithKeyValues:data];
+//            [self.tableView reloadData];
+//        }
+//    } fail:^(NSString *error) {
+//        NSLog(@"error :%@",error);
+//    }];
+    
+    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+//        [[NSUserDefaults standardUserDefaults] setObject:[data objectForKey:@"pids"] forKey:KinGuard_Device];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+        if (![JJSUtil isBlankString:@"c202237b"/*[data objectForKey:@"pids"]*/]) {
+            [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b"/*[data objectForKey:@"pids"]*/ success:^(NSDictionary *data) {
+                NSLog(@"宝贝：%@",data);
+                self.userModel = [DeviceInfo mj_objectWithKeyValues:data];
+                [self.tableView reloadData];
+            } fail:^(NSString *error) {
+                
+            }];
         }
     } fail:^(NSString *error) {
-        NSLog(@"error :%@",error);
+        NSLog(@"%@",error);
     }];
 }
 
@@ -116,17 +143,17 @@
     LeftType type = [[[self.tableViewContent objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] integerValue];
     switch (type) {
         case LeftType_Space:{
-            return 100;
+            return 50 * AutoSizeH;
         }
         case LeftType_HeaderView:{
-            return 100;
+            return 110 * AutoSizeH;
         }
         case LeftType_JianKongLog:
         case LeftType_JianKongMember:
         case LeftType_AddDevice:
         case LeftType_Setting:
         case LeftType_Login:{
-            return 44;
+            return 75 * AutoSizeH;
         }
             break;
         default:
@@ -142,27 +169,38 @@
         return cell;
     }else if (type == LeftType_HeaderView) {
         LeftHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftHeaderTableViewCell"];
-//        cell.headerImage.image = [UIImage imageNamed:@""];
+        if (![JJSUtil isBlankString:self.userModel.asset_name]) {
+            cell.title.text = self.userModel.asset_name;
+        }
+        if (![JJSUtil isBlankString:self.userModel.asset_id]) {
+            cell.detailTitle.text = self.userModel.asset_id;
+        }
+        
+        cell.headerImage.image = [UIImage imageNamed:@"head_default"];
         return cell;
     }else{
         LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
         switch (type) {
             case LeftType_JianKongLog:{
                 cell.title.text = @"监护日志";
+                [cell.titleImage setImage:[UIImage imageNamed:@"log_w"]];
             }
                 break;
             case LeftType_JianKongMember:{
                 cell.title.text = @"监护成员";
+                [cell.titleImage setImage:[UIImage imageNamed:@"user_w"]];
                 
             }
                 break;
             case LeftType_AddDevice:{
                 
                 cell.title.text = @"添加设备";
+                [cell.titleImage setImage:[UIImage imageNamed:@"card_w"]];
             }
                 break;
             case LeftType_Setting:{
                 cell.title.text = @"设置";
+                [cell.titleImage setImage:[UIImage imageNamed:@"settings_w"]];
             }
                 break;
             case LeftType_Login:{

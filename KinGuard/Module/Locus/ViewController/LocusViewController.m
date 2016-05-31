@@ -74,6 +74,11 @@
 {
     if (self.info.count > 0) {
         DeviceInfo *info = self.info[self.showIndex];
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:info];
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:CurrentBaby_Info];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         [self.headerTitle setTitle:info.asset_name forState:UIControlStateNormal];
         //开始定位
         [self beginLocationAnimation:YES];
@@ -94,6 +99,8 @@
 {
     [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
         NSLog(@"%@",data);
+        [[NSUserDefaults standardUserDefaults] setObject:[data objectForKey:@"pids"] forKey:KinGuard_Device];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         self.pids = @[[data objectForKey:@"pids"]?:@[]];
         if (self.pids.count> 0) {
             NSMutableArray *infoArr = [NSMutableArray array];

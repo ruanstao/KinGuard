@@ -43,26 +43,42 @@
     }
     [[KinGuartApi sharedKinGuard] loginWithMobile:phone withPassword:pwd success:^(NSDictionary *data) {
         [JJSUtil hideHUD];
-        [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
+//        [JJSUtil showHUDWithMessage:@"登陆成功" autoHide:YES];
         
         //存储登录信息
         UserModel *model = [[UserModel alloc] init];
         model.username = phone;
         model.password = pwd;
         model.token = [data objectForKey:@"logintoken"];
-        model.isLogined = YES;
         
-        NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
-        [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
-            if (finish) {
-                //跳转到绑定设备页面
-//                BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
-//                [self.navigationController pushViewController:bindController animated:YES];
-                ViewController *viewController = [[ViewController alloc] init];
-                self.view.window.rootViewController = viewController;
+        //判断是否已经绑定设备
+        [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+            NSLog(@"%@",data);
+            if (![JJSUtil isBlankString:[data objectForKey:@"pids"]]) {
+                
+                model.isLogined = YES;
+                NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
+                [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+                    //跳转到主界面
+                    ViewController *viewController = [[ViewController alloc] init];
+                    self.view.window.rootViewController = viewController;
+                }];
+            }else{
+                model.isLogined = NO;
+                
+                NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
+                [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+                    //跳转到绑定设备页面
+                    BindDeviceViewController *bindController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BindController"];
+                    [self.navigationController pushViewController:bindController animated:YES];
+                }];
                 
             }
-        }];
+         
+         } fail:^(NSString *error) {
+             NSLog(@"%@",error);
+             [JJSUtil showHUDWithMessage:@"获取绑定设备信息失败，请重新点击登录" autoHide:YES];
+         }];
         
     } fail:^(NSString *error) {
         [JJSUtil hideHUD];

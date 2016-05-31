@@ -46,9 +46,7 @@
     [self setLeftAnimation];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openAction) name:Show_LeftMenu object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHome) name:Show_MainView object:nil];
-
 }
-
 
 - (void)setLeftAnimation{
     self.distance = 0;
