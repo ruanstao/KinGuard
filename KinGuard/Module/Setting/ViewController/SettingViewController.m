@@ -10,6 +10,7 @@
 #import "DeviceInfo.h"
 #import "MemberShipViewController.h"
 #import "QRCodeViewController.h"
+#import "AccountInfo.h"
 
 @interface SettingViewController ()
 
@@ -20,6 +21,8 @@
 @property (nonatomic, strong) NSArray *info; //所有监护人信息
 @property (nonatomic, strong) DeviceInfo *currentDeviceInfo;
 @property (nonatomic, assign) NSInteger currentIndex;//当前选择的宝贝指针
+
+@property (nonatomic, strong) AccountInfo *accountInfo;
 @end
 
 @implementation SettingViewController
@@ -46,7 +49,6 @@
     self.backBtn.showsTouchWhenHighlighted = YES;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
-    
     [self requestData];
 }
 
@@ -57,6 +59,7 @@
 
 - (void)requestData
 {
+    [self getUserInfo];
     [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
         NSLog(@"%@",data);
         self.pids = @[[data objectForKey:@"pids"]?:@[]];
@@ -257,6 +260,42 @@
 //轨迹连线
 - (IBAction)isTrackConnection:(id)sender {
     
+}
+
+//解除绑定
+- (IBAction)unlockBind:(id)sender {
+    //akey = 6ce68d05;
+    //"asset_id" = c202237b;
+    [[KinDeviceApi sharedKinDevice] unBindDeviceByPid:self.currentDeviceInfo.asset_id withKey:self.currentDeviceInfo.akey withMainacc:self.accountInfo.acc success:^(NSDictionary *data) {
+        if (0) {
+            [self logout:nil];
+        }
+    } fail:^(NSString *error) {
+        
+    }];
+}
+
+- (IBAction)logout:(id)sender
+{
+    [[KinGuartApi sharedKinGuard] loginOutWithMobile:self.accountInfo.acc success:^(NSDictionary *data) {
+        [JJSUtil showHUDWithMessage:@"退出成功" autoHide:YES];
+        
+        self.view.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+    } fail:^(NSString *error) {
+        NSLog(@"logOut:%@",error);
+    }];
+}
+
+//获取用户数据
+- (void)getUserInfo
+{
+    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
+        NSLog(@"userInfo:%@",data);
+        self.accountInfo = [AccountInfo mj_objectWithKeyValues:data];
+    } fail:^(NSString *error) {
+        NSLog(@"error:%@",error);
+        [JJSUtil showHUDWithMessage:@"用户信息获取失败" autoHide:YES];
+    }];
 }
 
 @end
