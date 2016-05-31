@@ -1389,7 +1389,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1418,7 +1418,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = KinGuard1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

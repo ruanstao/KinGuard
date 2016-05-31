@@ -11,6 +11,7 @@
 
 @interface SafeZoneViewController ()<MAMapViewDelegate>
 @property(nonatomic, strong) MAMapView *mapView;
+@property(nonatomic, strong) UITextField *editField;
 @end
 
 @implementation SafeZoneViewController
@@ -22,6 +23,12 @@
     self.title = @"安全区域";
     [self initilizeBaseView];
     
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setFrame:CGRectMake(0, 0, 64, 44)];
+    [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightButton setTitle:@"编辑" forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(rightAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
 }
 
 - (void)initilizeBaseView
@@ -45,6 +52,14 @@
     
     //在地图上添加圆
     [self.mapView addOverlay: circle];
+    
+    self.editField = [[UITextField alloc] initWithFrame:CGRectMake(10, 5 + 64, mScreenWidth - 20, 44)];
+    self.editField.placeholder = @" 地址";
+    self.editField.clipsToBounds = YES;
+    self.editField.layer.cornerRadius = 5;
+    self.editField.backgroundColor = [UIColor whiteColor];
+    self.editField.hidden = YES;
+    [self.view addSubview:self.editField];
     
     UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(5, mScreenHeight - 75, mScreenWidth - 10, 70)];
     [bottomView setClipsToBounds:YES];
@@ -72,6 +87,11 @@
     [rightItem setBackgroundColor:[UIColor colorWithRed:0 green:124/255.0 blue:195/255.0 alpha:1]];
     [rightItem addTarget:self action:@selector(setAction:) forControlEvents:UIControlEventTouchUpInside];
     [bottomView addSubview:rightItem];
+}
+
+- (void)rightAction:(id)sender
+{
+    self.editField.hidden = NO;
 }
 
 - (void)setAction:(id)sender

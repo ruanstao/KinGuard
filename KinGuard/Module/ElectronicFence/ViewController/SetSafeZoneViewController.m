@@ -72,6 +72,9 @@ typedef enum: NSInteger{
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 2) {
+        return 88;
+    }
     return 44;
 }
 
