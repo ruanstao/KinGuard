@@ -13,11 +13,13 @@
 
 @interface SettingViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *babyName;
 @property (nonatomic, strong) UIButton *backBtn;
 
 @property (nonatomic, strong) NSArray *pids; //所有设备
 @property (nonatomic, strong) NSArray *info; //所有监护人信息
-
+@property (nonatomic, strong) DeviceInfo *currentDeviceInfo;
+@property (nonatomic, assign) NSInteger currentIndex;//当前选择的宝贝指针
 @end
 
 @implementation SettingViewController
@@ -65,7 +67,7 @@
                     [infoArr addObject:info];
                     if (infoArr.count == self.pids.count) {
                         self.info = infoArr;
-                        
+                        [self refreshUI];
                     }
                 }];
             }
@@ -77,7 +79,11 @@
 
 - (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
 {
-    [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b" success:^(NSDictionary *data) {
+
+//    c202237b
+    [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b"//pid
+                                          success:^(NSDictionary *data) {
+
         NSLog(@"%@",data);
         if (block) {
             block([DeviceInfo mj_objectWithKeyValues:data]);
@@ -86,31 +92,6 @@
         NSLog(@"%@",error);
     }];
     
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    NSLog(@"%d",indexPath.row);
-    switch (indexPath.row) {
-        case 1:
-        {
-            //关系设置
-            MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
-            [self.navigationController pushViewController:memberController animated:YES];
-        }
-            break;
-        case 2:
-        {
-            //二维码
-            QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
-            [self.navigationController pushViewController:memberController animated:YES];
-            
-        }
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,5 +108,154 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)refreshUI
+{
+    self.currentDeviceInfo = [self.info objectAtIndex:self.currentIndex];
+    [self.tableView reloadData];
+    
+}
+
+#pragma mark <UITableViewDataSource,UITableViewDelegate>
+
+//akey = 6ce68d05;
+//"asset_id" = c202237b;
+//"asset_name" = "星聯守護";
+//qrcode = 042bd75cb0bf4cdcad4d77038baec47e3ec5;
+//"qsc_ver" = "1.2.19";
+//sex = F;
+//"wifi_ver" = "1.3.0";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:{
+                //星宝宝
+               self.babyName.text = self.currentDeviceInfo.asset_name;
+            }
+                break;
+            case 1:{
+                //我是宝贝的XX
+            }
+                break;
+            case 2:{
+                //设备二维码
+                QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
+            }
+                break;
+            case 3:{
+                //远程关机
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        switch (indexPath.row) {
+            case 0:{
+                //声音开关
+            }
+                break;
+            case 1:{
+                //震动
+            }
+                break;
+            case 2:{
+                //轨迹连线
+            }
+                break;
+            case 3:{
+                //接触绑定
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:{
+                //星宝宝
+            }
+                break;
+            case 1:{
+                //关系设置 //我是宝贝的XX
+                MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
+            }
+                break;
+            case 2:{
+                //设备二维码
+            }
+                break;
+            case 3:{
+                //远程关机
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        switch (indexPath.row) {
+            case 0:{
+                //声音开关
+            }
+                break;
+            case 1:{
+                //震动
+            }
+                break;
+            case 2:{
+                //轨迹连线
+            }
+                break;
+            case 3:{
+                //接触绑定
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+- (IBAction)previous:(id)sender {
+    self.currentIndex --;
+    if (self.currentIndex < 0) {
+        self.currentIndex = self.info.count - 1;
+    }
+    [self refreshUI];
+}
+- (IBAction)next:(id)sender {
+    self.currentIndex ++;
+    if (self.currentIndex > self.info.count - 1) {
+        self.currentIndex = 0;
+    }
+    [self refreshUI];
+}
+//声音
+- (IBAction)isTurnOffSound:(id)sender {
+    
+}
+//振动
+- (IBAction)isTurnOffVibrate:(id)sender {
+    
+}
+//轨迹连线
+- (IBAction)isTrackConnection:(id)sender {
+    
+}
 
 @end
