@@ -82,7 +82,7 @@
     if (self.pids.count > 0) {
         NSMutableArray *infoArr = [NSMutableArray array];
         for (int i = 0;i < self.pids.count;i++) {
-            NSString *pid = [self.pids objectAtIndex:i];
+            NSString *pid = @"c202237b";//[self.pids objectAtIndex:i];
             [[KinLocationApi sharedKinLocation] getSecZonePid:pid success:^(NSDictionary *data) {
                 NSLog(@"---:%@",data);
                 if ([data isKindOfClass:[NSArray class]]) {
