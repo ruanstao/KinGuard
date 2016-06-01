@@ -10,14 +10,19 @@
 #import "DeviceInfo.h"
 #import "MemberShipViewController.h"
 #import "QRCodeViewController.h"
+#import "AccountInfo.h"
 
 @interface SettingViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *babyName;
 @property (nonatomic, strong) UIButton *backBtn;
 
 @property (nonatomic, strong) NSArray *pids; //所有设备
 @property (nonatomic, strong) NSArray *info; //所有监护人信息
+@property (nonatomic, strong) DeviceInfo *currentDeviceInfo;
+@property (nonatomic, assign) NSInteger currentIndex;//当前选择的宝贝指针
 
+@property (nonatomic, strong) AccountInfo *accountInfo;
 @end
 
 @implementation SettingViewController
@@ -44,7 +49,6 @@
     self.backBtn.showsTouchWhenHighlighted = YES;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
-    
     [self requestData];
 }
 
@@ -55,6 +59,7 @@
 
 - (void)requestData
 {
+    [self getUserInfo];
     [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
         NSLog(@"%@",data);
         self.pids = @[[data objectForKey:@"pids"]?:@[]];
@@ -65,7 +70,7 @@
                     [infoArr addObject:info];
                     if (infoArr.count == self.pids.count) {
                         self.info = infoArr;
-                        
+                        [self refreshUI];
                     }
                 }];
             }
@@ -77,7 +82,11 @@
 
 - (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
 {
-    [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b" success:^(NSDictionary *data) {
+
+//    c202237b
+    [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b"//pid
+                                          success:^(NSDictionary *data) {
+
         NSLog(@"%@",data);
         if (block) {
             block([DeviceInfo mj_objectWithKeyValues:data]);
@@ -86,31 +95,6 @@
         NSLog(@"%@",error);
     }];
     
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    NSLog(@"%d",indexPath.row);
-    switch (indexPath.row) {
-        case 1:
-        {
-            //关系设置
-            MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
-            [self.navigationController pushViewController:memberController animated:YES];
-        }
-            break;
-        case 2:
-        {
-            //二维码
-            QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
-            [self.navigationController pushViewController:memberController animated:YES];
-            
-        }
-            break;
-        default:
-            break;
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,5 +111,191 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)refreshUI
+{
+    self.currentDeviceInfo = [self.info objectAtIndex:self.currentIndex];
+    [self.tableView reloadData];
+    
+}
+
+#pragma mark <UITableViewDataSource,UITableViewDelegate>
+
+//akey = 6ce68d05;
+//"asset_id" = c202237b;
+//"asset_name" = "星聯守護";
+//qrcode = 042bd75cb0bf4cdcad4d77038baec47e3ec5;
+//"qsc_ver" = "1.2.19";
+//sex = F;
+//"wifi_ver" = "1.3.0";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:{
+                //星宝宝
+               self.babyName.text = self.currentDeviceInfo.asset_name;
+            }
+                break;
+            case 1:{
+                //我是宝贝的XX
+            }
+                break;
+            case 2:{
+                //设备二维码
+
+            }
+                break;
+            case 3:{
+                //远程关机
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        switch (indexPath.row) {
+            case 0:{
+                //声音开关
+            }
+                break;
+            case 1:{
+                //震动
+            }
+                break;
+            case 2:{
+                //轨迹连线
+            }
+                break;
+            case 3:{
+                //接触绑定
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:{
+                //星宝宝
+            }
+                break;
+            case 1:{
+                //关系设置 //我是宝贝的XX
+                MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
+            }
+                break;
+            case 2:{
+                //设备二维码
+                QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
+                [self.navigationController pushViewController:memberController animated:YES];
+            }
+                break;
+            case 3:{
+                //远程关机
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        switch (indexPath.row) {
+            case 0:{
+                //声音开关
+            }
+                break;
+            case 1:{
+                //震动
+            }
+                break;
+            case 2:{
+                //轨迹连线
+            }
+                break;
+            case 3:{
+                //接触绑定
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+- (IBAction)previous:(id)sender {
+    self.currentIndex --;
+    if (self.currentIndex < 0) {
+        self.currentIndex = self.info.count - 1;
+    }
+    [self refreshUI];
+}
+- (IBAction)next:(id)sender {
+    self.currentIndex ++;
+    if (self.currentIndex > self.info.count - 1) {
+        self.currentIndex = 0;
+    }
+    [self refreshUI];
+}
+//声音
+- (IBAction)isTurnOffSound:(id)sender {
+    
+}
+//振动
+- (IBAction)isTurnOffVibrate:(id)sender {
+    
+}
+//轨迹连线
+- (IBAction)isTrackConnection:(id)sender {
+    
+}
+
+//解除绑定
+- (IBAction)unlockBind:(id)sender {
+    //akey = 6ce68d05;
+    //"asset_id" = c202237b;
+    [[KinDeviceApi sharedKinDevice] unBindDeviceByPid:self.currentDeviceInfo.asset_id withKey:self.currentDeviceInfo.akey withMainacc:self.accountInfo.acc success:^(NSDictionary *data) {
+        if (0) {
+            [self logout:nil];
+        }
+    } fail:^(NSString *error) {
+        
+    }];
+}
+
+- (IBAction)logout:(id)sender
+{
+    [[KinGuartApi sharedKinGuard] loginOutWithMobile:self.accountInfo.acc success:^(NSDictionary *data) {
+        [JJSUtil showHUDWithMessage:@"退出成功" autoHide:YES];
+        
+        self.view.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+    } fail:^(NSString *error) {
+        NSLog(@"logOut:%@",error);
+    }];
+}
+
+//获取用户数据
+- (void)getUserInfo
+{
+    [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
+        NSLog(@"userInfo:%@",data);
+        self.accountInfo = [AccountInfo mj_objectWithKeyValues:data];
+    } fail:^(NSString *error) {
+        NSLog(@"error:%@",error);
+        [JJSUtil showHUDWithMessage:@"用户信息获取失败" autoHide:YES];
+    }];
+}
 
 @end
