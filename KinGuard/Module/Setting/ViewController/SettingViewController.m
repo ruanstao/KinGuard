@@ -12,7 +12,7 @@
 #import "QRCodeViewController.h"
 #import "AccountInfo.h"
 
-@interface SettingViewController ()
+@interface SettingViewController ()<UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *babyName;
 @property (nonatomic, strong) UIButton *backBtn;
@@ -205,6 +205,9 @@
                 break;
             case 3:{
                 //远程关机
+                
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否确认远程关机？" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alertView show];
             }
                 break;
                 
@@ -226,7 +229,7 @@
             }
                 break;
             case 3:{
-                //接触绑定
+                //解除绑定
             }
                 break;
                 
@@ -266,12 +269,15 @@
 - (IBAction)unlockBind:(id)sender {
     //akey = 6ce68d05;
     //"asset_id" = c202237b;
+    __weak typeof(self) weakSelf = self;
     [[KinDeviceApi sharedKinDevice] unBindDeviceByPid:self.currentDeviceInfo.asset_id withKey:self.currentDeviceInfo.akey withMainacc:self.accountInfo.acc success:^(NSDictionary *data) {
-        if (0) {
-            [self logout:nil];
+        if ([[data objectForKey:@"state"] integerValue] == 0) {
+            [weakSelf logout:nil];
+        }else{
+            [JJSUtil showHUDWithMessage:@"解绑失败" autoHide:YES];
         }
     } fail:^(NSString *error) {
-        
+        [JJSUtil showHUDWithMessage:error autoHide:YES];
     }];
 }
 
@@ -296,6 +302,14 @@
         NSLog(@"error:%@",error);
         [JJSUtil showHUDWithMessage:@"用户信息获取失败" autoHide:YES];
     }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex) {
+        //
+        [JJSUtil showHUDWithMessage:@"无接口" autoHide:YES];
+    }
 }
 
 @end

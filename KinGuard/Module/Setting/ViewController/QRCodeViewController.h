@@ -10,4 +10,6 @@
 
 @interface QRCodeViewController : KinViewController
 
+@property (nonatomic, copy) NSString *qrcode;
+
 @end

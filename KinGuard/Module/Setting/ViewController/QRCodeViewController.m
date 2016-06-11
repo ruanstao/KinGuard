@@ -10,6 +10,7 @@
 
 @interface QRCodeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *qrcodeView;
+@property (weak, nonatomic) IBOutlet UILabel *labDeviceId;
 
 @end
 
@@ -57,6 +58,8 @@
     self.qrcodeView.layer.shadowColor=[UIColor blackColor].CGColor;//设置阴影的颜色为黑色
     
     self.qrcodeView.layer.shadowOpacity=0.3;
+    
+    
 }
 
 

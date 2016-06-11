@@ -45,22 +45,6 @@
             timestampString = "486225651.950615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-bindDevice:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-            timestampString = "486225651.950615"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
             landmarkName = "-bindDevice:"
@@ -73,46 +57,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-            timestampString = "486225651.950615"
+            filePath = "KinGuard/Module/Setting/ViewController/SettingViewController.m"
+            timestampString = "487323452.580919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "-bindDevice:"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "-unlockBind:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[BindDeviceViewController bindDevice:]"
+                  symbolName = "-[SettingViewController unlockBind:]"
                   moduleName = "KinGuard"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "486405083.521211"
+                  urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Setting/ViewController/SettingViewController.m"
+                  timestampString = "487323452.590191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "224">
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "68">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__39-[BindDeviceViewController bindDevice:]_block_invoke"
+                  symbolName = "__36-[SettingViewController unlockBind:]_block_invoke"
                   moduleName = "KinGuard"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "486405083.521377"
+                  urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Setting/ViewController/SettingViewController.m"
+                  timestampString = "487323452.590379"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KinGuard/Module/Setting/ViewController/SettingViewController.m"
+            timestampString = "487323462.484281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "-unlockBind:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
