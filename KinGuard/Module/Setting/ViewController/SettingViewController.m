@@ -200,6 +200,7 @@
             case 2:{
                 //设备二维码
                 QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
+                memberController.info = self.currentDeviceInfo;
                 [self.navigationController pushViewController:memberController animated:YES];
             }
                 break;

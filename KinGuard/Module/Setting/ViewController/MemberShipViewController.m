@@ -194,9 +194,13 @@
     
     if ([sender.titleLabel.text isEqualToString:@"确定"]) {
         [JJSUtil showHUDWithWaitingMessage:nil];
-        [[KinDeviceApi sharedKinDevice] setRelationshipWithPid:@"" withRelationship:self.labMemerShip.text success:^(NSDictionary *data) {
+        [[KinDeviceApi sharedKinDevice] setRelationshipWithPid:self.info.asset_id withRelationship:self.labMemerShip.text success:^(NSDictionary *data) {
             [JJSUtil hideHUD];
             [JJSUtil showHUDWithMessage:@"关系设定成功" autoHide:YES];
+            
+            if (self.type == FromType_Setting) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
             
         } fail:^(NSString *error) {
             [JJSUtil hideHUD];
