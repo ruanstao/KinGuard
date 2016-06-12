@@ -15,7 +15,7 @@
 #import "XMNChatLocationMessageCell.h"
 
 #import "XMNAVAudioPlayer.h"
-#import "XMNChatServerExample.h"
+//#import "XMNChatServerExample.h"
 #import "XMNMessageStateManager.h"
 
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -35,7 +35,7 @@
     if ([super init]) {
         _dataArray = [NSMutableArray array];
         _parentVC = parentVC;
-        _chatServer = [[XMNChatServerExample alloc] init];
+//        _chatServer = [[XMNChatServerExample alloc] init];
         _chatServer.delegate = self;
     }
     return self;
@@ -44,7 +44,7 @@
 - (void)dealloc {
     
     [[XMNMessageStateManager shareManager] cleanState];
-    [(XMNChatServerExample *)self.chatServer cancelTimer];
+//    [(XMNChatServerExample *)self.chatServer cancelTimer];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

@@ -89,7 +89,10 @@ typedef enum: NSInteger{
         [cell.labTitle setText:[body objectForKey:@"title"]];
         
         NSMutableString  *a = [[NSMutableString alloc ] initWithString :[body objectForKey:@"value"]];
-        [a insertString:@":"  atIndex:a.length - 2];
+        if (a.length > 2) {
+            [a insertString:@":"  atIndex:a.length - 2];
+        }
+        
         [cell.labContent setText:a];
         return cell;
         
