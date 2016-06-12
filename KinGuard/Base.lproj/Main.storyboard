@@ -438,10 +438,10 @@
             </objects>
             <point key="canvasLocation" x="3706" y="-672"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="s7T-qi-8NX">
             <objects>
-                <viewController id="OT0-De-IvY" sceneMemberID="viewController">
+                <viewController id="OT0-De-IvY" customClass="ChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cg8-dP-6Vy"/>
                         <viewControllerLayoutGuide type="bottom" id="rht-tw-6IR"/>
