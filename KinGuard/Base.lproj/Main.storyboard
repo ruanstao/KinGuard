@@ -136,7 +136,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="street_w" translatesAutoresizingMaskIntoConstraints="NO" id="jNS-Fc-BOx">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jNS-Fc-BOx">
                                             <rect key="frame" x="18" y="25" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="UfA-uf-JOa"/>
@@ -357,7 +357,7 @@
                             <rect key="frame" x="225" y="2" width="150" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="120" minY="1" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="名字" image="arrow.png">
+                            <state key="normal" title="名字">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -2097,7 +2097,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.png" width="15" height="40"/>
         <image name="brother" width="116" height="121"/>
         <image name="grandmother" width="117" height="116"/>
         <image name="icon_60" width="60" height="60"/>
@@ -2115,7 +2114,6 @@
         <image name="more_on" width="32" height="32"/>
         <image name="street" width="32" height="32"/>
         <image name="street_on" width="32" height="32"/>
-        <image name="street_w" width="15" height="40"/>
         <image name="urgent_location_1" width="33" height="33"/>
         <image name="urgent_location_2" width="33" height="33"/>
         <image name="二维码框__" width="351" height="351"/>
