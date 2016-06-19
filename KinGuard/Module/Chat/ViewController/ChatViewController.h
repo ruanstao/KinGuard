@@ -7,7 +7,8 @@
 //
 
 #import "KinViewController.h"
+#import "XMNChatController.h"
 
-@interface ChatViewController : KinViewController
+@interface ChatViewController : XMNChatController
 
 @end

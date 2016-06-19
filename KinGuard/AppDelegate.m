@@ -28,18 +28,18 @@
     [KinGuartApi sharedKinGuard].appKey = KinGuardAppKey;
     [KinGuartApi sharedKinGuard].appSecret = KinGuardAppSecret;
     
-//    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
-//        if (obj) {
-//            NSData *userData = obj;
-//            UserModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
-//            if (!model.isLogined) { //非登录状态
-//                self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
-//            }
-//        }else{//未取到登录数据
-//            self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
-//        }
-//        
-//    }];
+    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+        if (obj) {
+            NSData *userData = obj;
+            UserModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+            if (!model.isLogined) { //非登录状态
+                self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+            }
+        }else{//未取到登录数据
+            self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
+        }
+        
+    }];
     
     
     return YES;

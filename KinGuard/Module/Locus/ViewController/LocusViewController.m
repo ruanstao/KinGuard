@@ -101,7 +101,11 @@
         NSLog(@"%@",data);
         [[NSUserDefaults standardUserDefaults] setObject:[data objectForKey:@"pids"] forKey:KinGuard_Device];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        self.pids = @[[data objectForKey:@"pids"]?:@[]];
+        if (![JJSUtil isBlankString:[data objectForKey:@"pids"]]) {
+            NSArray *array = [[data objectForKey:@"pids"] componentsSeparatedByString:@","];
+            self.pids = array;
+        }
+//        self.pids = @[[data objectForKey:@"pids"]?:@[]];
         if (self.pids.count> 0) {
             NSMutableArray *infoArr = [NSMutableArray array];
             for (NSString *pid in self.pids) {
@@ -122,7 +126,7 @@
 - (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
 {
     [[KinDeviceApi sharedKinDevice] deviceInfoPid:pid success:^(NSDictionary *data) {
-         NSLog(@"%@",data);
+         NSLog(@"info:%@",data);
         if (block) {
             block([DeviceInfo mj_objectWithKeyValues:data]);
         }
