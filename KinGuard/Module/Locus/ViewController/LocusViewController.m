@@ -84,7 +84,7 @@
         [self beginLocationAnimation:YES];
         [[KinLocationApi sharedKinLocation]readLocationInfo:info.asset_id success:^(NSDictionary *data) {
             
-            NSLog(@"%@",data);
+            NSLog(@"dd%@",data);
             self.currentLocation = [LocationInfo mj_objectWithKeyValues:data];
             [self beginLocationAnimation:NO];
         } fail:^(NSString *error) {
@@ -98,7 +98,7 @@
 - (void)requestData
 {
     [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
-        NSLog(@"%@",data);
+        NSLog(@"pids:%@",data);
         [[NSUserDefaults standardUserDefaults] setObject:[data objectForKey:@"pids"] forKey:KinGuard_Device];
         [[NSUserDefaults standardUserDefaults] synchronize];
         if (![JJSUtil isBlankString:[data objectForKey:@"pids"]]) {
@@ -108,6 +108,7 @@
 //        self.pids = @[[data objectForKey:@"pids"]?:@[]];
         if (self.pids.count> 0) {
             NSMutableArray *infoArr = [NSMutableArray array];
+            
             for (NSString *pid in self.pids) {
                 [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
                     [infoArr addObject:info];
@@ -131,7 +132,7 @@
             block([DeviceInfo mj_objectWithKeyValues:data]);
         }
     } fail:^(NSString *error) {
-         NSLog(@"%@",error);
+         NSLog(@"info:%@",error);
     }];
     
 }

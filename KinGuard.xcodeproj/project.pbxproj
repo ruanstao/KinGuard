@@ -1337,7 +1337,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 8MUA9S3748;
+						DevelopmentTeam = 4M8M5Z4AHT;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1711,7 +1711,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KinGuard.Kinzol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1743,7 +1743,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KinGuard.Kinzol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
