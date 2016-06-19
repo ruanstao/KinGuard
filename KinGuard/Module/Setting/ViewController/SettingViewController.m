@@ -11,14 +11,21 @@
 #import "MemberShipViewController.h"
 #import "QRCodeViewController.h"
 #import "AccountInfo.h"
+#import "GuarderInfo.h"
 
-@interface SettingViewController ()
+@interface SettingViewController ()<UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *babyName;
 @property (nonatomic, strong) UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UILabel *memberShip;
 
 @property (nonatomic, strong) NSArray *pids; //所有设备
 @property (nonatomic, strong) NSArray *info; //所有监护人信息
+
+@property (nonatomic, strong) NSMutableArray *memberInfo;//
+@property (nonatomic, strong) GuarderInfo *currentMemInfo;//
+@property (nonatomic, assign) NSInteger currentMemIndex;
+
 @property (nonatomic, strong) DeviceInfo *currentDeviceInfo;
 @property (nonatomic, assign) NSInteger currentIndex;//当前选择的宝贝指针
 
@@ -49,6 +56,8 @@
     self.backBtn.showsTouchWhenHighlighted = YES;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
+    
+    self.memberInfo = [NSMutableArray array];
     [self requestData];
 }
 
@@ -59,24 +68,25 @@
 
 - (void)requestData
 {
-    [self getUserInfo];
-    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-        self.pids = @[[data objectForKey:@"pids"]?:@[]];
-        if (self.pids.count> 0) {
-            NSMutableArray *infoArr = [NSMutableArray array];
-            for (NSString *pid in self.pids) {
-                [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
-                    [infoArr addObject:info];
-                    if (infoArr.count == self.pids.count) {
-                        self.info = infoArr;
-                        [self refreshUI];
-                    }
-                }];
+    [self getUserInfoFinish:^{
+        [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+            NSLog(@"%@",data);
+            self.pids = @[[data objectForKey:@"pids"]?:@[]];
+            if (self.pids.count> 0) {
+                NSMutableArray *infoArr = [NSMutableArray array];
+                for (NSString *pid in self.pids) {
+                    [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
+                        [infoArr addObject:info];
+                        if (infoArr.count == self.pids.count) {
+                            self.info = infoArr;
+                            [self refreshUI];
+                        }
+                    }];
+                }
             }
-        }
-    } fail:^(NSString *error) {
-        NSLog(@"%@",error);
+        } fail:^(NSString *error) {
+            NSLog(@"%@",error);
+        }];
     }];
 }
 
@@ -85,12 +95,26 @@
 
 //    c202237b
     [[KinDeviceApi sharedKinDevice] deviceInfoPid:@"c202237b"//pid
-                                          success:^(NSDictionary *data) {
+                                          success:^(NSDictionary *devicedata) {
 
-        NSLog(@"%@",data);
-        if (block) {
-            block([DeviceInfo mj_objectWithKeyValues:data]);
-        }
+        NSLog(@"%@",devicedata);
+        [[KinDeviceApi sharedKinDevice] deviceBindInfoPid:@"c202237b" success:^(NSDictionary *data) {
+            NSLog(@"baby:%@",data);
+            if ([data isKindOfClass:[NSArray class]]) {
+                NSArray *array = (NSArray *)data;
+                [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    GuarderInfo *info = [GuarderInfo mj_objectWithKeyValues:obj];
+                    [self.memberInfo addObject:info];
+                }];
+            }
+            if (block) {
+                block([DeviceInfo mj_objectWithKeyValues:devicedata]);
+            }
+        } fail:^(NSString *error) {
+                                                  
+        }];
+        
+                                              
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
     }];
@@ -115,6 +139,7 @@
 - (void)refreshUI
 {
     self.currentDeviceInfo = [self.info objectAtIndex:self.currentIndex];
+    self.currentMemInfo = [self.memberInfo objectAtIndex:self.currentMemIndex];
     [self.tableView reloadData];
     
 }
@@ -135,11 +160,15 @@
         switch (indexPath.row) {
             case 0:{
                 //星宝宝
-               self.babyName.text = self.currentDeviceInfo.asset_name;
+               self.babyName.text = self.currentMemInfo.acc_name;
             }
                 break;
             case 1:{
                 //我是宝贝的XX
+                if (![JJSUtil isBlankString:self.currentMemInfo.relationship]) {
+                    self.memberShip.text = self.currentMemInfo.relationship;
+                }
+                
             }
                 break;
             case 2:{
@@ -194,17 +223,22 @@
             case 1:{
                 //关系设置 //我是宝贝的XX
                 MemberShipViewController *memberController = [[MemberShipViewController alloc] initWithNibName:@"MemberShipViewController" bundle:nil];
+                memberController.type = FromType_Setting;
                 [self.navigationController pushViewController:memberController animated:YES];
             }
                 break;
             case 2:{
                 //设备二维码
                 QRCodeViewController *memberController = [[QRCodeViewController alloc] initWithNibName:@"QRCodeViewController" bundle:nil];
+                memberController.info = self.currentDeviceInfo;
                 [self.navigationController pushViewController:memberController animated:YES];
             }
                 break;
             case 3:{
                 //远程关机
+                
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"是否确认远程关机？" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alertView show];
             }
                 break;
                 
@@ -226,7 +260,7 @@
             }
                 break;
             case 3:{
-                //接触绑定
+                //解除绑定
             }
                 break;
                 
@@ -240,12 +274,20 @@
     if (self.currentIndex < 0) {
         self.currentIndex = self.info.count - 1;
     }
+    self.currentMemIndex --;
+    if (self.currentMemIndex < 0) {
+        self.currentMemIndex = self.memberInfo.count - 1;
+    }
     [self refreshUI];
 }
 - (IBAction)next:(id)sender {
     self.currentIndex ++;
     if (self.currentIndex > self.info.count - 1) {
         self.currentIndex = 0;
+    }
+    self.currentMemIndex ++;
+    if (self.currentMemIndex > self.memberInfo.count - 1) {
+        self.currentMemIndex = 0;
     }
     [self refreshUI];
 }
@@ -266,12 +308,15 @@
 - (IBAction)unlockBind:(id)sender {
     //akey = 6ce68d05;
     //"asset_id" = c202237b;
+    __weak typeof(self) weakSelf = self;
     [[KinDeviceApi sharedKinDevice] unBindDeviceByPid:self.currentDeviceInfo.asset_id withKey:self.currentDeviceInfo.akey withMainacc:self.accountInfo.acc success:^(NSDictionary *data) {
-        if (0) {
-            [self logout:nil];
+        if ([[data objectForKey:@"state"] integerValue] == 0) {
+            [weakSelf logout:nil];
+        }else{
+            [JJSUtil showHUDWithMessage:@"解绑失败" autoHide:YES];
         }
     } fail:^(NSString *error) {
-        
+        [JJSUtil showHUDWithMessage:error autoHide:YES];
     }];
 }
 
@@ -287,15 +332,24 @@
 }
 
 //获取用户数据
-- (void)getUserInfo
+- (void)getUserInfoFinish:(void (^)())block
 {
     [[KinGuartApi sharedKinGuard] getUserInfoSuccess:^(NSDictionary *data) {
         NSLog(@"userInfo:%@",data);
         self.accountInfo = [AccountInfo mj_objectWithKeyValues:data];
+        block();
     } fail:^(NSString *error) {
         NSLog(@"error:%@",error);
         [JJSUtil showHUDWithMessage:@"用户信息获取失败" autoHide:YES];
     }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex) {
+        //
+        [JJSUtil showHUDWithMessage:@"无接口" autoHide:YES];
+    }
 }
 
 @end

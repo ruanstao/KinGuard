@@ -10,6 +10,7 @@
 
 @interface QRCodeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *qrcodeView;
+@property (weak, nonatomic) IBOutlet UILabel *labDeviceId;
 
 @end
 
@@ -34,7 +35,7 @@
     
     //将字符串转换成NSData
     
-    NSData *data=[@"042bd75cb0bf4cdcad4d77038baec47e3ec5" dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data=[self.info.qrcode dataUsingEncoding:NSUTF8StringEncoding];
     
     //通过KVO设置滤镜inputmessage数据
     
@@ -57,6 +58,8 @@
     self.qrcodeView.layer.shadowColor=[UIColor blackColor].CGColor;//设置阴影的颜色为黑色
     
     self.qrcodeView.layer.shadowOpacity=0.3;
+    
+    self.labDeviceId.text = self.info.asset_id;
 }
 
 

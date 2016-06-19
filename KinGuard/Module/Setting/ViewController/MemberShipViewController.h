@@ -7,6 +7,7 @@
 //
 
 #import "KinViewController.h"
+#import "DeviceInfo.h"
 
 typedef enum :NSInteger{
 
@@ -16,5 +17,7 @@ typedef enum :NSInteger{
 @interface MemberShipViewController : KinViewController
 
 @property(nonatomic, assign) FromType type;
+
+@property(nonatomic, strong) DeviceInfo *info;
 
 @end

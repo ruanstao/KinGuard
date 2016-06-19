@@ -7,7 +7,10 @@
 //
 
 #import "KinViewController.h"
+#import "DeviceInfo.h"
 
 @interface QRCodeViewController : KinViewController
+
+@property (nonatomic, strong) DeviceInfo *info;
 
 @end
