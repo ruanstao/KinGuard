@@ -10,6 +10,8 @@
 
 @interface MainTabBarController ()
 
+@property (nonatomic,strong) UIView *touchView;
+
 @end
 
 @implementation MainTabBarController
@@ -38,4 +40,21 @@
 }
 */
 
+- (void)setTouchEnbel:(BOOL)touchEnbel
+{
+    if (touchEnbel) {
+        self.touchView.hidden = YES;
+    }else{
+        if (self.touchView == nil) {
+            self.touchView = [[UIView alloc] initWithFrame:self.view.bounds];
+            self.touchView.backgroundColor = [UIColor blackColor];
+            self.touchView.alpha = 0.3;
+            [self.touchView setTapActionWithBlock:^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:Show_LeftMenu object:nil];
+            }];
+            [self.view addSubview:self.touchView];
+        }
+        self.touchView.hidden = NO;
+    }
+}
 @end

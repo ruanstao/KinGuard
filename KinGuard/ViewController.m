@@ -183,8 +183,10 @@
         // 缩放首页
         self.mainView.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion);
         self.blackCover.alpha = ([showWhat isEqualToString: @"home"]) ? 1 : 0;
-        
-        if ([showWhat isEqualToString: @"left"]) {
+        if ([showWhat isEqualToString:@"home"]) {
+            self.mainTabBarController.touchEnbel = YES;
+        }else if ([showWhat isEqualToString: @"left"]) {
+            self.mainTabBarController.touchEnbel = NO;
             // 移动左侧菜单的中心
             self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y);
             // 缩放左侧菜单
