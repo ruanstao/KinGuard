@@ -108,31 +108,8 @@
             NSArray *array = [[data objectForKey:@"pids"] componentsSeparatedByString:@","];
             self.pids = array;
         }
-//        self.pids = @[[data objectForKey:@"pids"]?:@[]];
         if (self.pids.count> 0) {
-<<<<<<< HEAD
-            NSMutableArray *infoArr = [NSMutableArray array];
             
-            for (NSString *pid in self.pids) {
-                [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
-                    [infoArr addObject:info];
-                    if (infoArr.count == self.pids.count) {
-                        self.info = infoArr;
-                        [self refreshUI];
-                    }
-                }];
-            }
-=======
-//            NSMutableArray *infoArr = [NSMutableArray array];
-//            for (NSString *pid in self.pids) {
-//                [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
-//                    [infoArr addObject:info];
-//                    if (infoArr.count >= self.pids.count) {
-//                        self.info = infoArr;
-//                        [self refreshUI];
-//                    }
-//                }];
-//            }
             self.locusVM = [[LocusVM alloc] init];
             __weak typeof(self) weakSelf = self;
             [self.locusVM requestDeviceInfoWithPid:self.pids complete:^(BOOL finish, id obj) {
@@ -140,14 +117,11 @@
                     strongSelf.info = obj;
                     [strongSelf refreshUI];
             }];
->>>>>>> ruanstao/master
         }
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
     }];
 }
-
-<<<<<<< HEAD
 - (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
 {
     [[KinDeviceApi sharedKinDevice] deviceInfoPid:pid success:^(NSDictionary *data) {
@@ -160,22 +134,6 @@
     }];
     
 }
-=======
-
-//- (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
-//{
-//    [[KinDeviceApi sharedKinDevice] deviceInfoPid:pid success:^(NSDictionary *data) {
-//         NSLog(@"info:%@",data);
-//        if (block) {
-//            block([DeviceInfo mj_objectWithKeyValues:data]);
-//        }
-//    } fail:^(NSString *error) {
-//         NSLog(@"%@",error);
-//    }];
-//    
-//}
->>>>>>> ruanstao/master
-
 
 #pragma mark - headTItle
 - (IBAction)HeadButtonAction:(UIButton *)sender
