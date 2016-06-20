@@ -32,8 +32,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)SegChange:(id)sender {
-    
+- (IBAction)SegChange:(UISegmentedControl *)sender {
+    sender.selectedSegmentIndex = YES;
 }
 
 /*
