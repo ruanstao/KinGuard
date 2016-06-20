@@ -19,22 +19,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Locus/ViewController/LocusViewController.m"
-            timestampString = "488129891.100336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "-beiDouDingWei:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h"
             timestampString = "488125555.614473"
             startingColumnNumber = "9223372036854775807"
@@ -60,16 +44,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Locus/ViewModel/LocusVM.m"
-            timestampString = "488129639.261872"
+            filePath = "KinGuard/ViewController.m"
+            timestampString = "488131682.859903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-requestDeviceInfoWithPid:complete:"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-doTheAnimateWithProportion:andshowWhat:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

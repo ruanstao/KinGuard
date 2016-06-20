@@ -79,6 +79,7 @@
         DeviceInfo *info = self.info[self.showIndex];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:info];
+        [[NSUserDefaults standardUserDefaults] setObject:self.pids[self.showIndex] forKey:KinGuard_Device];
         [[NSUserDefaults standardUserDefaults] setObject:data forKey:CurrentBaby_Info];
         [[NSUserDefaults standardUserDefaults] synchronize];
         

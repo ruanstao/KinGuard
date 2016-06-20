@@ -12,4 +12,6 @@
 
 + (instancetype)creatByNib;
 
+@property (nonatomic,assign) BOOL touchEnbel;
+
 @end
