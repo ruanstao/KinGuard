@@ -623,11 +623,11 @@
             </objects>
             <point key="canvasLocation" x="2355" y="718"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--更多-->
         <scene sceneID="kfK-fO-OeJ">
             <objects>
                 <navigationController id="dTE-xd-c00" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="more" selectedImage="more_on" id="7RE-uk-r5i"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="more" selectedImage="more_on" id="7RE-uk-r5i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wam-7m-VqR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
