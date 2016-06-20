@@ -176,7 +176,7 @@
             poiAnnotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
         }
 
-        poiAnnotationView.image = [UIImage imageNamed:@"brother"];
+        poiAnnotationView.image = [UIImage imageNamed:@"icon_my_loacation"];
         poiAnnotationView.canShowCallout = NO;
 
         return poiAnnotationView;
@@ -188,7 +188,7 @@
         annotaionView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
     }
     annotaionView.canShowCallout = YES;
-    annotaionView.image = [UIImage imageNamed:@"street_on"];
+    annotaionView.image = [UIImage imageNamed:@"point_gps"];
     return annotaionView;
 }
 
@@ -199,7 +199,8 @@
         MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:overlay];
         
         polylineRenderer.lineWidth = 3.f;
-        polylineRenderer.strokeColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.6];
+        polylineRenderer.strokeColor = HexRGB(0xBBF0FF);
+//        [UIColor colorWithRed:0.5 green:1 blue:0.8 alpha:0.8];
         polylineRenderer.lineJoin = kCGLineJoinRound;//连接类型
         polylineRenderer.lineCap = kCGLineCapRound;//端点类型
         
