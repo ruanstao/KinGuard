@@ -12,6 +12,7 @@
 #import "LocationInfo.h"
 #import "DeviceAnnotationView.h"
 #import "PosHisInfoViewController.h"
+#import "LocusVM.h"
 
 @interface LocusViewController ()<MAMapViewDelegate>
 
@@ -28,6 +29,8 @@
 @property (nonatomic,strong) LocationInfo *currentLocation;
 
 @property (nonatomic,assign) BOOL annotationAnimation;
+
+@property (nonatomic,strong) LocusVM *locusVM;
 @end
 
 @implementation LocusViewController
@@ -107,6 +110,7 @@
         }
 //        self.pids = @[[data objectForKey:@"pids"]?:@[]];
         if (self.pids.count> 0) {
+<<<<<<< HEAD
             NSMutableArray *infoArr = [NSMutableArray array];
             
             for (NSString *pid in self.pids) {
@@ -118,12 +122,32 @@
                     }
                 }];
             }
+=======
+//            NSMutableArray *infoArr = [NSMutableArray array];
+//            for (NSString *pid in self.pids) {
+//                [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
+//                    [infoArr addObject:info];
+//                    if (infoArr.count >= self.pids.count) {
+//                        self.info = infoArr;
+//                        [self refreshUI];
+//                    }
+//                }];
+//            }
+            self.locusVM = [[LocusVM alloc] init];
+            __weak typeof(self) weakSelf = self;
+            [self.locusVM requestDeviceInfoWithPid:self.pids complete:^(BOOL finish, id obj) {
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                    strongSelf.info = obj;
+                    [strongSelf refreshUI];
+            }];
+>>>>>>> ruanstao/master
         }
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
     }];
 }
 
+<<<<<<< HEAD
 - (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
 {
     [[KinDeviceApi sharedKinDevice] deviceInfoPid:pid success:^(NSDictionary *data) {
@@ -136,6 +160,21 @@
     }];
     
 }
+=======
+
+//- (void)requestDeviceInfo:(NSString *)pid finish:(void (^)(DeviceInfo *info))block
+//{
+//    [[KinDeviceApi sharedKinDevice] deviceInfoPid:pid success:^(NSDictionary *data) {
+//         NSLog(@"info:%@",data);
+//        if (block) {
+//            block([DeviceInfo mj_objectWithKeyValues:data]);
+//        }
+//    } fail:^(NSString *error) {
+//         NSLog(@"%@",error);
+//    }];
+//    
+//}
+>>>>>>> ruanstao/master
 
 
 #pragma mark - headTItle

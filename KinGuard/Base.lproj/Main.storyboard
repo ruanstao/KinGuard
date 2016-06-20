@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="akG-Cq-dS9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -92,7 +92,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id:000001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Is-PMg">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="id:000001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Is-PMg">
                                             <rect key="frame" x="128" y="48" width="78" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,7 +265,9 @@
                                     <constraint firstAttribute="width" constant="30" id="Lcp-3j-vP0"/>
                                     <constraint firstAttribute="height" constant="30" id="TaC-fg-8UJ"/>
                                 </constraints>
-                                <state key="normal" title="定位" image="grandmother"/>
+                                <state key="normal" title="定位" image="abc_btn_on"/>
+                                <state key="selected" image="abc_btn_off"/>
+                                <state key="highlighted" image="abc_btn_off"/>
                                 <connections>
                                     <action selector="userLocationAction:" destination="Wpg-KV-NsK" eventType="touchUpInside" id="uxS-6m-R9E"/>
                                 </connections>
@@ -354,10 +356,10 @@
                             </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tz2-HX-rUc">
-                            <rect key="frame" x="225" y="2" width="150" height="40"/>
+                            <rect key="frame" x="225" y="11" width="150" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <inset key="imageEdgeInsets" minX="120" minY="1" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="名字">
+                            <state key="normal" title="名字" image="downArror">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -2098,8 +2100,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="abc_btn_off" width="48" height="48"/>
+        <image name="abc_btn_on" width="48" height="48"/>
         <image name="brother" width="116" height="121"/>
-        <image name="grandmother" width="117" height="116"/>
+        <image name="downArror" width="12" height="12"/>
         <image name="icon_60" width="60" height="60"/>
         <image name="icon_light" width="80" height="80"/>
         <image name="icon_pic" width="80" height="80"/>
