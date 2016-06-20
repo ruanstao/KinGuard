@@ -139,7 +139,7 @@
 {
     NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
     if (![JJSUtil isBlankString:pid]) {
-        [[KinGuartApi sharedKinGuard] downloadHeadPortraitByPid:@"" andProgress:^(NSProgress *progress) {
+        [[KinGuartApi sharedKinGuard] downloadHeadPortraitByPid:pid?:@"" andProgress:^(NSProgress *progress) {
             
         } finished:^(NSDictionary *data) {
             NSLog(@"%@",data);
