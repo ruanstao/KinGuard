@@ -39,7 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.messageChatType = XMNMessageChatSingle;
     [XMNAVAudioPlayer sharePlayer].delegate = self;
     self.chatViewModel = [[XMNChatViewModel alloc] initWithParentVC:self];
     self.chatViewModel.delegate = self;

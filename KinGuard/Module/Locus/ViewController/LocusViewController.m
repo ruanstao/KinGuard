@@ -14,7 +14,7 @@
 #import "PosHisInfoViewController.h"
 #import "LocusVM.h"
 
-@interface LocusViewController ()<MAMapViewDelegate>
+@interface LocusViewController ()<MAMapViewDelegate,CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet MAMapView *mapView;
 
@@ -31,6 +31,9 @@
 @property (nonatomic,assign) BOOL annotationAnimation;
 
 @property (nonatomic,strong) LocusVM *locusVM;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 @end
 
 @implementation LocusViewController
@@ -220,8 +223,34 @@
 }
 
 - (IBAction)userLocationAction:(id)sender {
-    [self.mapView addAnnotation:self.mapView.userLocation];
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+
+        switch ([CLLocationManager authorizationStatus]) {
+            case kCLAuthorizationStatusAuthorizedAlways:
+            case kCLAuthorizationStatusAuthorizedWhenInUse:{
+                [self.locationManager startUpdatingLocation];
+            }
+                break;
+            case kCLAuthorizationStatusNotDetermined:
+//                [self.locationManager requestAlwaysAuthorization];
+                [self.locationManager requestWhenInUseAuthorization];
+                break;
+            case kCLAuthorizationStatusDenied:
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请在隐私设置中打开定位开关" delegate:self cancelButtonTitle:@"以后再说" otherButtonTitles:@"前往设置",nil];
+                [alertView show];
+            }
+                break;
+            default:
+                break;
+        }
+    }else{
+        [self.locationManager startUpdatingLocation];
+    }
+//    [self.locationManager startUpdatingLocation];
+//    [self.mapView addAnnotation:self.mapView.userLocation];
+//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
 
 - (void)bulingbuling:(UIButton *)button
@@ -323,5 +352,35 @@
 
 }
 
+#pragma mark - 用户定位
+- (CLLocationManager *)locationManager{
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+    }
+    return _locationManager;
+}
 
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [manager startUpdatingLocation];
+    }
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    //取出经纬度
+    CLLocationCoordinate2D coordinate = manager.location.coordinate;
+    // 3.打印经纬度
+    MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
+    pointAnno.coordinate = coordinate;
+    [self.mapView.annotations enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.mapView removeAnnotation:obj];
+    }];
+    [self.mapView addAnnotation:pointAnno];
+    [self.mapView setCenterCoordinate:coordinate animated:YES];
+    [self.locationManager stopUpdatingLocation];//停止定位  
+}
 @end

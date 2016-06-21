@@ -71,6 +71,9 @@
         }
     } fail:^(NSString *error) {
         NSLog(@"%@",error);
+        if (block) {
+            block([DeviceInfo new]);
+        }
     }];
     
 }
