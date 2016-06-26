@@ -228,10 +228,18 @@
         }
     }else if (alertView.tag == 2)
     {
+        //email
         if (!buttonIndex) {
             if (![JJSUtil isBlankString:text]) {
-                [self.labEmail setText:text];
-                self.email = text;
+                NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+                NSPredicate *emailPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+                if ([emailPre evaluateWithObject:text]) {
+                    [self.labEmail setText:text];
+                    self.email = text;
+                }else{
+                    [self performSelector:@selector(emailAction:) withObject:nil afterDelay:1];
+                    [JJSUtil showHUDWithMessage:@"邮箱格式错误" autoHide:YES];
+                }
             }
         }
     }else if (alertView.tag == 40)
