@@ -39,6 +39,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.chatterName = @"asdf";
+    self.chatterThumb = @"brother";
     self.messageChatType = XMNMessageChatSingle;
     [XMNAVAudioPlayer sharePlayer].delegate = self;
     self.chatViewModel = [[XMNChatViewModel alloc] initWithParentVC:self];
@@ -123,7 +125,7 @@
         return;
     }
     [UIView animateWithDuration:.3f animations:^{
-        [self.tableView setFrame:CGRectMake(0, 0, self.view.frame.size.width, frame.origin.y)];
+        [self.tableView setFrame:CGRectMake(0, 0, self.view.frame.size.width - 49, frame.origin.y)];
     } completion:nil];
 }
 
@@ -247,7 +249,7 @@
 
 - (XMChatBar *)chatBar {
     if (!_chatBar) {
-        _chatBar = [[XMChatBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kMinHeight - (self.navigationController.navigationBar.isTranslucent ? 0 : 64), self.view.frame.size.width, kMinHeight)];
+        _chatBar = [[XMChatBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kMinHeight - (self.navigationController.navigationBar.isTranslucent ? 0 : 64) - 49, self.view.frame.size.width, kMinHeight)];
         [_chatBar setSuperViewHeight:[UIScreen mainScreen].bounds.size.height - (self.navigationController.navigationBar.isTranslucent ? 0 : 64)];
         _chatBar.delegate = self;
     }
