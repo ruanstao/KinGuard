@@ -136,7 +136,7 @@
     
     CGRect addBarFrame = self.frame;
     addBarFrame.size.height = textViewFrame.size.height+offset;
-    addBarFrame.origin.y = self.superViewHeight - self.bottomHeight - addBarFrame.size.height;
+    addBarFrame.origin.y = self.superViewHeight - self.bottomHeight - addBarFrame.size.height - 49;
     [self setFrame:addBarFrame animated:NO];
     if (textView.scrollEnabled) {
         [textView scrollRangeToVisible:NSMakeRange(textView.text.length - 2, 1)];

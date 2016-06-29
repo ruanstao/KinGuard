@@ -1347,7 +1347,11 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
+<<<<<<< HEAD
 						DevelopmentTeam = 8MUA9S3748;
+=======
+						DevelopmentTeam = Q8G47UAD38;
+>>>>>>> ruanstao/master
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1723,7 +1727,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1755,7 +1759,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
