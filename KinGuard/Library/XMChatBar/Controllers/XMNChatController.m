@@ -125,7 +125,7 @@
         return;
     }
     [UIView animateWithDuration:.3f animations:^{
-        [self.tableView setFrame:CGRectMake(0, 0, self.view.frame.size.width - 49, frame.origin.y)];
+        [self.tableView setFrame:CGRectMake(0, 0, self.view.frame.size.width , frame.origin.y)];
     } completion:nil];
 }
 
