@@ -226,6 +226,7 @@
                 self.nickName = text;
             }
         }
+        
     }else if (alertView.tag == 2)
     {
         //email
