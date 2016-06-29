@@ -67,6 +67,7 @@
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
 		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
+		D525810E1D2409A500F135FF /* LocationHistroyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D525810D1D2409A500F135FF /* LocationHistroyModel.m */; };
 		D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */; };
 		D539D8821CDE54FF00FF36C0 /* BindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D87F1CDE54FF00FF36C0 /* BindDeviceViewController.m */; };
 		D539D8C51CDE562400FF36C0 /* UIImage+IAnime.m in Sources */ = {isa = PBXBuildFile; fileRef = D539D8C41CDE562400FF36C0 /* UIImage+IAnime.m */; };
@@ -278,6 +279,8 @@
 		62CE4E2D1CE2410A007551E4 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		62CE4E2E1CE2410A007551E4 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D525810C1D2409A500F135FF /* LocationHistroyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHistroyModel.h; sourceTree = "<group>"; };
+		D525810D1D2409A500F135FF /* LocationHistroyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHistroyModel.m; sourceTree = "<group>"; };
 		D538FEBD1CE4DE9D002D60EB /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		D539D87E1CDE54FF00FF36C0 /* BindDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindDeviceViewController.h; sourceTree = "<group>"; };
@@ -1244,6 +1247,8 @@
 		DAAA95651CFC278F00113202 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D525810C1D2409A500F135FF /* LocationHistroyModel.h */,
+				D525810D1D2409A500F135FF /* LocationHistroyModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1342,7 +1347,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = QZL59SN5K2;
+						DevelopmentTeam = 8MUA9S3748;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1545,6 +1550,7 @@
 				62111D2F1D0C68120010EC2A /* XMChatFaceView.m in Sources */,
 				DAAA956B1CFC27AE00113202 /* MonitoringLogsViewController.m in Sources */,
 				DA063B841CD9C98D00524689 /* JJSUtil.m in Sources */,
+				D525810E1D2409A500F135FF /* LocationHistroyModel.m in Sources */,
 				D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */,
 				6255BEFB1CF5F3A6006E6C18 /* WHUCalendarPopView.m in Sources */,
 				DA063BA51CDA07FF00524689 /* KinTableViewController.m in Sources */,
