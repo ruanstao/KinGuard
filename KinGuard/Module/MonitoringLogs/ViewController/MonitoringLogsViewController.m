@@ -157,7 +157,7 @@
                                                            options:NSJSONWritingPrettyPrinted
                                                              error:&error];
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        [cell setText:jsonString];
+        [cell.textLabel setText:jsonString];
     }
     
     return cell;
