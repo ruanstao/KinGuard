@@ -18,6 +18,13 @@
     } failed:^(NSString *error) {
         
         NSLog(@"%@",error);
+        NSString *jsonStr = [NSString stringWithFormat:@"[%@]",error];
+        NSData *jsonData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil ];
+        NSLog(@"%@",arr);
+        if (block) {
+            block(YES,arr);
+        }
     }];
 }
 

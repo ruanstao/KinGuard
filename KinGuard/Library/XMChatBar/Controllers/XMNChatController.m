@@ -61,15 +61,58 @@
 - (void)requestData
 {
     NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
-//    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
-//        if (obj) {
-//            NSData *userData = obj;
-//            UserModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
-//        }
-//    }];
+    __block UserModel *model = nil;
+    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+        if (obj) {
+            NSData *userData = obj;
+            model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+        }
+    }];
 
     [[ChatVM alloc] getMessage:pid complete:^(BOOL finish, id obj) {
-        
+//        audioname = "";
+//        chatcontent = mmmmm;
+//        fromacc = 13395018200;
+//        ts = 1466146754;
+        for (int i = 0 ; i < [obj count]; i++) {
+            NSDictionary *dic = obj[i];
+            NSMutableDictionary *messageDic = [NSMutableDictionary dictionary];
+
+            if (i > 0) {
+                //系统时间
+                long long passTime = [obj[i-1][@"ts"] longLongValue];
+                long long thisTime = [obj[i][@"ts"] longLongValue];
+                if (thisTime - passTime > 60) {
+                    NSMutableDictionary *systemDic = [NSMutableDictionary dictionary];
+                    //文本类型
+                    systemDic[kXMNMessageConfigurationTypeKey] = @( XMNMessageTypeSystem);
+                    //内容
+                    systemDic[kXMNMessageConfigurationTextKey] = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:thisTime] type:10];
+                    //是否为系统消息
+                    systemDic[kXMNMessageConfigurationOwnerKey] = @(XMNMessageOwnerSystem);
+                    systemDic[kXMNMessageConfigurationGroupKey] = @(XMNMessageChatSingle);
+                    [self.chatViewModel addMessage:systemDic];
+                    
+                }
+            }
+            //文本类型
+            messageDic[kXMNMessageConfigurationTypeKey] = @( XMNMessageTypeText);
+            //内容
+            messageDic[kXMNMessageConfigurationTextKey] = dic[@"chatcontent"];
+            if ([dic[@"fromacc"] isEqualToString:model.username]) {
+                //是否为自己发送的消息
+                messageDic[kXMNMessageConfigurationOwnerKey] = @(XMNMessageOwnerSelf);
+                //是否为群组聊天   个人发送
+                messageDic[kXMNMessageConfigurationGroupKey] = @(XMNMessageChatSingle);
+//                [self.chatViewModel sendMessage:messageDic];
+            }else{
+                messageDic[kXMNMessageConfigurationOwnerKey] = @(XMNMessageOwnerOther);
+                //是否为群组聊天  别人发送
+                messageDic[kXMNMessageConfigurationGroupKey] = @(XMNMessageChatGroup);
+            }
+            [self.chatViewModel addMessage:messageDic];
+            [self.tableView reloadData];
+        }
     }];
 }
 
