@@ -39,6 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"astitle";
     self.chatterName = @"asdf";
     self.chatterThumb = @"brother";
     self.messageChatType = XMNMessageChatSingle;
@@ -249,7 +250,7 @@
 
 - (XMChatBar *)chatBar {
     if (!_chatBar) {
-        _chatBar = [[XMChatBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kMinHeight - (self.navigationController.navigationBar.isTranslucent ? 0 : 64) - 49, self.view.frame.size.width, kMinHeight)];
+        _chatBar = [[XMChatBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kMinHeight - (self.navigationController.navigationBar.isTranslucent ? 0 : 64) - 49 , self.view.frame.size.width, kMinHeight)];
         [_chatBar setSuperViewHeight:[UIScreen mainScreen].bounds.size.height - (self.navigationController.navigationBar.isTranslucent ? 0 : 64)];
         _chatBar.delegate = self;
     }

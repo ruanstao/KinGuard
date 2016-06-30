@@ -143,13 +143,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Library/XMChatBar/Controllers/XMNChatController.m"
-            timestampString = "488911123.639224"
+            filePath = "KinGuard/Library/XMChatBar/Views/XMChatBar.m"
+            timestampString = "488994109.613349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-chatBarFrameDidChange:frame:"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-textViewDidChange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
