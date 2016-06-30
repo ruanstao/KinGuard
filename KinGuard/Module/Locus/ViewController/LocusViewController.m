@@ -174,7 +174,7 @@
 //    self.annotationAnimation = animation;
     MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
     pointAnno.title = self.currentLocation.addr;
-    pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:10];
+    pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:18];
     pointAnno.coordinate = CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude);
     [self.mapView.annotations enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.mapView removeAnnotation:obj];

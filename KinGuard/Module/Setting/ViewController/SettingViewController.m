@@ -12,6 +12,7 @@
 #import "QRCodeViewController.h"
 #import "AccountInfo.h"
 #import "GuarderInfo.h"
+#import "LocusVM.h"
 
 @interface SettingViewController ()<UIAlertViewDelegate>
 
@@ -30,6 +31,8 @@
 @property (nonatomic, assign) NSInteger currentIndex;//当前选择的宝贝指针
 
 @property (nonatomic, strong) AccountInfo *accountInfo;
+
+@property (nonatomic, strong) LocusVM *locusVM;
 @end
 
 @implementation SettingViewController
@@ -71,18 +74,32 @@
     [self getUserInfoFinish:^{
         [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
             NSLog(@"%@",data);
-            self.pids = @[[data objectForKey:@"pids"]?:@[]];
+//            self.pids = @[[data objectForKey:@"pids"]?:@[]];
+//            if (self.pids.count> 0) {
+//                NSMutableArray *infoArr = [NSMutableArray array];
+//                for (NSString *pid in self.pids) {
+//                    [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
+//                        [infoArr addObject:info];
+//                        if (infoArr.count == self.pids.count) {
+//                            self.info = infoArr;
+//                            [self refreshUI];
+//                        }
+//                    }];
+//                }
+//            }
+            if (![JJSUtil isBlankString:[data objectForKey:@"pids"]]) {
+                NSArray *array = [[data objectForKey:@"pids"] componentsSeparatedByString:@","];
+                self.pids = array;
+            }
             if (self.pids.count> 0) {
-                NSMutableArray *infoArr = [NSMutableArray array];
-                for (NSString *pid in self.pids) {
-                    [self requestDeviceInfo:pid finish:^(DeviceInfo *info) {
-                        [infoArr addObject:info];
-                        if (infoArr.count == self.pids.count) {
-                            self.info = infoArr;
-                            [self refreshUI];
-                        }
-                    }];
-                }
+                
+                self.locusVM = [[LocusVM alloc] init];
+                __weak typeof(self) weakSelf = self;
+                [self.locusVM requestDeviceInfoWithPid:self.pids complete:^(BOOL finish, id obj) {
+                    __strong typeof(weakSelf) strongSelf = weakSelf;
+                    strongSelf.info = obj;
+                    [strongSelf refreshUI];
+                }];
             }
         } fail:^(NSString *error) {
             NSLog(@"%@",error);
@@ -139,7 +156,7 @@
 - (void)refreshUI
 {
     self.currentDeviceInfo = [self.info objectAtIndex:self.currentIndex];
-    self.currentMemInfo = [self.memberInfo objectAtIndex:self.currentMemIndex];
+//    self.currentMemInfo = [self.memberInfo objectAtIndex:self.currentMemIndex];
     [self.tableView reloadData];
     
 }
@@ -160,14 +177,14 @@
         switch (indexPath.row) {
             case 0:{
                 //星宝宝
-               self.babyName.text = self.currentMemInfo.acc_name;
+               self.babyName.text = self.currentDeviceInfo.asset_name;
             }
                 break;
             case 1:{
                 //我是宝贝的XX
-                if (![JJSUtil isBlankString:self.currentMemInfo.relationship]) {
-                    self.memberShip.text = self.currentMemInfo.relationship;
-                }
+//                if (![JJSUtil isBlankString:self.currentMemInfo.relationship]) {
+//                    self.memberShip.text = self.currentMemInfo.relationship;
+//                }
                 
             }
                 break;
