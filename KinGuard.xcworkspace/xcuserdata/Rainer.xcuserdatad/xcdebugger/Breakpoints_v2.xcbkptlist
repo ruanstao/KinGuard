@@ -74,7 +74,7 @@
                   moduleName = "KinGuard"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "488910799.198771"
+                  timestampString = "488996480.515691"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "161"
@@ -89,7 +89,7 @@
                   moduleName = "KinGuard"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "488910799.199012"
+                  timestampString = "488996480.515908"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "161"
@@ -128,22 +128,6 @@
             startingLineNumber = "158"
             endingLineNumber = "158"
             landmarkName = "-bindDevice:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/MonitoringLogs/ViewController/MonitoringLogsViewController.m"
-            timestampString = "488908480.104665"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

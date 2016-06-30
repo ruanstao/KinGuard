@@ -85,6 +85,7 @@
 		D551C8961CE8C7FE00D23FAC /* AccountSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C8951CE8C7FE00D23FAC /* AccountSafeViewController.m */; };
 		D551C89A1CE8CCA700D23FAC /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C8991CE8CCA700D23FAC /* VPImageCropperViewController.m */; };
 		D551C89D1CE8D02800D23FAC /* AccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D551C89C1CE8D02800D23FAC /* AccountInfo.m */; };
+		D552E8EC1D257B9C00661CBB /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D52581121D24317800F135FF /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D554FDAF1CDCDE8A00F1537F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D554FDAE1CDCDE8A00F1537F /* UserModel.m */; };
 		D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD93D1CE221320008F54B /* FollowViewController.m */; };
 		D55FD9491CE23D100008F54B /* MemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55FD9481CE23D100008F54B /* MemberListViewController.m */; };
@@ -150,6 +151,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D552E8EC1D257B9C00661CBB /* StudentCardApi.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
