@@ -30,4 +30,16 @@
 - (void)downloadRecordWithDeviceId:(NSString *)deviceId token:(NSString *)token
                        andFileName:(NSString *)fileName andProgress:(KSDownloadProgress)progress finished:(KSFinishedBlock)finished failed:(KSFailedBlock)failed;
 
+//上传聊天信息
+- (void)uploadChatMessageToAcc:(NSString *)acc chatContent:(NSString *)message finished:(KSFinishedBlock)finished failed:(KSFailedBlock)failed;
+
+//获取聊天信息
+- (void)getMessageToAcc:(NSString *)acc fromDate:(NSString *)fromDate toDate:(NSString *)toDate finished:(KSFinishedBlock)finished failed:(KSFailedBlock)failed;
+
+//群聊信息上传
+- (void)uploadMessageToPid:(NSString *)pid chatContent:(NSString *)chatcontent finished:(KSFinishedBlock)finished failed:(KSFailedBlock)failed;
+
+//获取群聊信息
+- (void)getChatMessage:(NSString *)pid chatContent:(NSString *)chatcontent fromDate:(NSString *)fromDate toDate:(NSString *)toDate finished:(KSFinishedBlock)finished failed:(KSFailedBlock)failed;
+
 @end
