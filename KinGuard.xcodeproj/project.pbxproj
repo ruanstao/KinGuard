@@ -67,6 +67,8 @@
 		628759DD1CD11EBE00CD92A5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 628759DC1CD11EBE00CD92A5 /* MainTabBarController.m */; };
 		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
 		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
+		62DE7F2D1D25792400CD670E /* ChatVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DE7F2C1D25792400CD670E /* ChatVM.m */; };
+		62DE7F2E1D257BD000CD670E /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D52581121D24317800F135FF /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D525810E1D2409A500F135FF /* LocationHistroyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D525810D1D2409A500F135FF /* LocationHistroyModel.m */; };
 		D52581131D24317800F135FF /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52581121D24317800F135FF /* StudentCardApi.framework */; };
 		D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */; };
@@ -278,6 +280,8 @@
 		62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceAnnotationView.m; sourceTree = "<group>"; };
 		62CE4E2D1CE2410A007551E4 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		62CE4E2E1CE2410A007551E4 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		62DE7F2B1D25792400CD670E /* ChatVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatVM.h; path = KinGuard/Module/Chat/ViewModel/ChatVM.h; sourceTree = SOURCE_ROOT; };
+		62DE7F2C1D25792400CD670E /* ChatVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatVM.m; path = KinGuard/Module/Chat/ViewModel/ChatVM.m; sourceTree = SOURCE_ROOT; };
 		B7A6D5CEF3B099406C763F55 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D525810C1D2409A500F135FF /* LocationHistroyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHistroyModel.h; sourceTree = "<group>"; };
 		D525810D1D2409A500F135FF /* LocationHistroyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHistroyModel.m; sourceTree = "<group>"; };
@@ -636,6 +640,8 @@
 		62111D411D0C681D0010EC2A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				62DE7F2B1D25792400CD670E /* ChatVM.h */,
+				62DE7F2C1D25792400CD670E /* ChatVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1347,7 +1353,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 8MUA9S3748;
+						DevelopmentTeam = Q8G47UAD38;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1514,6 +1520,7 @@
 				D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */,
 				622218FB1CD10C3C00A47434 /* AppDelegate.m in Sources */,
 				DA063B861CD9C98D00524689 /* UIImageEffects.m in Sources */,
+				62DE7F2D1D25792400CD670E /* ChatVM.m in Sources */,
 				62111D301D0C68120010EC2A /* XMChatMoreItem.m in Sources */,
 				D55FD93E1CE221320008F54B /* FollowViewController.m in Sources */,
 				62111D211D0C68120010EC2A /* XMNChatMessageCell+XMNCellIdentifier.m in Sources */,

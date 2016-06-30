@@ -11,9 +11,12 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "UITableView+XMNCellRegister.h"
 #import "XMNChatMessageCell+XMNCellIdentifier.h"
+#import "ChatVM.h"
+#import "UserModel.h"
 
 #define kSelfName @"XMFraker"
 #define kSelfThumb @"http://img1.touxiang.cn/uploads/20131114/14-065809_117.jpg"
+
 
 @interface XMNChatController () <XMChatBarDelegate,XMNAVAudioPlayerDelegate,XMNChatMessageCellDelegate,XMNChatViewModelDelegate>
 
@@ -39,6 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"astitle";
     self.chatterName = @"asdf";
     self.chatterThumb = @"brother";
     self.messageChatType = XMNMessageChatSingle;
@@ -51,6 +55,65 @@
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.chatBar];
     
+    [self requestData];
+}
+
+- (void)requestData
+{
+    NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
+    __block UserModel *model = nil;
+    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+        if (obj) {
+            NSData *userData = obj;
+            model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+        }
+    }];
+
+    [[ChatVM alloc] getMessage:pid complete:^(BOOL finish, id obj) {
+//        audioname = "";
+//        chatcontent = mmmmm;
+//        fromacc = 13395018200;
+//        ts = 1466146754;
+        for (int i = 0 ; i < [obj count]; i++) {
+            NSDictionary *dic = obj[i];
+            NSMutableDictionary *messageDic = [NSMutableDictionary dictionary];
+
+            if (i > 0) {
+                //系统时间
+                long long passTime = [obj[i-1][@"ts"] longLongValue];
+                long long thisTime = [obj[i][@"ts"] longLongValue];
+                if (thisTime - passTime > 60) {
+                    NSMutableDictionary *systemDic = [NSMutableDictionary dictionary];
+                    //文本类型
+                    systemDic[kXMNMessageConfigurationTypeKey] = @( XMNMessageTypeSystem);
+                    //内容
+                    systemDic[kXMNMessageConfigurationTextKey] = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:thisTime] type:10];
+                    //是否为系统消息
+                    systemDic[kXMNMessageConfigurationOwnerKey] = @(XMNMessageOwnerSystem);
+                    systemDic[kXMNMessageConfigurationGroupKey] = @(XMNMessageChatSingle);
+                    [self.chatViewModel addMessage:systemDic];
+                    
+                }
+            }
+            //文本类型
+            messageDic[kXMNMessageConfigurationTypeKey] = @( XMNMessageTypeText);
+            //内容
+            messageDic[kXMNMessageConfigurationTextKey] = dic[@"chatcontent"];
+            if ([dic[@"fromacc"] isEqualToString:model.username]) {
+                //是否为自己发送的消息
+                messageDic[kXMNMessageConfigurationOwnerKey] = @(XMNMessageOwnerSelf);
+                //是否为群组聊天   个人发送
+                messageDic[kXMNMessageConfigurationGroupKey] = @(XMNMessageChatSingle);
+//                [self.chatViewModel sendMessage:messageDic];
+            }else{
+                messageDic[kXMNMessageConfigurationOwnerKey] = @(XMNMessageOwnerOther);
+                //是否为群组聊天  别人发送
+                messageDic[kXMNMessageConfigurationGroupKey] = @(XMNMessageChatGroup);
+            }
+            [self.chatViewModel addMessage:messageDic];
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -229,7 +292,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - kMinHeight) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - kMinHeight - 49) style:UITableViewStylePlain];
         
         _tableView.estimatedRowHeight = 66;
         _tableView.delegate = self.chatViewModel;
@@ -249,7 +312,7 @@
 
 - (XMChatBar *)chatBar {
     if (!_chatBar) {
-        _chatBar = [[XMChatBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kMinHeight - (self.navigationController.navigationBar.isTranslucent ? 0 : 64) - 49, self.view.frame.size.width, kMinHeight)];
+        _chatBar = [[XMChatBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - kMinHeight - (self.navigationController.navigationBar.isTranslucent ? 0 : 64) - 49 , self.view.frame.size.width, kMinHeight)];
         [_chatBar setSuperViewHeight:[UIScreen mainScreen].bounds.size.height - (self.navigationController.navigationBar.isTranslucent ? 0 : 64)];
         _chatBar.delegate = self;
     }
