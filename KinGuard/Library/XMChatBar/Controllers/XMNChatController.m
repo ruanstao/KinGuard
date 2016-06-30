@@ -11,9 +11,12 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "UITableView+XMNCellRegister.h"
 #import "XMNChatMessageCell+XMNCellIdentifier.h"
+#import "ChatVM.h"
+#import "UserModel.h"
 
 #define kSelfName @"XMFraker"
 #define kSelfThumb @"http://img1.touxiang.cn/uploads/20131114/14-065809_117.jpg"
+
 
 @interface XMNChatController () <XMChatBarDelegate,XMNAVAudioPlayerDelegate,XMNChatMessageCellDelegate,XMNChatViewModelDelegate>
 
@@ -52,6 +55,22 @@
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.chatBar];
     
+    [self requestData];
+}
+
+- (void)requestData
+{
+    NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
+//    [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+//        if (obj) {
+//            NSData *userData = obj;
+//            UserModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+//        }
+//    }];
+
+    [[ChatVM alloc] getMessage:pid complete:^(BOOL finish, id obj) {
+        
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
