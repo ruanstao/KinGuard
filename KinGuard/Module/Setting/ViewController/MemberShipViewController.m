@@ -201,6 +201,7 @@
             if (self.type == FromType_Setting) {
                 [self.navigationController popViewControllerAnimated:YES];
             }else if(self.type == FromType_Login) {
+                
                 //跳转到主界面
                 ViewController *viewController = [[ViewController alloc] init];
                 self.view.window.rootViewController = viewController;

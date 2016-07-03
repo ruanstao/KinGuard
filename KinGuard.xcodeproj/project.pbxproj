@@ -68,7 +68,6 @@
 		62CE4E2B1CE23D92007551E4 /* DeviceAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2A1CE23D92007551E4 /* DeviceAnnotationView.m */; };
 		62CE4E2F1CE2410A007551E4 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE4E2E1CE2410A007551E4 /* CircleView.m */; };
 		62DE7F2D1D25792400CD670E /* ChatVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DE7F2C1D25792400CD670E /* ChatVM.m */; };
-		62DE7F2E1D257BD000CD670E /* StudentCardApi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D52581121D24317800F135FF /* StudentCardApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D525810E1D2409A500F135FF /* LocationHistroyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D525810D1D2409A500F135FF /* LocationHistroyModel.m */; };
 		D52581131D24317800F135FF /* StudentCardApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52581121D24317800F135FF /* StudentCardApi.framework */; };
 		D538FEBF1CE4DE9D002D60EB /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D538FEBE1CE4DE9D002D60EB /* SettingViewController.m */; };
@@ -103,6 +102,8 @@
 		D594387F1CF1E9E100AD5170 /* SafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D594387E1CF1E9E100AD5170 /* SafeZoneViewController.m */; };
 		D5A3790A1CDA442600827F16 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379051CDA442600827F16 /* ForgetViewController.m */; };
 		D5A3790B1CDA442600827F16 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A379071CDA442600827F16 /* RegisterViewController.m */; };
+		D5D0288D1D28EEF6004364D0 /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D0288B1D28EEF6004364D0 /* jpush-ios-2.1.8.a */; };
+		D5D0288E1D28EF2B004364D0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D58EABF71CDF9B3900AECB3B /* libz.tbd */; };
 		D5DCF6211CFCB1610016B8BC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */; };
 		D5DCF6221CFCB1610016B8BC /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */; };
 		D5E518C61CF49E0F00BFB49D /* SetSafeZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E518C51CF49E0F00BFB49D /* SetSafeZoneViewController.m */; };
@@ -346,6 +347,8 @@
 		D5A379051CDA442600827F16 /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		D5A379061CDA442600827F16 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D5A379071CDA442600827F16 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		D5D0288B1D28EEF6004364D0 /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
+		D5D0288C1D28EEF6004364D0 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		D5DCF61E1CFCB1610016B8BC /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		D5DCF61F1CFCB1610016B8BC /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		D5DCF6201CFCB1610016B8BC /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
@@ -398,6 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D0288E1D28EF2B004364D0 /* libz.tbd in Frameworks */,
 				D54920FF1CE0C45100B1249C /* libiconv.tbd in Frameworks */,
 				D54920FE1CE0C42F00B1249C /* UIKit.framework in Frameworks */,
 				D54920FC1CE0C42A00B1249C /* AVFoundation.framework in Frameworks */,
@@ -407,6 +411,7 @@
 				D539D8C91CDE5C1900FF36C0 /* QuartzCore.framework in Frameworks */,
 				D539D8CB1CDE5C2400FF36C0 /* CoreVideo.framework in Frameworks */,
 				E4EDEA9D64CF6658E9F6B04D /* libPods.a in Frameworks */,
+				D5D0288D1D28EEF6004364D0 /* jpush-ios-2.1.8.a in Frameworks */,
 				D52581131D24317800F135FF /* StudentCardApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,6 +944,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D5D0288A1D28EEF6004364D0 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				D5D0288B1D28EEF6004364D0 /* jpush-ios-2.1.8.a */,
+				D5D0288C1D28EEF6004364D0 /* JPUSHService.h */,
+			);
+			path = JPush;
+			sourceTree = "<group>";
+		};
 		DA063B751CD9C98D00524689 /* KinCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1100,6 +1114,7 @@
 		DA8860951CD1B5E4009C6D56 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D5D0288A1D28EEF6004364D0 /* JPush */,
 				62111CD31D0C68120010EC2A /* XMChatBar */,
 				6255BEE71CF5F3A6006E6C18 /* WHUCalendar */,
 				D551C8971CE8CCA700D23FAC /* VPImageCropper */,
@@ -1353,7 +1368,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = Q8G47UAD38;
+						DevelopmentTeam = 4M8M5Z4AHT;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1710,8 +1725,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1729,8 +1744,9 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
+					"$(PROJECT_DIR)/KinGuard/Library/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KinGuardA.Kinzol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1742,8 +1758,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1761,8 +1777,9 @@
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders",
 					"$(PROJECT_DIR)/KinGuard/Library/Libs/ZBarSDK/Hearders/ZBarSDK",
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
+					"$(PROJECT_DIR)/KinGuard/Library/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KinGuardA.Kinzol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

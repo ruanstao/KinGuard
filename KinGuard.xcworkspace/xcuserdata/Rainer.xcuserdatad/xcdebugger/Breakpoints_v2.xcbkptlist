@@ -74,12 +74,12 @@
                   moduleName = "KinGuard"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "489002711.993088"
+                  timestampString = "489224007.559862"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "161"
                   endingLineNumber = "161"
-                  offsetFromSymbolStart = "558">
+                  offsetFromSymbolStart = "552">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -89,12 +89,12 @@
                   moduleName = "KinGuard"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "489002711.993311"
+                  timestampString = "489224007.560067"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "161"
                   endingLineNumber = "161"
-                  offsetFromSymbolStart = "566">
+                  offsetFromSymbolStart = "564">
                </Location>
             </Locations>
          </BreakpointContent>
