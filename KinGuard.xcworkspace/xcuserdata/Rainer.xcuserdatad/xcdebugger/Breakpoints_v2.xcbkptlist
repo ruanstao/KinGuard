@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-            timestampString = "488128961.684501"
+            filePath = "KinGuard/AppDelegate.m"
+            timestampString = "489230143.056464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,61 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-            timestampString = "488129249.783086"
+            filePath = "KinGuard/AppDelegate.m"
+            timestampString = "489236071.747485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-bindDevice:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[BindDeviceViewController bindDevice:]_block_invoke"
-                  moduleName = "KinGuard"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "489224007.559862"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "552">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[BindDeviceViewController bindDevice:]_block_invoke"
-                  moduleName = "KinGuard"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qiuheling/GitHub/KinGuard/KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-                  timestampString = "489224007.560067"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "564">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-            timestampString = "488129261.483067"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-application:didReceiveRemoteNotification:fetchCompletionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KinGuard/Module/Login/ViewController/BindDeviceViewController.m"
-            timestampString = "488129605.003183"
+            filePath = "KinGuard/AppDelegate.m"
+            timestampString = "489236254.56129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-bindDevice:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-application:didFailToRegisterForRemoteNotificationsWithError:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

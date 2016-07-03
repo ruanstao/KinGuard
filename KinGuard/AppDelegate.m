@@ -79,6 +79,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // IOS 7 Support Required
     [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"推送消息" message:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
