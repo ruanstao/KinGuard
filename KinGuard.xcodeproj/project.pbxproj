@@ -1368,7 +1368,7 @@
 				TargetAttributes = {
 					622218F21CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 4M8M5Z4AHT;
+						DevelopmentTeam = Q8G47UAD38;
 					};
 					6222190B1CD10C3C00A47434 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1725,8 +1725,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1746,7 +1746,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
 					"$(PROJECT_DIR)/KinGuard/Library/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KinGuardA.Kinzol;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1758,8 +1758,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xiaohua wu (CBBF55YQ2K)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1779,7 +1779,7 @@
 					"$(PROJECT_DIR)/KinGuard/Library/XMChatBar/Vendors/VoiceLib",
 					"$(PROJECT_DIR)/KinGuard/Library/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KinGuardA.Kinzol;
+				PRODUCT_BUNDLE_IDENTIFIER = RT.KinGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

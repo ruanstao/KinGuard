@@ -75,4 +75,6 @@ typedef NS_ENUM(NSInteger, XDScaningWarningTone) {
 #define KinGuard_UserInfo @"user_info"
 #define KinGuard_Device @"device_pids"
 #define CurrentBaby_Info @"baby_info"
+#define PosHis_Line @"PosHis_Line"
+
 #endif /* KinGuardDefine_h */

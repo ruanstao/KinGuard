@@ -318,7 +318,9 @@
 }
 //轨迹连线
 - (IBAction)isTrackConnection:(id)sender {
-    
+    UISwitch *swi= (UISwitch *)sender;
+    [[NSUserDefaults standardUserDefaults] setObject:@(swi.on?NO:YES) forKey:PosHis_Line];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 //解除绑定

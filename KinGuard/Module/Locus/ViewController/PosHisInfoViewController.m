@@ -145,8 +145,11 @@
     //draw Line
     //构造折线对象
     MAPolyline *commonPolyline = [MAPolyline polylineWithCoordinates:lineCoords count:self.locationArray.count];
-    //在地图上添加折线对象
-    [_mapView addOverlay: commonPolyline];
+    BOOL lineToPoint = [[[NSUserDefaults standardUserDefaults] objectForKey:PosHis_Line] boolValue];
+    if (lineToPoint == NO) {
+        //在地图上添加折线对象
+        [_mapView addOverlay: commonPolyline];
+    }
 
 //    CLLocationDistance maxDistance = MAMetersBetweenMapPoints(MAMapPointMake(range_X.x,range_Y.x),MAMapPointMake(range_X.y,range_Y.y));
     CLLocationDistance distance_X = MAMetersBetweenMapPoints(MAMapPointMake(range_X.x,range_Y.x),MAMapPointMake(range_X.y,range_Y.x));
@@ -188,7 +191,7 @@
         annotaionView = [[MAAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
     }
     annotaionView.canShowCallout = YES;
-    annotaionView.image = [UIImage imageNamed:@"point_gps"];
+    annotaionView.image = [UIImage imageNamed:@"point_mix"];
     return annotaionView;
 }
 
@@ -199,8 +202,7 @@
         MAPolylineRenderer *polylineRenderer = [[MAPolylineRenderer alloc] initWithPolyline:overlay];
         
         polylineRenderer.lineWidth = 3.f;
-        polylineRenderer.strokeColor = HexRGB(0xBBF0FF);
-//        [UIColor colorWithRed:0.5 green:1 blue:0.8 alpha:0.8];
+        polylineRenderer.strokeColor = [UIColor greenColor];
         polylineRenderer.lineJoin = kCGLineJoinRound;//连接类型
         polylineRenderer.lineCap = kCGLineCapRound;//端点类型
         
