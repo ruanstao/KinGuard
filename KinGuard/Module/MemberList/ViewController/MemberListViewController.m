@@ -44,28 +44,29 @@
 
 - (void)getMemerInfo
 {
-    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-        self.pids = @[[data objectForKey:@"pids"]?:@[]];
-        if (self.pids.count > 0) {
+//    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+//        NSLog(@"%@",data);
+//        self.pids = @[[data objectForKey:@"pids"]?:@[]];
+//        if (self.pids.count > 0) {
             [self requestDeviceInfoFinish:^(NSArray *info) {
                 self.info = info;
                 NSLog(@"kkk:%@",self.info);
                 [self.memberListTableView reloadData];
             }];
-        }
-        
-    } fail:^(NSString *error) {
-        NSLog(@"%@",error);
-    }];
+//        }
+//        
+//    } fail:^(NSString *error) {
+//        NSLog(@"%@",error);
+//    }];
 }
 
 - (void)requestDeviceInfoFinish:(void (^)(NSArray *info))block
 {
-    if (self.pids.count > 0) {
+//    if (self.pids.count > 0) {
         NSMutableArray *infoArr = [NSMutableArray array];
-        for (int i = 0;i < self.pids.count;i++) {
-            NSString *pid = [self.pids objectAtIndex:i];
+//        for (int i = 0;i < self.pids.count;i++) {
+//            NSString *pid = [self.pids objectAtIndex:i];
+    NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
             [[KinDeviceApi sharedKinDevice] deviceBindInfoPid:pid success:^(NSDictionary *data) {
                 NSLog(@"---:%@",data);
                 if ([data isKindOfClass:[NSArray class]]) {
@@ -75,16 +76,16 @@
                         [infoArr addObject:guarder];
                     }];
                 }
-                if (i == self.pids.count - 1) {
+//                if (i == self.pids.count - 1) {
                     if (block) {
                         block(infoArr);
                     }
-                }
+//                }
             } fail:^(NSString *error) {
                 NSLog(@"%@",error);
             }];
-        }
-    }
+//        }
+//    }
 }
 
 - (void)back
@@ -107,7 +108,12 @@
 {
     MemberListCell *cell = [MemberListCell cellForTableView:tableView];
     GuarderInfo *guarder = [self.info objectAtIndex:indexPath.row];
-    [cell.labName setText:guarder.aliasname];
+    if ([guarder.mainbind integerValue] == 1) {
+        [cell.labName setText:@"主账号(家长)"];
+    }else{
+        [cell.labName setText:[guarder.aliasname stringByAppendingString:@"(家长)"]];
+    }
+    
     [cell.labPhone setText:guarder.acc];
     return cell;
 }

@@ -1147,7 +1147,7 @@
             [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
             break;
         case 18:
-            [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+            [dateFormatter setDateFormat:@"MM-dd HH:mm:ss"];
             break;
         case 19:
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];

@@ -138,14 +138,17 @@
     if (self.selectIndex == 0) {
         return 44;
     }
-    return 144;
+    return 240;
 
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    LeftType type = [[[self.tableViewContent objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] integerValue];
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MonitoringCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
     if (self.selectIndex == 0) {
         LocationHistroyModel *model = [self.tableViewContent objectAtIndex:indexPath.section];
         [cell.textLabel setText:model.location_m];
@@ -158,6 +161,8 @@
                                                              error:&error];
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         [cell.textLabel setText:jsonString];
+        cell.textLabel.numberOfLines = 0;
+        cell.detailTextLabel.text = @"";
     }
     
     return cell;

@@ -89,14 +89,14 @@
         [self.headerTitle setTitle:info.asset_name forState:UIControlStateNormal];
         //开始定位
         [self beginLocationAnimation:YES];
-        [[KinLocationApi sharedKinLocation]readLocationInfo:info.asset_id success:^(NSDictionary *data) {
+        [[KinLocationApi sharedKinLocation] readLocationInfo:info.asset_id success:^(NSDictionary *data) {
             
             NSLog(@"dd%@",data);
             self.currentLocation = [LocationInfo mj_objectWithKeyValues:data];
             [self beginLocationAnimation:NO];
         } fail:^(NSString *error) {
             
-            NSLog(@"%@",error);
+            NSLog(@"dd%@",error);
         }];
     }
     
@@ -174,7 +174,7 @@
 //    self.annotationAnimation = animation;
     MAPointAnnotation *pointAnno = [[MAPointAnnotation alloc] init];
     pointAnno.title = self.currentLocation.addr;
-    pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:10];
+    pointAnno.subtitle = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:self.currentLocation.timestamp] type:18];
     pointAnno.coordinate = CLLocationCoordinate2DMake(self.currentLocation.latitude, self.currentLocation.longitude);
     [self.mapView.annotations enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.mapView removeAnnotation:obj];
@@ -278,7 +278,7 @@
 //    });
     DeviceInfo *info = self.info[self.showIndex];
     [[KinLocationApi sharedKinLocation] startNormalLocation:info.asset_id success:^(NSDictionary *data) {
-        NSLog(@"%@",data);
+        NSLog(@"normal:%@",data);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self stopBuling:sender];
@@ -295,7 +295,7 @@
  [self bulingbuling:sender];
     DeviceInfo *info = self.info[self.showIndex];
     [[KinLocationApi sharedKinLocation] startUrgenLocation:info.asset_id success:^(NSDictionary *data) {
-        NSLog(@"%@",data);
+        NSLog(@"urgen:%@",data);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                  [self stopBuling:sender];
@@ -313,7 +313,7 @@
      [self bulingbuling:sender];
     DeviceInfo *info = self.info[self.showIndex];
     [[KinLocationApi sharedKinLocation]startRecordLocation:info.asset_id success:^(NSDictionary *data) {
-        NSLog(@"%@",data);
+        NSLog(@"record:%@",data);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                  [self stopBuling:sender];

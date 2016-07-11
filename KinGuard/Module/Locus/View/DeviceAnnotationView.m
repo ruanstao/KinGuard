@@ -18,7 +18,7 @@
 #define kPortraitWidth  50.f
 #define kPortraitHeight 50.f
 
-#define kCalloutWidth   260.0
+#define kCalloutWidth   mScreenWidth - 20
 #define kCalloutHeight  60.0
 @interface DeviceAnnotationView ()
 

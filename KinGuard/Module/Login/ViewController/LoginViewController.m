@@ -59,6 +59,10 @@
                 model.isLogined = YES;
                 NSData *userData = [NSKeyedArchiver archivedDataWithRootObject:model];
                 [JJSUtil storageDataWithObject:userData Key:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
+                    
+                    //注册别名推送
+                    [JPUSHService setAlias:model.username callbackSelector:nil object:nil];
+                    
                     //跳转到主界面
                     ViewController *viewController = [[ViewController alloc] init];
                     self.view.window.rootViewController = viewController;

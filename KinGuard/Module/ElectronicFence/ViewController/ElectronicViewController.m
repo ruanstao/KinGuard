@@ -60,29 +60,31 @@
 
 - (void)requestData
 {
-    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
-        NSLog(@"%@",data);
-        self.pids = @[[data objectForKey:@"pids"]?:@[]];
-        if (self.pids.count > 0) {
-            
+//    [[KinDeviceApi sharedKinDevice] deviceListSuccess:^(NSDictionary *data) {
+//        NSLog(@"%@",data);
+//        self.pids = @[[data objectForKey:@"pids"]?:@[]];
+//        if (self.pids.count > 0) {
+    
             [self requestSafeZoneInfoFinish:^(NSArray *info) {
                 self.safeInfo = info;
                 NSLog(@"kkk:%@",self.safeInfo);
                 [self.safeTableView reloadData];
             }];
             
-        }
-    } fail:^(NSString *error) {
-        NSLog(@"%@",error);
-    }];
+//        }
+//    } fail:^(NSString *error) {
+//        NSLog(@"%@",error);
+//    }];
 }
 
 - (void)requestSafeZoneInfoFinish:(void (^)(NSArray *info))block
 {
-    if (self.pids.count > 0) {
+//    if (self.pids.count > 0) {
         NSMutableArray *infoArr = [NSMutableArray array];
-        for (int i = 0;i < self.pids.count;i++) {
-            NSString *pid = @"c202237b";//[self.pids objectAtIndex:i];
+//        for (int i = 0;i < self.pids.count;i++) {
+//            NSString *pid = @"c202237b";//[self.pids objectAtIndex:i];
+    
+    NSString *pid = [[NSUserDefaults standardUserDefaults] objectForKey:KinGuard_Device];
             [[KinLocationApi sharedKinLocation] getSecZonePid:pid success:^(NSDictionary *data) {
                 NSLog(@"---:%@",data);
                 if ([data isKindOfClass:[NSArray class]]) {
@@ -94,16 +96,16 @@
                         }
                     }];
                 }
-                if (i == self.pids.count - 1) {
+//                if (i == self.pids.count - 1) {
                     if (block) {
                         block(infoArr);
                     }
-                }
+//                }
             } fail:^(NSString *error) {
                 NSLog(@"%@",error);
             }];
-        }
-    }
+//        }
+//    }
 }
 
 #pragma mark ---

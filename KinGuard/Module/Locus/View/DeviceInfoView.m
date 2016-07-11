@@ -37,9 +37,9 @@
 */
 
 - (void)initWithLocationModel:(LocationInfo *)info{
-    self.power.text =[NSString stringWithFormat:@"%@", @(info.battery)];;
-    self.time.text = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:info.timestamp] type:10];
-    self.accuracy.text = [NSString stringWithFormat:@"%@",@(info.range)];
+    self.power.text =[NSString stringWithFormat:@"电量:%@%%", @(info.battery)];;
+    self.time.text = [JJSUtil timeDateFormatter:[NSDate dateWithTimeIntervalSince1970:info.timestamp] type:18];
+    self.accuracy.text = [NSString stringWithFormat:@"精度小于%@",@(info.range)];
     self.address.text = [NSString stringWithFormat:@"%@",info.addr];
     
 }

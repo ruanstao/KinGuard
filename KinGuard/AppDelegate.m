@@ -8,10 +8,13 @@
 
 #import "AppDelegate.h"
 #import "UserModel.h"
+#import "JPUSHService.h"
 
 #define GaoDeDiTu_Key @"60bc8e854afef14a5500863c1f409263"
 #define KinGuardAppKey @"a6b0c023c373971a6523b1960ede0031"
 #define KinGuardAppSecret @"0be4f5e95593a4d65d6734942b4617e740090527becaf0d3f46d50be179d6933"
+
+#define JpushAppKey @"2c01be14342a43fd42064719"
 
 @interface AppDelegate ()
 
@@ -28,6 +31,18 @@
     [KinGuartApi sharedKinGuard].appKey = KinGuardAppKey;
     [KinGuartApi sharedKinGuard].appSecret = KinGuardAppSecret;
     
+    //🐔光推送
+    [JPUSHService setupWithOption:launchOptions appKey:JpushAppKey channel:@"星联守护" apsForProduction:NO];
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        //       categories
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound |
+            UIUserNotificationTypeAlert) categories:nil];
+    } else {
+        //categories    nil
+        [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert) categories:nil];
+    }
+    
     [JJSUtil getDataWithKey:KinGuard_UserInfo Completion:^(BOOL finish, id obj) {
         if (obj) {
             NSData *userData = obj;
@@ -43,6 +58,35 @@
     
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    // IOS 7 Support Required
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"推送消息" message:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alertView show];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
