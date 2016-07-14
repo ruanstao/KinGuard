@@ -32,6 +32,8 @@
 
 @property (nonatomic, strong) AccountInfo *accountInfo;
 
+@property (strong, nonatomic) IBOutlet UISwitch *isLine; //轨迹连线
+
 @property (nonatomic, strong) LocusVM *locusVM;
 @end
 
@@ -213,6 +215,10 @@
                 break;
             case 2:{
                 //轨迹连线
+                BOOL lineToPoint = [[[NSUserDefaults standardUserDefaults] objectForKey:PosHis_Line] boolValue];
+                    //NO 默认开启
+                    self.isLine.on = lineToPoint == NO ?YES:NO;
+
             }
                 break;
             case 3:{
